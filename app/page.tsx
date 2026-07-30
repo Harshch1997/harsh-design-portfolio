@@ -88,9 +88,10 @@ export default function Home() {
           HC<span>®</span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#work">Work</a>
+          <a href="#work">UI/UX</a>
+          <a href="#social">Social</a>
+          <a href="#video">Video</a>
           <a href="#about">About</a>
-          <a href="#contact">Contact</a>
         </nav>
         <a
           className="availability"
@@ -123,11 +124,37 @@ export default function Home() {
         <div className="hero-orbit orbit-two">Branding</div>
       </section>
 
+      <section className="work-index" aria-label="Portfolio categories">
+        <p className="kicker">Explore by category</p>
+        <div>
+          <a href="#work">
+            <span>01</span>
+            UI/UX &amp; Web Design
+            <b>↓</b>
+          </a>
+          <a href="#social">
+            <span>02</span>
+            Social Media &amp; Reels
+            <b>↓</b>
+          </a>
+          <a href="#video">
+            <span>03</span>
+            YouTube &amp; Video
+            <b>↓</b>
+          </a>
+          <a href="#graphic">
+            <span>04</span>
+            Graphic &amp; Brand Design
+            <b>↓</b>
+          </a>
+        </div>
+      </section>
+
       <section className="work-section" id="work">
         <div className="section-heading">
-          <p className="kicker">Selected work / 2024–26</p>
-          <h2>Built with intent.</h2>
-          <p className="count">06 projects</p>
+          <p className="kicker">01 / UI/UX &amp; Web Design</p>
+          <h2>Digital experiences.</h2>
+          <p className="count">06 case studies</p>
         </div>
 
         <div className="work-grid">
@@ -166,13 +193,13 @@ export default function Home() {
         </a>
       </section>
 
-      <section className="brand-section">
+      <section className="brand-section" id="social">
         <div className="brand-intro">
-          <p className="kicker">Brand collaborations</p>
-          <h2>From feed to feeling.</h2>
+          <p className="kicker">02 / Social Media &amp; Reels</p>
+          <h2>Feeds that move.</h2>
           <p>
-            Social-first systems and campaign worlds that give growing brands a
-            distinct, consistent voice.
+            All social-first work lives here: reel concepts, campaign creatives,
+            content systems and visual storytelling for growing brands.
           </p>
         </div>
         <div className="brand-list">
@@ -192,12 +219,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="motion-section">
+      <section className="motion-section" id="video">
         <div className="motion-copy">
-          <p className="kicker">Motion &amp; video</p>
-          <h2>Stories that don’t sit still.</h2>
+          <p className="kicker">03 / YouTube &amp; Long-form Video</p>
+          <h2>Stories with a longer arc.</h2>
           <p>
-            Visual direction, content design and video storytelling across
+            Channel identity, thumbnails and long-form visual storytelling for
             original shows and purpose-led education.
           </p>
         </div>
@@ -225,6 +252,33 @@ export default function Home() {
               <strong>Go Sharpener</strong>
             </span>
             <Arrow />
+          </a>
+        </div>
+      </section>
+
+      <section className="graphic-section" id="graphic">
+        <div>
+          <p className="kicker">04 / Graphic &amp; Brand Design</p>
+          <h2>Identity, print &amp; everything visual.</h2>
+        </div>
+        <div className="graphic-copy">
+          <p>
+            Logos, packaging, campaign key visuals, posters and brand systems —
+            collected separately from digital product and social work.
+          </p>
+          <a
+            href="https://www.behance.net/harshchhabra"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Browse graphic design archive <Arrow />
+          </a>
+          <a
+            href="https://drive.google.com/drive/folders/1Qg2Xu1e8smwU4gVpHackjyd1pDCxrWGo?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open complete portfolio drive <Arrow />
           </a>
         </div>
       </section>
