@@ -1,43 +1,39 @@
+import { ReelShowcase } from "./ReelShowcase";
+
 const work = [
   {
     title: "Investment App",
     type: "Product Design · UI/UX",
-    image: "/work/investment-app.png",
     href: "https://www.behance.net/gallery/232275921/investment-app",
     index: "01",
   },
   {
     title: "Red Fort Ticketing",
     type: "Web Experience · UI/UX",
-    image: "/work/redfort-ticketing.png",
     href: "https://www.behance.net/harshchhabra",
     index: "02",
   },
   {
     title: "Construction Finance",
     type: "Digital Product · Web Design",
-    image: "/work/construction-finance.png",
     href: "https://www.behance.net/harshchhabra",
     index: "03",
   },
   {
     title: "Pathology Lab",
     type: "Healthcare · Web Design",
-    image: "/work/pathology-lab.png",
     href: "https://www.behance.net/harshchhabra",
     index: "04",
   },
   {
     title: "Hospital Dashboard",
     type: "Data Experience · UI/UX",
-    image: "/work/hospital-dashboard.png",
     href: "https://www.behance.net/harshchhabra",
     index: "05",
   },
   {
     title: "Uncover Clinic",
     type: "Wellness · Web Design",
-    image: "/work/uncover-clinic.png",
     href: "https://www.behance.net/harshchhabra",
     index: "06",
   },
@@ -88,9 +84,9 @@ export default function Home() {
           HC<span>®</span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#work">UI/UX</a>
           <a href="#social">Social</a>
           <a href="#video">Video</a>
+          <a href="#work">UI/UX</a>
           <a href="#about">About</a>
         </nav>
         <a
@@ -115,7 +111,7 @@ export default function Home() {
             I’m Harsh Chhabra — a graphic &amp; UI/UX designer creating bold
             digital experiences, visual identities and stories built to move.
           </p>
-          <a className="circle-link" href="#work" aria-label="Explore selected work">
+          <a className="circle-link" href="#social" aria-label="Explore selected work">
             <span>Explore</span>
             <b>↓</b>
           </a>
@@ -127,19 +123,19 @@ export default function Home() {
       <section className="work-index" aria-label="Portfolio categories">
         <p className="kicker">Explore by category</p>
         <div>
-          <a href="#work">
-            <span>01</span>
-            UI/UX &amp; Web Design
-            <b>↓</b>
-          </a>
           <a href="#social">
-            <span>02</span>
+            <span>01</span>
             Social Media &amp; Reels
             <b>↓</b>
           </a>
           <a href="#video">
-            <span>03</span>
+            <span>02</span>
             YouTube &amp; Video
+            <b>↓</b>
+          </a>
+          <a href="#work">
+            <span>03</span>
+            UI/UX &amp; Web Design
             <b>↓</b>
           </a>
           <a href="#graphic">
@@ -150,78 +146,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="work-section" id="work">
-        <div className="section-heading">
-          <p className="kicker">01 / UI/UX &amp; Web Design</p>
-          <h2>Digital experiences.</h2>
-          <p className="count">06 case studies</p>
-        </div>
-
-        <div className="work-grid">
-          {work.map((item) => (
-            <a
-              className="project-card"
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              key={item.title}
-            >
-              <div className="project-image">
-                <img src={item.image} alt={`${item.title} project preview`} />
-                <span className="view-pill">View project <Arrow /></span>
-              </div>
-              <div className="project-meta">
-                <span>{item.index}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.type}</p>
-                </div>
-                <Arrow />
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <a
-          className="behance-link"
-          href="https://www.behance.net/harshchhabra"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span>See the complete archive on Behance</span>
-          <Arrow />
-        </a>
-      </section>
-
       <section className="brand-section" id="social">
         <div className="brand-intro">
-          <p className="kicker">02 / Social Media &amp; Reels</p>
+          <p className="kicker">01 / Social Media &amp; Reels</p>
           <h2>Feeds that move.</h2>
           <p>
             All social-first work lives here: reel concepts, campaign creatives,
             content systems and visual storytelling for growing brands.
           </p>
         </div>
-        <div className="brand-list">
+        <div className="social-profiles">
           {brandWork.map((item, index) => (
-            <a
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              key={item.name}
-            >
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{item.name}</h3>
-              <p>{item.service}</p>
-              <Arrow />
-            </a>
-          ))}
+              <a href={item.href} target="_blank" rel="noreferrer" key={item.name}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{item.name}</strong>
+                <Arrow />
+              </a>
+            ))}
+        </div>
+        <div className="reels-wide">
+          <ReelShowcase />
         </div>
       </section>
 
       <section className="motion-section" id="video">
         <div className="motion-copy">
-          <p className="kicker">03 / YouTube &amp; Long-form Video</p>
+          <p className="kicker">02 / YouTube &amp; Long-form Video</p>
           <h2>Stories with a longer arc.</h2>
           <p>
             Channel identity, thumbnails and long-form visual storytelling for
@@ -254,6 +204,37 @@ export default function Home() {
             <Arrow />
           </a>
         </div>
+      </section>
+
+      <section className="work-section" id="work">
+        <div className="section-heading">
+          <p className="kicker">03 / UI/UX &amp; Web Design</p>
+          <h2>Ideas, not screenshots.</h2>
+          <p className="count">06 case studies</p>
+        </div>
+        <p className="work-note">
+          A text-led index of digital product thinking. Open any project to see
+          the complete process, interface and outcome on Behance.
+        </p>
+        <div className="case-index">
+          {work.map((item) => (
+            <a href={item.href} target="_blank" rel="noreferrer" key={item.title}>
+              <span>{item.index}</span>
+              <h3>{item.title}</h3>
+              <p>{item.type}</p>
+              <b>View case study <Arrow /></b>
+            </a>
+          ))}
+        </div>
+        <a
+          className="behance-link"
+          href="https://www.behance.net/harshchhabra"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span>See the complete UI/UX archive on Behance</span>
+          <Arrow />
+        </a>
       </section>
 
       <section className="graphic-section" id="graphic">
