@@ -1,4 +1,5 @@
 import { ReelShowcase } from "./ReelShowcase";
+import { DesignCollections } from "./DesignCollections";
 
 const work = [
   {
@@ -139,8 +140,28 @@ export default function Home() {
             <b>↓</b>
           </a>
           <a href="#graphic">
+            <span>08</span>
+            More Graphic Design
+            <b>↓</b>
+          </a>
+          <a href="#packaging">
             <span>04</span>
-            Graphic &amp; Brand Design
+            Packaging Design
+            <b>↓</b>
+          </a>
+          <a href="#brochures">
+            <span>05</span>
+            Brochures
+            <b>↓</b>
+          </a>
+          <a href="#product-listing">
+            <span>06</span>
+            Product Listings
+            <b>↓</b>
+          </a>
+          <a href="#tshirts">
+            <span>07</span>
+            T-shirt Design
             <b>↓</b>
           </a>
         </div>
@@ -237,9 +258,11 @@ export default function Home() {
         </a>
       </section>
 
+      <DesignCollections />
+
       <section className="graphic-section" id="graphic">
         <div>
-          <p className="kicker">04 / Graphic &amp; Brand Design</p>
+          <p className="kicker">08 / Graphic &amp; Brand Design</p>
           <h2>Identity, print &amp; everything visual.</h2>
         </div>
         <div className="graphic-copy">
