@@ -1,5 +1,6 @@
 import { ReelShowcase } from "./ReelShowcase";
 import { DesignCollections } from "./DesignCollections";
+import { YouTubeShowcase } from "./YouTubeShowcase";
 
 const work = [
   {
@@ -139,28 +140,28 @@ export default function Home() {
             UI/UX &amp; Web Design
             <b>↓</b>
           </a>
-          <a href="#graphic">
-            <span>08</span>
-            More Graphic Design
+          <a href="#print">
+            <span>04</span>
+            Print Designs
             <b>↓</b>
           </a>
           <a href="#packaging">
-            <span>04</span>
+            <span>05</span>
             Packaging Design
             <b>↓</b>
           </a>
           <a href="#brochures">
-            <span>05</span>
+            <span>06</span>
             Brochures
             <b>↓</b>
           </a>
           <a href="#product-listing">
-            <span>06</span>
+            <span>07</span>
             Product Listings
             <b>↓</b>
           </a>
           <a href="#tshirts">
-            <span>07</span>
+            <span>08</span>
             T-shirt Design
             <b>↓</b>
           </a>
@@ -199,32 +200,7 @@ export default function Home() {
             original shows and purpose-led education.
           </p>
         </div>
-        <div className="video-links">
-          <a
-            href="https://youtube.com/@theoriginalyoushow"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="play">▶</span>
-            <span>
-              <small>YouTube channel</small>
-              <strong>The Original You Show</strong>
-            </span>
-            <Arrow />
-          </a>
-          <a
-            href="https://youtube.com/@gosharpener"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="play">▶</span>
-            <span>
-              <small>YouTube channel</small>
-              <strong>Go Sharpener</strong>
-            </span>
-            <Arrow />
-          </a>
-        </div>
+        <YouTubeShowcase />
       </section>
 
       <section className="work-section" id="work">
@@ -262,7 +238,7 @@ export default function Home() {
 
       <section className="graphic-section" id="graphic">
         <div>
-          <p className="kicker">08 / Graphic &amp; Brand Design</p>
+          <p className="kicker">09 / Graphic &amp; Brand Design</p>
           <h2>Identity, print &amp; everything visual.</h2>
         </div>
         <div className="graphic-copy">
