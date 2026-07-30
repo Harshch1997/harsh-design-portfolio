@@ -68,11 +68,6 @@ export const instagramCatalogues = [
     codes: ids("DbSwbobKwYH DbFhqF8R-q8 DbAvS4vqTJG Da5Y4V-qcxo Da28jrcqKB7 DazfIscRqz8 DaxpHs3KZF4 DaxPbGsKH07 DavAblTKZKt"),
   },
   {
-    brand: "Go Sharpener",
-    accent: "#d6a8ff",
-    codes: ids("DbX90mChXew DbVpysOTgv0 DbSq9ZkzUl2 DbNhEO4z1Jp DbK72AUTKhU"),
-  },
-  {
     brand: "Chai Calling",
     accent: "#ffb54a",
     codes: ids("DNqi6ixv2Yq DNqOnX7Txn8 DbYZlfAz3zW DbTYViEToDy DbQxquMz86u DbH7--SxCN8 DbC3VQexkhq"),
@@ -81,6 +76,50 @@ export const instagramCatalogues = [
     brand: "Yuomo Men",
     accent: "#7ec8ff",
     codes: ids("DZfLzFRTNcj DXmfkohk4W- DXhcZ-Ik4tX DXZyBfSk8Vg DXhJ9rjkxat DXMWj1vk7Al DYplqTFT6YE DXWvcStE5o0 DXZM7MNhO54 DYmtt2qTYCP DYkbDvkzlN7 DWtfpF1k-Yc"),
+  },
+];
+
+export const instagramPostCatalogues = [
+  {
+    brand: "Uncover Transform",
+    accent: "#d7ff35",
+    posts: [
+      { code: "DaxgZshlMX4", slides: 5 },
+      { code: "Dau1RJrMjlc", slides: 1 },
+    ],
+  },
+  {
+    brand: "Uncover Hair",
+    accent: "#ff785a",
+    posts: [
+      { code: "Da0RIkdGJcg", slides: 7 },
+      { code: "Daxf7j6GJEk", slides: 6 },
+      { code: "Dau0iSCHNcV", slides: 7 },
+    ],
+  },
+  {
+    brand: "Go Sharpener",
+    accent: "#d6a8ff",
+    posts: [
+      { code: "DJJWX5Jzthy", slides: 1 },
+      { code: "DJHCnSkobN1", slides: 1 },
+      { code: "DJHB4CvzWW1", slides: 1 },
+      { code: "DbVclldk0pQ", slides: 6 },
+      { code: "DbVAI-vE3iD", slides: 6 },
+      { code: "DbP9KS9E20r", slides: 11 },
+      { code: "DbPY4RKzjev", slides: 1 },
+    ],
+  },
+  {
+    brand: "Chai Calling",
+    accent: "#ffb54a",
+    posts: [
+      { code: "DMIuBrBTyVu", slides: 1 },
+      { code: "DbVTdgMTKfr", slides: 1 },
+      { code: "DbLopjUEy2a", slides: 5 },
+      { code: "DbGUOscTWz6", slides: 1 },
+      { code: "Da-hLXZzef-", slides: 1 },
+    ],
   },
 ];
 
@@ -93,17 +132,6 @@ export const youtubeCatalogues = [
   {
     channel: "GoSharpener",
     handle: "gosharpener",
-    ids: ids(`
-      5oig0IdDF5c 355fd_NM9_U AD0DgPMtRL4 8lv3Q9DTDYo ZWi3tdHrG2M 2Tsq1kjGy7w f5IWBRYRFhs xu5uyYCvcW4 GRxSTecPhJQ rEB9F3_cO_E uaF0KrAk8rI V2cHcmBVFCA hax1eY-2vrQ ESkwRf8E7h4 KwqwcuL47wU
-      MqX4crvenwo UXHeuJOMeCs I4hEFt1JiFU 6pRUTT6VJG4 4ctYBmXJpIk fMzuGvauWcI Rk-sCow2CCE OURb6dPxfk8 _JLrWbwnZg4 G4mc-MZsuoI 92XTWa1dqcM X146HnAwT0I xGErSp7YtUs 4TibSCRZCac 9wE6HZo-fCI
-      ZF5MYAfVnXw pLga17-MLyI -DXpNIvgEoQ bT5OT5DQOSA VADyoV1MsbM MaM-LdVz5Ds RJ9bkznml6E SisOf0PUR5Q BjSewY2PIVU izLZ-PMfKrM DQNTOmDqS2o oTnkRAdeGIQ 9XTE_eNcS_s 1SxAB_0hnZ4 Cd83XbV12do
-      kaaE5kJbwn0 uj754pGvyeg 0-1et8u3sCA 6QNUmlE_szI 1zDO6V-kH2w 835_xffYhM4 wcTiNRk2TmA fF-OVEe0Grk j7a6Lvy5f4I yqXGPqeoBpU d2piifU4elM CIMSQsChTQo 5d4CIdb7ZXs 8WX58L1BIQk U91-xIy11aE
-      TUPgPMFdyoU ZdzJ7ChDJ8g FSdnUaR9vA8 y3W4sIEDFXY Uf-B30x9no4 Jlxo0vcEyl4 JuZ0ARZ4tgQ TAcEO3fotF8 r7LUFtP2FY4 DMPNPi7qNzk _GTfCjNwzaM axooKW0kP_Q xFTk3s5cpBI BMTWSEpWchU ONvjhGNYnGQ
-      zjFvYm3DkOY BSkLUCCKCAA ACFxrqo4fI8 IsQcAwULS3U qWUvkQi72PE 3nBo6PYa8o4 7Mwy1x5C2hc Bp9S-gbCfn8 NxRKe7r0omw SD8TeR3OdQw b2M2flOpanE pxNBKMx6nVU CbR1E0710Ng Xco_xEo_lbE OEW92veXLnk
-      lBqFrf1n8zU gMNiNqFJJHQ 3XqDFXy_CK8 mfy373gDHAY kyz-_0rJAAw ICoYCzi3e_k 5GafP4ucZBA vwA_RQ_qXiM K4hPLRQNKYI Totq4OoU8rc XerhBhsCvQk GRSDmWr0qp8 31UCIxbVmqA CCS5QL6zqUs j03idH4s4HE
-      i3AE8JDluqQ ErC29UW8ldM 7VosquGnFwc MRI7YZHpp5U RAztNCQY9d4 XShRro70fwc EZqqr1gLYXc SMPEvDYmsPg g2hzzzQtd7g OB9JB0ZpEwo c3FO3iqsXHU 06tNO2tWU0A dTum5OsKkfw 6ctaiIirmk0 Nv7_4JGlOSM
-      JZ4cmhMKF1Q 3jogKby27gU gcdhNAmeWzk cYJu_tqC0vc szifLg8Mc08 5Kf2J8rUVA0 6nQL6vfQuqo OWwhQRRvCVM -F7LROudBaY nfY_aP_8Ngw OJL-ZPrt1zo 1MPh3jZdwjg ihTD6qeZuAI yIZNKOcV0iY f4OVfpxkw0A
-      4pidjbEU2bg mYcYd2lviSo Y07pvoi9U2g m4h6y5rC1LA 4hrR2Umut4I S7yT52AA3cU gQkcmx5gkPs _6wfk3HGMBY szaoysfAkqU OJl7EeTtfxA jn_ityFR5Rw 70MTSpA29Qc DnN25fpWzno EA5r5g4rOh8 Q5hnI6xKv54
-    `),
+    ids: ids("8WX58L1BIQk U91-xIy11aE axooKW0kP_Q"),
   },
 ];

@@ -1,6 +1,7 @@
 import { ReelShowcase } from "./ReelShowcase";
 import { DesignCollections } from "./DesignCollections";
 import { YouTubeShowcase } from "./YouTubeShowcase";
+import { StaticPostShowcase } from "./StaticPostShowcase";
 
 const work = [
   {
@@ -127,7 +128,7 @@ export default function Home() {
         <div>
           <a href="#social">
             <span>01</span>
-            Social Media &amp; Reels
+            Social Reels &amp; Posts
             <b>↓</b>
           </a>
           <a href="#video">
@@ -173,8 +174,8 @@ export default function Home() {
           <p className="kicker">01 / Social Media &amp; Reels</p>
           <h2>Feeds that move.</h2>
           <p>
-            All social-first work lives here: reel concepts, campaign creatives,
-            content systems and visual storytelling for growing brands.
+            Motion-first social work: reel concepts, edits and visual
+            storytelling. GoSharpener’s static work lives in the next section.
           </p>
         </div>
         <div className="social-profiles">
@@ -189,6 +190,18 @@ export default function Home() {
         <div className="reels-wide">
           <ReelShowcase />
         </div>
+      </section>
+
+      <section className="static-section" id="static-posts">
+        <div className="static-intro">
+          <p className="kicker">01B / Static &amp; Carousel Posts</p>
+          <h2>Stories, frame by frame.</h2>
+          <p>
+            Static campaign design and multi-slide carousel systems, separated
+            from reels and organised by brand—including GoSharpener.
+          </p>
+        </div>
+        <StaticPostShowcase />
       </section>
 
       <section className="motion-section" id="video">
