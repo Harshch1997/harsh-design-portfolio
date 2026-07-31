@@ -51,11 +51,29 @@ const work = [
     index: "01",
   },
   {
+    title: "Uncover",
+    type: "Healthcare Brand · Website Design · UI/UX",
+    image: "/work/uncover-website.webp",
+    href: "https://uncover.co.in/",
+    cta: "Visit live website",
+    website: "uncover.co.in",
+    index: "02",
+  },
+  {
+    title: "USL Derma",
+    type: "Skincare E-commerce · Website Design · UI/UX",
+    image: "/work/usl-derma-website.webp",
+    href: "https://www.uslderma.com/",
+    cta: "Visit live website",
+    website: "uslderma.com",
+    index: "03",
+  },
+  {
     title: "Investment App",
     type: "Product Design · UI/UX",
     image: "/work/investment-app.png",
     href: "https://www.behance.net/gallery/232275921/investment-app",
-    index: "02",
+    index: "04",
   },
   {
     title: "Red Fort Ticketing",
@@ -63,35 +81,35 @@ const work = [
     image: "/work/redfort-ticketing.png",
     video: "/videos/redfort-ui-walkthrough.mp4",
     href: "https://www.behance.net/harshchhabra",
-    index: "03",
+    index: "05",
   },
   {
     title: "Construction Finance",
     type: "Digital Product · Web Design",
     image: "/work/construction-finance.png",
     href: "https://www.behance.net/harshchhabra",
-    index: "04",
+    index: "06",
   },
   {
     title: "Pathology Lab",
     type: "Healthcare · Web Design",
     image: "/work/pathology-lab.png",
     href: "https://www.behance.net/harshchhabra",
-    index: "05",
+    index: "07",
   },
   {
     title: "Hospital Dashboard",
     type: "Data Experience · UI/UX",
     image: "/work/hospital-dashboard.png",
     href: "https://www.behance.net/harshchhabra",
-    index: "06",
+    index: "08",
   },
   {
     title: "Uncover Clinic",
     type: "Wellness · Web Design",
     image: "/work/uncover-clinic.png",
     href: "https://www.behance.net/harshchhabra",
-    index: "07",
+    index: "09",
   },
 ];
 
@@ -302,12 +320,12 @@ export default function Home() {
         <div className="section-heading">
           <p className="kicker"><MonitorSmartphone size={15} /> 03 / UI/UX &amp; Web Design</p>
           <h2>Ideas, not screenshots.</h2>
-          <p className="count">07 case studies</p>
+          <p className="count">09 case studies</p>
         </div>
         <div className="work-grid visual-work-grid">
           {work.map((item) => (
             <a
-              className={`project-card ${item.video ? "video-project" : ""} ${item.featured ? "featured-project" : ""}`}
+              className={`project-card ${item.video ? "video-project" : ""} ${item.featured ? "featured-project" : ""} ${item.website ? "website-project" : ""}`}
               href={item.href}
               target="_blank"
               rel="noreferrer"
@@ -331,6 +349,18 @@ export default function Home() {
                           key={screen}
                         />
                       ))}
+                    </div>
+                  </div>
+                ) : item.website ? (
+                  <div className="website-project-preview">
+                    <div className="website-browser-bar">
+                      <i /><i /><i />
+                      <span>{item.website}</span>
+                    </div>
+                    <img src={item.image} alt={`${item.title} website homepage`} loading="lazy" />
+                    <div className="website-project-label">
+                      <span>Live website</span>
+                      <strong>{item.title}</strong>
                     </div>
                   </div>
                 ) : item.video ? (
