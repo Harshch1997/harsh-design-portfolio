@@ -79,6 +79,10 @@ const work = [
     type: "Product Design · UI/UX",
     image: "/work/investment-app.png",
     href: "https://www.behance.net/gallery/232275921/investment-app",
+    frame: "app-frame",
+    tone: "investment-tone",
+    previewLabel: "Fintech product",
+    tags: ["Mobile UI", "Investing"],
     index: "04",
   },
   {
@@ -87,6 +91,10 @@ const work = [
     image: "/work/redfort-ticketing.png",
     video: "/videos/redfort-ui-walkthrough.mp4",
     href: "https://www.behance.net/harshchhabra",
+    frame: "browser-frame",
+    tone: "redfort-tone",
+    previewLabel: "Ticketing experience",
+    tags: ["Culture", "Booking"],
     index: "05",
   },
   {
@@ -94,6 +102,10 @@ const work = [
     type: "Digital Product · Web Design",
     image: "/work/construction-finance.png",
     href: "https://www.behance.net/harshchhabra",
+    frame: "browser-frame",
+    tone: "finance-tone",
+    previewLabel: "Finance platform",
+    tags: ["Web UI", "Fintech"],
     index: "06",
   },
   {
@@ -101,6 +113,10 @@ const work = [
     type: "Healthcare · Web Design",
     image: "/work/pathology-lab.png",
     href: "https://www.behance.net/harshchhabra",
+    frame: "browser-frame",
+    tone: "pathology-tone",
+    previewLabel: "Healthcare website",
+    tags: ["Web UI", "Healthcare"],
     index: "07",
   },
   {
@@ -108,6 +124,10 @@ const work = [
     type: "Data Experience · UI/UX",
     image: "/work/hospital-dashboard.png",
     href: "https://www.behance.net/harshchhabra",
+    frame: "dashboard-frame",
+    tone: "hospital-tone",
+    previewLabel: "Clinical dashboard",
+    tags: ["Dashboard", "Data"],
     index: "08",
   },
   {
@@ -115,6 +135,10 @@ const work = [
     type: "Wellness · Web Design",
     image: "/work/uncover-clinic.png",
     href: "https://www.behance.net/harshchhabra",
+    frame: "browser-frame",
+    tone: "clinic-tone",
+    previewLabel: "Wellness experience",
+    tags: ["Web UI", "Wellness"],
     index: "09",
   },
 ];
@@ -377,16 +401,40 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                ) : item.video ? (
-                  <video
-                    src={item.video}
-                    poster={item.image}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    aria-label="Red Fort ticketing interface walkthrough"
-                  />
+                ) : item.frame ? (
+                  <div className={`case-preview ${item.tone}`}>
+                    <div className="case-preview-head">
+                      <span>{item.previewLabel}</span>
+                      <strong>{item.index}</strong>
+                    </div>
+                    <div className={`case-device ${item.frame}`}>
+                      <div className="case-device-bar">
+                        <i /><i /><i />
+                        <span>{item.title}</span>
+                      </div>
+                      <div className="case-device-screen">
+                        {item.video ? (
+                          <video
+                            src={item.video}
+                            poster={item.image}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            aria-label="Red Fort ticketing interface walkthrough"
+                          />
+                        ) : (
+                          <img src={item.image} alt={`${item.title} UI/UX preview`} loading="lazy" />
+                        )}
+                      </div>
+                    </div>
+                    <div className="case-preview-foot">
+                      <strong>{item.title}</strong>
+                      <div>
+                        {item.tags?.map((tag) => <i key={tag}>{tag}</i>)}
+                      </div>
+                    </div>
+                  </div>
                 ) : (
                   <img src={item.image} alt={`${item.title} UI/UX preview`} loading="lazy" />
                 )}
