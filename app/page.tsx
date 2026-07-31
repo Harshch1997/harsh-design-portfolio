@@ -4,6 +4,7 @@ import { YouTubeShowcase } from "./YouTubeShowcase";
 import { StaticPostShowcase } from "./StaticPostShowcase";
 import { InteractiveChrome } from "./InteractiveChrome";
 import { MotionGraphicsShowcase } from "./MotionGraphicsShowcase";
+import { PerformanceAdsShowcase } from "./PerformanceAdsShowcase";
 import {
   ArrowDown,
   ArrowUp,
@@ -229,7 +230,7 @@ export default function Home() {
       <section className="portfolio-stats" data-reveal aria-label="Portfolio overview">
         <div><Clapperboard /><strong>38</strong><span>Design reels</span></div>
         <div><GalleryHorizontalEnd /><strong>17</strong><span>Social posts</span></div>
-        <div><TvMinimalPlay /><strong>30</strong><span>Video &amp; motion pieces</span></div>
+        <div><TvMinimalPlay /><strong>39</strong><span>Video, motion &amp; ad pieces</span></div>
         <div><Images /><strong>212</strong><span>Archived artworks</span></div>
       </section>
 
@@ -249,6 +250,11 @@ export default function Home() {
           <a href="#motion-graphics">
             <span>02B</span><Film className="category-icon" />
             <strong>Motion Graphics</strong>
+            <ArrowDown />
+          </a>
+          <a href="#performance-ads">
+            <span>02C</span><Megaphone className="category-icon" />
+            <strong>AI Performance Ads</strong>
             <ArrowDown />
           </a>
           <a href="#work">
@@ -344,6 +350,18 @@ export default function Home() {
           </p>
         </div>
         <MotionGraphicsShowcase />
+      </section>
+
+      <section className="performance-ads-section" id="performance-ads" data-reveal>
+        <div className="performance-ads-head">
+          <p className="kicker"><Megaphone size={15} /> 02C / AI Performance Marketing Ads</p>
+          <h2>Creative built to perform.</h2>
+          <p>
+            AI-assisted concepts, persona-led hooks and conversion-minded video
+            storytelling for healthcare, wellness and consumer brands.
+          </p>
+        </div>
+        <PerformanceAdsShowcase />
       </section>
 
       <section className="work-section" id="work" data-reveal>
