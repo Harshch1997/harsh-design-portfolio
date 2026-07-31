@@ -2,6 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import { instagramCatalogues } from "./catalogueData";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Camera,
+  ExternalLink,
+  MousePointerClick,
+  Play,
+  X,
+} from "lucide-react";
 
 const reels = instagramCatalogues.flatMap((group) =>
   group.codes.map((code, index) => ({
@@ -51,15 +60,16 @@ export function ReelShowcase() {
               trackRef.current?.scrollTo({ left: 0, behavior: "smooth" });
             }}
           >
+            {brand === "All" && <Camera size={14} />}
             {brand}
           </button>
         ))}
       </div>
       <div className="reel-controls">
-        <p>{visible.length} public design reels</p>
+        <p><MousePointerClick size={15} /> {visible.length} reels · click to play</p>
         <div>
-          <button onClick={() => move(-1)} aria-label="Previous reels">←</button>
-          <button onClick={() => move(1)} aria-label="Next reels">→</button>
+          <button onClick={() => move(-1)} aria-label="Previous reels"><ChevronLeft /></button>
+          <button onClick={() => move(1)} aria-label="Next reels"><ChevronRight /></button>
         </div>
       </div>
       <div className="reel-track" ref={trackRef}>
@@ -76,7 +86,7 @@ export function ReelShowcase() {
               loading="lazy"
             />
             <span className="reel-number">{String(index + 1).padStart(2, "0")}</span>
-            <span className="reel-play" aria-hidden="true">▶</span>
+            <span className="reel-play" aria-hidden="true"><Play size={23} fill="currentColor" /></span>
             <span className="reel-caption">
               <small>{reel.brand}</small>
               <strong>{reel.title}</strong>
@@ -101,7 +111,7 @@ export function ReelShowcase() {
                 <small>{active.brand}</small>
                 <strong>{active.title}</strong>
               </span>
-              <button onClick={() => setActive(null)} aria-label="Close reel">×</button>
+              <button onClick={() => setActive(null)} aria-label="Close reel"><X size={20} /></button>
             </div>
             <iframe
               src={`https://www.instagram.com/reel/${active.code}/embed/`}
@@ -113,7 +123,7 @@ export function ReelShowcase() {
               target="_blank"
               rel="noreferrer"
             >
-              Open reel on Instagram ↗
+              <Camera size={16} /> Open reel on Instagram <ExternalLink size={15} />
             </a>
           </div>
         </div>

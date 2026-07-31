@@ -2,6 +2,35 @@ import { ReelShowcase } from "./ReelShowcase";
 import { DesignCollections } from "./DesignCollections";
 import { YouTubeShowcase } from "./YouTubeShowcase";
 import { StaticPostShowcase } from "./StaticPostShowcase";
+import { InteractiveChrome } from "./InteractiveChrome";
+import {
+  ArrowDown,
+  ArrowUp,
+  ArrowUpRight,
+  BookOpenText,
+  Boxes,
+  BriefcaseBusiness,
+  Camera,
+  Clapperboard,
+  Eye,
+  Film,
+  FolderOpen,
+  GalleryHorizontalEnd,
+  Images,
+  LayoutTemplate,
+  MapPin,
+  Megaphone,
+  MessageCircle,
+  MonitorSmartphone,
+  MousePointerClick,
+  PackageOpen,
+  Palette,
+  Printer,
+  Shirt,
+  Sparkles,
+  UserRound,
+  TvMinimalPlay,
+} from "lucide-react";
 
 const work = [
   {
@@ -76,21 +105,22 @@ const brandWork = [
 ];
 
 function Arrow() {
-  return <span aria-hidden="true">↗</span>;
+  return <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />;
 }
 
 export default function Home() {
   return (
     <main>
+      <InteractiveChrome />
       <header className="site-header">
         <a className="logo" href="#top" aria-label="Harsh Chhabra, home">
           HC<span>®</span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#social">Social</a>
-          <a href="#video">Video</a>
-          <a href="#work">UI/UX</a>
-          <a href="#about">About</a>
+          <a href="#social"><Clapperboard size={15} />Social</a>
+          <a href="#video"><TvMinimalPlay size={15} />Video</a>
+          <a href="#work"><MonitorSmartphone size={15} />UI/UX</a>
+          <a href="#about"><UserRound size={15} />About</a>
         </nav>
         <a
           className="availability"
@@ -98,12 +128,12 @@ export default function Home() {
           target="_blank"
           rel="noreferrer"
         >
-          Available for projects <i />
+          <BriefcaseBusiness size={16} /> Available for projects <i />
         </a>
       </header>
 
       <section className="hero" id="top">
-        <p className="eyebrow">Independent designer · India</p>
+        <p className="eyebrow"><MapPin size={15} /> Independent designer · India</p>
         <h1>
           Design that makes
           <br />
@@ -115,63 +145,71 @@ export default function Home() {
             digital experiences, visual identities and stories built to move.
           </p>
           <a className="circle-link" href="#social" aria-label="Explore selected work">
+            <MousePointerClick size={20} />
             <span>Explore</span>
-            <b>↓</b>
+            <ArrowDown size={18} />
           </a>
         </div>
         <div className="hero-orbit orbit-one">UI/UX</div>
         <div className="hero-orbit orbit-two">Branding</div>
       </section>
 
-      <section className="work-index" aria-label="Portfolio categories">
-        <p className="kicker">Explore by category</p>
+      <section className="portfolio-stats" data-reveal aria-label="Portfolio overview">
+        <div><Clapperboard /><strong>38</strong><span>Design reels</span></div>
+        <div><GalleryHorizontalEnd /><strong>17</strong><span>Social posts</span></div>
+        <div><TvMinimalPlay /><strong>09</strong><span>Selected videos</span></div>
+        <div><Images /><strong>212</strong><span>Archived artworks</span></div>
+      </section>
+
+      <section className="work-index" data-reveal aria-label="Portfolio categories">
+        <p className="kicker"><Sparkles size={15} /> Explore by category</p>
         <div>
           <a href="#social">
-            <span>01</span>
-            Social Reels &amp; Posts
-            <b>↓</b>
+            <span>01</span><Clapperboard className="category-icon" />
+            <strong>Social Reels &amp; Posts</strong>
+            <ArrowDown />
           </a>
           <a href="#video">
-            <span>02</span>
-            YouTube &amp; Video
-            <b>↓</b>
+            <span>02</span><TvMinimalPlay className="category-icon" />
+            <strong>YouTube &amp; Video</strong>
+            <ArrowDown />
           </a>
           <a href="#work">
-            <span>03</span>
-            UI/UX &amp; Web Design
-            <b>↓</b>
+            <span>03</span><MonitorSmartphone className="category-icon" />
+            <strong>UI/UX &amp; Web Design</strong>
+            <ArrowDown />
           </a>
           <a href="#print">
-            <span>04</span>
-            Print Designs
-            <b>↓</b>
+            <span>04</span><Printer className="category-icon" />
+            <strong>Print Designs</strong>
+            <ArrowDown />
           </a>
           <a href="#packaging">
-            <span>05</span>
-            Packaging Design
-            <b>↓</b>
+            <span>05</span><PackageOpen className="category-icon" />
+            <strong>Packaging Design</strong>
+            <ArrowDown />
           </a>
           <a href="#brochures">
-            <span>06</span>
-            Brochures
-            <b>↓</b>
+            <span>06</span><BookOpenText className="category-icon" />
+            <strong>Brochures</strong>
+            <ArrowDown />
           </a>
           <a href="#product-listing">
-            <span>07</span>
-            Product Listings
-            <b>↓</b>
+            <span>07</span><Boxes className="category-icon" />
+            <strong>Product Listings</strong>
+            <ArrowDown />
           </a>
           <a href="#tshirts">
-            <span>08</span>
-            T-shirt Design
-            <b>↓</b>
+            <span>08</span><Shirt className="category-icon" />
+            <strong>T-shirt Design</strong>
+            <ArrowDown />
           </a>
         </div>
       </section>
 
-      <section className="brand-section" id="social">
+      <section className="brand-section" id="social" data-reveal>
         <div className="brand-intro">
-          <p className="kicker">01 / Social Media &amp; Reels</p>
+          <p className="kicker"><Clapperboard size={15} /> 01 / Social Media &amp; Reels</p>
           <h2>Feeds that move.</h2>
           <p>
             Motion-first social work: reel concepts, edits and visual
@@ -179,10 +217,13 @@ export default function Home() {
           </p>
         </div>
         <div className="social-profiles">
-          {brandWork.map((item, index) => (
+          {brandWork.map((item) => (
               <a href={item.href} target="_blank" rel="noreferrer" key={item.name}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{item.name}</strong>
+                <span className="profile-icon"><Camera size={18} /></span>
+                <span className="profile-copy">
+                  <strong>{item.name}</strong>
+                  <small>{item.service}</small>
+                </span>
                 <Arrow />
               </a>
             ))}
@@ -192,9 +233,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="static-section" id="static-posts">
+      <section className="static-section" id="static-posts" data-reveal>
         <div className="static-intro">
-          <p className="kicker">01B / Static &amp; Carousel Posts</p>
+          <p className="kicker"><GalleryHorizontalEnd size={15} /> 01B / Static &amp; Carousel Posts</p>
           <h2>Stories, frame by frame.</h2>
           <p>
             Static campaign design and multi-slide carousel systems, separated
@@ -204,9 +245,9 @@ export default function Home() {
         <StaticPostShowcase />
       </section>
 
-      <section className="motion-section" id="video">
+      <section className="motion-section" id="video" data-reveal>
         <div className="motion-copy">
-          <p className="kicker">02 / YouTube &amp; Long-form Video</p>
+          <p className="kicker"><TvMinimalPlay size={15} /> 02 / YouTube &amp; Long-form Video</p>
           <h2>Stories with a longer arc.</h2>
           <p>
             Channel identity, thumbnails and long-form visual storytelling for
@@ -216,9 +257,9 @@ export default function Home() {
         <YouTubeShowcase />
       </section>
 
-      <section className="work-section" id="work">
+      <section className="work-section" id="work" data-reveal>
         <div className="section-heading">
-          <p className="kicker">03 / UI/UX &amp; Web Design</p>
+          <p className="kicker"><MonitorSmartphone size={15} /> 03 / UI/UX &amp; Web Design</p>
           <h2>Ideas, not screenshots.</h2>
           <p className="count">06 case studies</p>
         </div>
@@ -232,7 +273,7 @@ export default function Home() {
               <span>{item.index}</span>
               <h3>{item.title}</h3>
               <p>{item.type}</p>
-              <b>View case study <Arrow /></b>
+              <b><Eye size={16} /> View case study <Arrow /></b>
             </a>
           ))}
         </div>
@@ -249,9 +290,9 @@ export default function Home() {
 
       <DesignCollections />
 
-      <section className="graphic-section" id="graphic">
+      <section className="graphic-section" id="graphic" data-reveal>
         <div>
-          <p className="kicker">09 / Graphic &amp; Brand Design</p>
+          <p className="kicker"><Palette size={15} /> 09 / Graphic &amp; Brand Design</p>
           <h2>Identity, print &amp; everything visual.</h2>
         </div>
         <div className="graphic-copy">
@@ -264,20 +305,20 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
           >
-            Browse graphic design archive <Arrow />
+            <span><Palette size={18} /> Browse graphic design archive</span> <Arrow />
           </a>
           <a
             href="https://drive.google.com/drive/folders/1Qg2Xu1e8smwU4gVpHackjyd1pDCxrWGo?usp=sharing"
             target="_blank"
             rel="noreferrer"
           >
-            Open complete portfolio drive <Arrow />
+            <span><FolderOpen size={18} /> Open complete portfolio drive</span> <Arrow />
           </a>
         </div>
       </section>
 
-      <section className="about-section" id="about">
-        <p className="kicker">A little about me</p>
+      <section className="about-section" id="about" data-reveal>
+        <p className="kicker"><UserRound size={15} /> A little about me</p>
         <div className="about-grid">
           <h2>
             Curious by nature.
@@ -291,19 +332,19 @@ export default function Home() {
               products — always led by a strong idea and thoughtful craft.
             </p>
             <div className="skills">
-              <span>Art Direction</span>
-              <span>Brand Identity</span>
-              <span>UI/UX Design</span>
-              <span>Social Campaigns</span>
-              <span>Motion &amp; Video</span>
-              <span>Packaging</span>
+              <span><Palette size={15} />Art Direction</span>
+              <span><Sparkles size={15} />Brand Identity</span>
+              <span><LayoutTemplate size={15} />UI/UX Design</span>
+              <span><Megaphone size={15} />Social Campaigns</span>
+              <span><Film size={15} />Motion &amp; Video</span>
+              <span><PackageOpen size={15} />Packaging</span>
             </div>
           </div>
         </div>
       </section>
 
-      <footer id="contact">
-        <p className="kicker">Have a project in mind?</p>
+      <footer id="contact" data-reveal>
+        <p className="kicker"><MessageCircle size={15} /> Have a project in mind?</p>
         <h2>Let’s make it happen.</h2>
         <div className="footer-links">
           <a
@@ -311,20 +352,20 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
           >
-            Start a conversation on Behance <Arrow />
+            <span><MessageCircle size={19} /> Start a conversation on Behance</span> <Arrow />
           </a>
           <a
             href="https://drive.google.com/drive/folders/1Qg2Xu1e8smwU4gVpHackjyd1pDCxrWGo?usp=sharing"
             target="_blank"
             rel="noreferrer"
           >
-            View portfolio drive <Arrow />
+            <span><FolderOpen size={19} /> View portfolio drive</span> <Arrow />
           </a>
         </div>
         <div className="footer-base">
           <p>© {new Date().getFullYear()} Harsh Chhabra</p>
           <p>Graphic &amp; UI/UX Designer · India</p>
-          <a href="#top">Back to top ↑</a>
+          <a href="#top">Back to top <ArrowUp size={15} /></a>
         </div>
       </footer>
     </main>

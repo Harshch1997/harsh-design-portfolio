@@ -2,6 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import { instagramPostCatalogues } from "./catalogueData";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Camera,
+  ExternalLink,
+  GalleryHorizontalEnd,
+  Image as ImageIcon,
+  Layers3,
+  MousePointerClick,
+  X,
+} from "lucide-react";
 
 const posts = instagramPostCatalogues.flatMap((group) =>
   group.posts.map((post, index) => ({
@@ -49,16 +60,17 @@ export function StaticPostShowcase() {
               track.current?.scrollTo({ left: 0, behavior: "smooth" });
             }}
           >
+            {brand === "All" && <GalleryHorizontalEnd size={14} />}
             {brand}
           </button>
         ))}
       </div>
       <div className="archive-controls post-controls">
-        <strong>{visible.length} static &amp; carousel posts</strong>
-        <span>Click a carousel to browse every slide</span>
+        <strong><Layers3 size={15} /> {visible.length} static &amp; carousel posts</strong>
+        <span><MousePointerClick size={14} /> Click a carousel to browse every slide</span>
         <div>
-          <button onClick={() => move(-1)} aria-label="Previous posts">←</button>
-          <button onClick={() => move(1)} aria-label="Next posts">→</button>
+          <button onClick={() => move(-1)} aria-label="Previous posts"><ChevronLeft /></button>
+          <button onClick={() => move(1)} aria-label="Next posts"><ChevronRight /></button>
         </div>
       </div>
       <div className="post-track" ref={track}>
@@ -75,8 +87,8 @@ export function StaticPostShowcase() {
                 alt={`${post.brand}: ${post.title}`}
                 loading="lazy"
               />
-              <i>{post.slides > 1 ? `${post.slides} slides` : "Static"}</i>
-              <b aria-hidden="true">{post.slides > 1 ? "▣" : "↗"}</b>
+              <i>{post.slides > 1 ? <><Layers3 size={13} /> {post.slides} slides</> : <><ImageIcon size={13} /> Static</>}</i>
+              <b aria-hidden="true">{post.slides > 1 ? <Layers3 size={17} /> : <Camera size={17} />}</b>
             </span>
             <span className="post-meta">
               <small>{String(index + 1).padStart(2, "0")} / {post.brand}</small>
@@ -102,7 +114,7 @@ export function StaticPostShowcase() {
                 <small>{active.brand}</small>
                 <strong>{active.title}</strong>
               </span>
-              <button onClick={() => setActive(null)} aria-label="Close post">×</button>
+              <button onClick={() => setActive(null)} aria-label="Close post"><X size={20} /></button>
             </div>
             <iframe
               src={`https://www.instagram.com/p/${active.code}/embed/`}
@@ -113,7 +125,7 @@ export function StaticPostShowcase() {
               target="_blank"
               rel="noreferrer"
             >
-              Open post on Instagram ↗
+              <Camera size={16} /> Open post on Instagram <ExternalLink size={15} />
             </a>
           </div>
         </div>

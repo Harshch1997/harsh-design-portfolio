@@ -2,6 +2,16 @@
 
 import { useEffect, useRef, useState } from "react";
 import { youtubeCatalogues } from "./catalogueData";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  MousePointerClick,
+  Play,
+  Video,
+  X,
+  TvMinimalPlay,
+} from "lucide-react";
 
 const videos = youtubeCatalogues.flatMap((group) =>
   group.ids.map((id, index) => ({
@@ -47,16 +57,17 @@ export function YouTubeShowcase() {
               track.current?.scrollTo({ left: 0, behavior: "smooth" });
             }}
           >
+            {channel === "All" && <TvMinimalPlay size={14} />}
             {channel}
           </button>
         ))}
       </div>
       <div className="archive-controls youtube-controls">
-        <strong>{visible.length} public videos</strong>
-        <span>Click any thumbnail to watch</span>
+        <strong><Video size={15} /> {visible.length} selected videos</strong>
+        <span><MousePointerClick size={14} /> Click any thumbnail to watch</span>
         <div>
-          <button onClick={() => move(-1)} aria-label="Previous videos">←</button>
-          <button onClick={() => move(1)} aria-label="Next videos">→</button>
+          <button onClick={() => move(-1)} aria-label="Previous videos"><ChevronLeft /></button>
+          <button onClick={() => move(1)} aria-label="Next videos"><ChevronRight /></button>
         </div>
       </div>
       <div className="youtube-track" ref={track}>
@@ -72,7 +83,7 @@ export function YouTubeShowcase() {
                 alt={`${video.channel} ${video.title}`}
                 loading="lazy"
               />
-              <i>▶</i>
+              <i><Play size={22} fill="currentColor" /></i>
             </span>
             <small>{video.channel}</small>
             <strong>{video.title}</strong>
@@ -97,7 +108,7 @@ export function YouTubeShowcase() {
                 <small>{active.channel}</small>
                 <strong>{active.title}</strong>
               </span>
-              <button onClick={() => setActive(null)} aria-label="Close video">×</button>
+              <button onClick={() => setActive(null)} aria-label="Close video"><X size={21} /></button>
             </div>
             <iframe
               src={`https://www.youtube.com/embed/${active.id}?autoplay=1`}
@@ -110,7 +121,7 @@ export function YouTubeShowcase() {
               target="_blank"
               rel="noreferrer"
             >
-              Open on YouTube ↗
+              <TvMinimalPlay size={16} /> Open on YouTube <ExternalLink size={15} />
             </a>
           </div>
         </div>
