@@ -2544,16 +2544,74 @@ footer h2 {
 .website-project-preview {
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(150px, 0.65fr);
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 34px);
   position: relative;
-  padding-top: 36px;
+  padding: clamp(20px, 3vw, 40px);
   overflow: hidden;
-  background: #f0ede7;
+}
+
+.website-project-preview::before,
+.website-project-preview::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.website-project-preview::before {
+  width: 180px;
+  height: 180px;
+  right: -55px;
+  top: -80px;
+  border: 1px solid currentColor;
+  opacity: 0.12;
+}
+
+.website-project-preview::after {
+  width: 70px;
+  height: 70px;
+  right: 18%;
+  bottom: -36px;
+  background: currentColor;
+  opacity: 0.07;
+}
+
+.uncover-preview {
+  color: #683f32;
+  background: linear-gradient(135deg, #f7ddc6, #e8bca2);
+}
+
+.usl-preview {
+  color: #33251d;
+  background: linear-gradient(135deg, #e7d4c1, #b89478);
+}
+
+.website-browser-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  border: 7px solid rgba(255, 255, 255, 0.78);
+  border-radius: 13px;
+  background: white;
+  box-shadow: 0 24px 50px rgba(32, 22, 16, 0.2);
+  transform: rotate(-1.4deg);
+  transition: transform 450ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.usl-preview .website-browser-card {
+  transform: rotate(1.2deg);
+}
+
+.website-project:hover .website-browser-card {
+  transform: rotate(0) translateY(-4px);
 }
 
 .website-browser-bar {
-  position: absolute;
-  inset: 0 0 auto;
-  height: 36px;
+  height: 30px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -2581,40 +2639,83 @@ footer h2 {
   margin-right: 8px;
 }
 
-.website-project-preview > img {
+.website-browser-canvas {
+  aspect-ratio: 1.5;
+  overflow: hidden;
+  background: #dfc2a7;
+}
+
+.website-browser-canvas > img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.2, 0.75, 0.2, 1);
 }
 
-.website-project-label {
-  position: absolute;
-  left: 20px;
-  bottom: 18px;
+.usl-preview .website-browser-canvas > img {
+  object-fit: contain;
+}
+
+.website-card-caption {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding: 13px 16px;
-  background: rgba(15, 29, 36, 0.88);
-  color: white;
-  backdrop-filter: blur(12px);
+  align-items: flex-start;
 }
 
-.website-project-label span {
+.website-card-caption > span {
   font-size: 0.58rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  opacity: 0.65;
+  opacity: 0.62;
 }
 
-.website-project-label strong {
-  font-size: 1.05rem;
-  font-weight: 540;
+.website-card-caption > strong {
+  margin-top: 8px;
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+  font-weight: 620;
 }
 
-.website-project:hover .website-project-preview > img {
-  transform: scale(1.035);
+.website-card-caption > p {
+  margin: 14px 0 18px;
+  font-size: clamp(0.68rem, 0.9vw, 0.8rem);
+  line-height: 1.5;
+  opacity: 0.68;
+}
+
+.website-card-caption > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.website-card-caption i {
+  padding: 6px 9px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.55rem;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.website-project:hover .website-browser-canvas > img {
+  transform: scale(1.025);
+}
+
+.website-project .view-pill {
+  top: 14px;
+  right: 14px;
+  bottom: auto;
+  opacity: 1;
+  transform: none;
+  z-index: 4;
+  padding: 9px 12px;
+  font-size: 0.58rem;
 }
 
 @media (max-width: 800px) {
@@ -2685,16 +2786,29 @@ footer h2 {
   }
 
   .website-project-preview {
-    padding-top: 32px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.25fr auto;
+    gap: 16px;
+    padding: 20px;
   }
 
   .website-browser-bar {
-    height: 32px;
+    height: 26px;
   }
 
-  .website-project-label {
-    left: 14px;
-    bottom: 14px;
-    padding: 10px 13px;
+  .website-browser-card {
+    width: 82%;
+    margin: 0 auto;
+    border-width: 5px;
+  }
+
+  .website-card-caption > p {
+    max-width: 90%;
+    margin: 9px 0 12px;
+  }
+
+  .website-project .view-pill {
+    top: 10px;
+    right: 10px;
   }
 }

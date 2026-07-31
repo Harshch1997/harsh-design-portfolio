@@ -57,6 +57,9 @@ const work = [
     href: "https://uncover.co.in/",
     cta: "Visit live website",
     website: "uncover.co.in",
+    websiteTone: "uncover-preview",
+    summary: "A dermatologist-led clinic experience that guides visitors through skin, hair and body treatments.",
+    tags: ["Skin", "Hair", "Body"],
     index: "02",
   },
   {
@@ -66,6 +69,9 @@ const work = [
     href: "https://www.uslderma.com/",
     cta: "Visit live website",
     website: "uslderma.com",
+    websiteTone: "usl-preview",
+    summary: "A warm, editorial storefront for dermatologist-created skincare essentials.",
+    tags: ["Shop", "Skincare", "E-commerce"],
     index: "03",
   },
   {
@@ -352,15 +358,23 @@ export default function Home() {
                     </div>
                   </div>
                 ) : item.website ? (
-                  <div className="website-project-preview">
-                    <div className="website-browser-bar">
-                      <i /><i /><i />
-                      <span>{item.website}</span>
+                  <div className={`website-project-preview ${item.websiteTone}`}>
+                    <div className="website-browser-card">
+                      <div className="website-browser-bar">
+                        <i /><i /><i />
+                        <span>{item.website}</span>
+                      </div>
+                      <div className="website-browser-canvas">
+                        <img src={item.image} alt={`${item.title} website homepage`} loading="lazy" />
+                      </div>
                     </div>
-                    <img src={item.image} alt={`${item.title} website homepage`} loading="lazy" />
-                    <div className="website-project-label">
-                      <span>Live website</span>
+                    <div className="website-card-caption">
+                      <span>Live website design</span>
                       <strong>{item.title}</strong>
+                      <p>{item.summary}</p>
+                      <div>
+                        {item.tags?.map((tag) => <i key={tag}>{tag}</i>)}
+                      </div>
                     </div>
                   </div>
                 ) : item.video ? (
