@@ -36,11 +36,26 @@ import {
 
 const work = [
   {
+    title: "Doxper Blu",
+    type: "Healthcare App · Product Design · UI/UX",
+    image: "/work/doxper-screen-03.png",
+    screens: [
+      "/work/doxper-screen-01.png",
+      "/work/doxper-screen-02.png",
+      "/work/doxper-screen-03.png",
+    ],
+    appIcon: "/work/doxper-icon.png",
+    href: "https://play.google.com/store/apps/details?id=com.informds.doxper&hl=en_IN",
+    cta: "View on Google Play",
+    featured: true,
+    index: "01",
+  },
+  {
     title: "Investment App",
     type: "Product Design · UI/UX",
     image: "/work/investment-app.png",
     href: "https://www.behance.net/gallery/232275921/investment-app",
-    index: "01",
+    index: "02",
   },
   {
     title: "Red Fort Ticketing",
@@ -48,35 +63,35 @@ const work = [
     image: "/work/redfort-ticketing.png",
     video: "/videos/redfort-ui-walkthrough.mp4",
     href: "https://www.behance.net/harshchhabra",
-    index: "02",
+    index: "03",
   },
   {
     title: "Construction Finance",
     type: "Digital Product · Web Design",
     image: "/work/construction-finance.png",
     href: "https://www.behance.net/harshchhabra",
-    index: "03",
+    index: "04",
   },
   {
     title: "Pathology Lab",
     type: "Healthcare · Web Design",
     image: "/work/pathology-lab.png",
     href: "https://www.behance.net/harshchhabra",
-    index: "04",
+    index: "05",
   },
   {
     title: "Hospital Dashboard",
     type: "Data Experience · UI/UX",
     image: "/work/hospital-dashboard.png",
     href: "https://www.behance.net/harshchhabra",
-    index: "05",
+    index: "06",
   },
   {
     title: "Uncover Clinic",
     type: "Wellness · Web Design",
     image: "/work/uncover-clinic.png",
     href: "https://www.behance.net/harshchhabra",
-    index: "06",
+    index: "07",
   },
 ];
 
@@ -287,19 +302,38 @@ export default function Home() {
         <div className="section-heading">
           <p className="kicker"><MonitorSmartphone size={15} /> 03 / UI/UX &amp; Web Design</p>
           <h2>Ideas, not screenshots.</h2>
-          <p className="count">06 case studies</p>
+          <p className="count">07 case studies</p>
         </div>
         <div className="work-grid visual-work-grid">
           {work.map((item) => (
             <a
-              className={`project-card ${item.video ? "video-project" : ""}`}
+              className={`project-card ${item.video ? "video-project" : ""} ${item.featured ? "featured-project" : ""}`}
               href={item.href}
               target="_blank"
               rel="noreferrer"
               key={item.title}
             >
               <div className="project-image">
-                {item.video ? (
+                {item.screens ? (
+                  <div className="doxper-project-preview">
+                    <div className="doxper-project-copy">
+                      <img src={item.appIcon} alt="" className="doxper-app-icon" />
+                      <span>Healthcare product design</span>
+                      <strong>Doxper Blu</strong>
+                      <p>Digital workflows designed for doctors, appointments and connected care.</p>
+                    </div>
+                    <div className="doxper-screens" aria-label="Doxper Blu app interface previews">
+                      {item.screens.map((screen, screenIndex) => (
+                        <img
+                          src={screen}
+                          alt={`Doxper Blu app screen ${screenIndex + 1}`}
+                          loading={screenIndex === 0 ? "eager" : "lazy"}
+                          key={screen}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ) : item.video ? (
                   <video
                     src={item.video}
                     poster={item.image}
@@ -313,7 +347,11 @@ export default function Home() {
                   <img src={item.image} alt={`${item.title} UI/UX preview`} loading="lazy" />
                 )}
                 <span className="view-pill">
-                  {item.video ? <><Play size={15} fill="currentColor" /> Watch Red Fort video</> : <><Eye size={15} /> View project</>}
+                  {item.video ? (
+                    <><Play size={15} fill="currentColor" /> Watch Red Fort video</>
+                  ) : (
+                    <><Eye size={15} /> {item.cta ?? "View project"}</>
+                  )}
                 </span>
               </div>
               <div className="project-meta">
