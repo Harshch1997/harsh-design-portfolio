@@ -48,7 +48,7 @@ const collections: Collection[] = [
     kicker: "Packaging Design",
     title: "Shelf presence, considered.",
     description:
-      "Every available packaging system, label, bottle artwork and product mockup from the portfolio archive.",
+      "Finished product mockups for every packaging system—bottles, tubes, jars and boxes presented as shelf-ready work.",
     source:
       "https://drive.google.com/drive/folders/1pOYFadc5Kd6-RNgUsgTgE61a_XfqGIX0",
     tone: "peach",
@@ -110,8 +110,9 @@ const collections: Collection[] = [
   },
 ];
 
+const isLocalAsset = (id: string) => id.startsWith("/");
 const thumb = (id: string, size = 1000) =>
-  `https://drive.google.com/thumbnail?id=${id}&sz=w${size}`;
+  isLocalAsset(id) ? id : `https://drive.google.com/thumbnail?id=${id}&sz=w${size}`;
 
 const collectionIcons = {
   print: Printer,
@@ -183,7 +184,7 @@ function CollectionCarousel({
             <span className="collection-meta">
               <small>{String(index + 1).padStart(2, "0")}</small>
               <strong>{collection.kicker} / {index + 1}</strong>
-              <em>Original portfolio archive</em>
+              <em>{isLocalAsset(id) ? "Photorealistic product mockup" : "Original portfolio archive"}</em>
             </span>
           </button>
         ))}
@@ -248,11 +249,13 @@ export function DesignCollections() {
               <span>{active.collection.kicker}</span>
               <strong>Artwork {String(active.index + 1).padStart(2, "0")}</strong>
               <a
-                href={`https://drive.google.com/file/d/${active.id}/view`}
+                href={isLocalAsset(active.id)
+                  ? active.collection.source
+                  : `https://drive.google.com/file/d/${active.id}/view`}
                 target="_blank"
                 rel="noreferrer"
               >
-                <FolderOpen size={16} /> Open original file <ExternalLink size={14} />
+                <FolderOpen size={16} /> {isLocalAsset(active.id) ? "Open packaging source folder" : "Open original file"} <ExternalLink size={14} />
               </a>
             </div>
           </div>
