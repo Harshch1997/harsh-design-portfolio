@@ -791,6 +791,16 @@ footer h2 {
   --collection-accent: #2767d8;
 }
 
+.design-collection.coral {
+  --collection-bg: #f7d4c6;
+  --collection-accent: #c95137;
+}
+
+.design-collection.gold {
+  --collection-bg: #f1dfae;
+  --collection-accent: #8c6118;
+}
+
 .collection-head {
   display: grid;
   grid-template-columns: 0.7fr 1.35fr 0.8fr;

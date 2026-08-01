@@ -11,8 +11,10 @@ import {
   Eye,
   FolderOpen,
   Image as ImageIcon,
+  GalleryHorizontalEnd,
   MousePointerClick,
   PackageOpen,
+  Palette,
   Printer,
   Shirt,
   X,
@@ -84,6 +86,28 @@ const collections: Collection[] = [
       "https://drive.google.com/drive/folders/1TFnEkf3RteviNTwvPmjfHKD442QCVbZR",
     tone: "blue",
   },
+  {
+    id: "identity",
+    number: "09",
+    kicker: "Brand Identity & Campaign Graphics",
+    title: "Systems that stay recognizable.",
+    description:
+      "Logo families, brand-guide thinking and campaign key visuals—grouped into one focused identity archive.",
+    source:
+      "https://drive.google.com/drive/folders/1XBqhiK8hcWu52ZxL4g1Mwf64GAN4Bu1J",
+    tone: "coral",
+  },
+  {
+    id: "outdoor",
+    number: "10",
+    kicker: "Outdoor & In-Clinic Branding",
+    title: "Designed for physical space.",
+    description:
+      "Standees, billboards, clinic boards and launch signage designed to communicate clearly at real-world scale.",
+    source:
+      "https://drive.google.com/drive/folders/1yg2KdCbOzIjULoqqIEx485ahw4WjCQGr",
+    tone: "gold",
+  },
 ];
 
 const thumb = (id: string, size = 1000) =>
@@ -95,6 +119,8 @@ const collectionIcons = {
   brochures: BookOpenText,
   listings: Boxes,
   tshirts: Shirt,
+  identity: Palette,
+  outdoor: GalleryHorizontalEnd,
 };
 
 function CollectionCarousel({

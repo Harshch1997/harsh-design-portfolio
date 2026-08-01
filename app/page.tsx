@@ -231,7 +231,7 @@ export default function Home() {
         <div><Clapperboard /><strong>38</strong><span>Design reels</span></div>
         <div><GalleryHorizontalEnd /><strong>17</strong><span>Social posts</span></div>
         <div><TvMinimalPlay /><strong>39</strong><span>Video, motion &amp; ad pieces</span></div>
-        <div><Images /><strong>212</strong><span>Archived artworks</span></div>
+        <div><Images /><strong>246</strong><span>Archived artworks</span></div>
       </section>
 
       <section className="work-index" data-reveal aria-label="Portfolio categories">
@@ -285,6 +285,16 @@ export default function Home() {
           <a href="#tshirts">
             <span>08</span><Shirt className="category-icon" />
             <strong>T-shirt Design</strong>
+            <ArrowDown />
+          </a>
+          <a href="#identity">
+            <span>09</span><Palette className="category-icon" />
+            <strong>Brand Identity</strong>
+            <ArrowDown />
+          </a>
+          <a href="#outdoor">
+            <span>10</span><GalleryHorizontalEnd className="category-icon" />
+            <strong>Outdoor Branding</strong>
             <ArrowDown />
           </a>
         </div>
@@ -490,7 +500,7 @@ export default function Home() {
 
       <section className="graphic-section" id="graphic" data-reveal>
         <div>
-          <p className="kicker"><Palette size={15} /> 09 / Graphic &amp; Brand Design</p>
+          <p className="kicker"><Palette size={15} /> 11 / Extended Graphic &amp; Brand Design</p>
           <h2>Identity, print &amp; everything visual.</h2>
         </div>
         <div className="graphic-copy">

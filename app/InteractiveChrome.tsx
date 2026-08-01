@@ -14,6 +14,7 @@ import {
   Menu,
   MonitorSmartphone,
   PackageOpen,
+  Palette,
   Printer,
   Shirt,
   TvMinimalPlay,
@@ -32,6 +33,8 @@ const destinations = [
   { id: "brochures", label: "Brochures", icon: BookOpenText },
   { id: "product-listing", label: "Listings", icon: Boxes },
   { id: "tshirts", label: "T-shirts", icon: Shirt },
+  { id: "identity", label: "Brand identity", icon: Palette },
+  { id: "outdoor", label: "Outdoor branding", icon: GalleryHorizontalEnd },
   { id: "graphic", label: "Graphic design", icon: Images },
 ];
 
