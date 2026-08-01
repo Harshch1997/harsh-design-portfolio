@@ -68,6 +68,13 @@ const performanceAds = [
   },
 ] as const;
 
+const prioritizedPerformanceAds = [...performanceAds].sort((a, b) => {
+  if (a.brand === b.brand) return 0;
+  if (a.brand === "Uncover") return -1;
+  if (b.brand === "Uncover") return 1;
+  return 0;
+});
+
 export function PerformanceAdsShowcase() {
   const [active, setActive] = useState<(typeof performanceAds)[number] | null>(null);
   const track = useRef<HTMLDivElement>(null);
@@ -108,7 +115,7 @@ export function PerformanceAdsShowcase() {
       </div>
 
       <div className="performance-ad-track" ref={track}>
-        {performanceAds.map((ad, index) => (
+        {prioritizedPerformanceAds.map((ad, index) => (
           <button
             className="performance-ad-card"
             onClick={() => setActive(ad)}

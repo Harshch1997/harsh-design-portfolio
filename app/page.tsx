@@ -163,6 +163,21 @@ const work = [
   },
 ];
 
+const currentWorkOrder = ["UNCOVER App", "Uncover", "Uncover Clinic"];
+const prioritizedWork = [...work]
+  .sort((a, b) => {
+    const aPriority = currentWorkOrder.indexOf(a.title);
+    const bPriority = currentWorkOrder.indexOf(b.title);
+    if (aPriority === -1 && bPriority === -1) return 0;
+    if (aPriority === -1) return 1;
+    if (bPriority === -1) return -1;
+    return aPriority - bPriority;
+  })
+  .map((item, index) => ({
+    ...item,
+    index: String(index + 1).padStart(2, "0"),
+  }));
+
 const brandWork = [
   {
     name: "Uncover Transform",
@@ -400,7 +415,7 @@ export default function Home() {
           <p className="count">10 case studies</p>
         </div>
         <div className="work-grid visual-work-grid">
-          {work.map((item) => (
+          {prioritizedWork.map((item) => (
             <a
               className={`project-card ${item.video ? "video-project" : ""} ${item.featured ? "featured-project" : ""} ${item.website ? "website-project" : ""}`}
               href={item.href}
