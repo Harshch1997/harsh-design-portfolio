@@ -52,6 +52,25 @@ const work = [
     index: "01",
   },
   {
+    title: "UNCOVER App",
+    type: "Healthcare App · Product Design · UI/UX",
+    image: "/work/uncover-app-screen-01.png",
+    screens: [
+      "/work/uncover-app-screen-01.png",
+      "/work/uncover-app-screen-02.png",
+      "/work/uncover-app-screen-03.png",
+    ],
+    appIcon: "/work/uncover-app-icon.png",
+    href: "https://play.google.com/store/apps/details?id=in.uncover.patient&hl=en_IN",
+    cta: "View on Google Play",
+    featured: true,
+    appTone: "uncover-app-preview",
+    previewLabel: "Patient app experience",
+    summary:
+      "A guided skin-analysis, appointment-booking and treatment-discovery experience for Uncover clinic patients.",
+    index: "02",
+  },
+  {
     title: "Uncover",
     type: "Healthcare Brand · Website Design · UI/UX",
     image: "/work/uncover-website.webp",
@@ -61,7 +80,7 @@ const work = [
     websiteTone: "uncover-preview",
     summary: "A dermatologist-led clinic experience that guides visitors through skin, hair and body treatments.",
     tags: ["Skin", "Hair", "Body"],
-    index: "02",
+    index: "03",
   },
   {
     title: "USL Derma",
@@ -73,7 +92,7 @@ const work = [
     websiteTone: "usl-preview",
     summary: "A warm, editorial storefront for dermatologist-created skincare essentials.",
     tags: ["Shop", "Skincare", "E-commerce"],
-    index: "03",
+    index: "04",
   },
   {
     title: "Investment App",
@@ -84,7 +103,7 @@ const work = [
     tone: "investment-tone",
     previewLabel: "Fintech product",
     tags: ["Mobile UI", "Investing"],
-    index: "04",
+    index: "05",
   },
   {
     title: "Red Fort Ticketing",
@@ -96,7 +115,7 @@ const work = [
     tone: "redfort-tone",
     previewLabel: "Ticketing experience",
     tags: ["Culture", "Booking"],
-    index: "05",
+    index: "06",
   },
   {
     title: "Construction Finance",
@@ -107,7 +126,7 @@ const work = [
     tone: "finance-tone",
     previewLabel: "Finance platform",
     tags: ["Web UI", "Fintech"],
-    index: "06",
+    index: "07",
   },
   {
     title: "Pathology Lab",
@@ -118,7 +137,7 @@ const work = [
     tone: "pathology-tone",
     previewLabel: "Healthcare website",
     tags: ["Web UI", "Healthcare"],
-    index: "07",
+    index: "08",
   },
   {
     title: "Hospital Dashboard",
@@ -129,7 +148,7 @@ const work = [
     tone: "hospital-tone",
     previewLabel: "Clinical dashboard",
     tags: ["Dashboard", "Data"],
-    index: "08",
+    index: "09",
   },
   {
     title: "Uncover Clinic",
@@ -140,7 +159,7 @@ const work = [
     tone: "clinic-tone",
     previewLabel: "Wellness experience",
     tags: ["Web UI", "Wellness"],
-    index: "09",
+    index: "10",
   },
 ];
 
@@ -378,7 +397,7 @@ export default function Home() {
         <div className="section-heading">
           <p className="kicker"><MonitorSmartphone size={15} /> 03 / UI/UX &amp; Web Design</p>
           <h2>Ideas, not screenshots.</h2>
-          <p className="count">09 case studies</p>
+          <p className="count">10 case studies</p>
         </div>
         <div className="work-grid visual-work-grid">
           {work.map((item) => (
@@ -391,12 +410,12 @@ export default function Home() {
             >
               <div className="project-image">
                 {item.screens ? (
-                  <div className="doxper-project-preview">
+                  <div className={`doxper-project-preview ${item.appTone ?? ""}`}>
                     <div className="doxper-project-copy">
                       <img src={item.appIcon} alt="" className="doxper-app-icon" />
-                      <span>Healthcare product design</span>
-                      <strong>Doxper Blu</strong>
-                      <p>Digital workflows designed for doctors, appointments and connected care.</p>
+                      <span>{item.previewLabel ?? "Healthcare product design"}</span>
+                      <strong>{item.title}</strong>
+                      <p>{item.summary ?? "Digital workflows designed for doctors, appointments and connected care."}</p>
                     </div>
                     <div className="doxper-screens" aria-label="Doxper Blu app interface previews">
                       {item.screens.map((screen, screenIndex) => (

@@ -2465,6 +2465,29 @@ footer h2 {
     linear-gradient(135deg, #eafaff 0%, #bfefff 52%, #69ccea 100%);
 }
 
+.doxper-project-preview.uncover-app-preview {
+  background:
+    radial-gradient(circle at 20% 16%, rgba(255, 255, 255, 0.88), transparent 34%),
+    linear-gradient(135deg, #fff9ef 0%, #efd9c3 52%, #c99670 100%);
+}
+
+.uncover-app-preview .doxper-project-copy {
+  color: #3f3029;
+}
+
+.uncover-app-preview .doxper-project-copy > span {
+  color: #a35f32;
+}
+
+.uncover-app-preview .doxper-project-copy > p {
+  color: rgba(63, 48, 41, 0.7);
+}
+
+.uncover-app-preview .doxper-screens img {
+  border-color: #1b1715;
+  box-shadow: 0 28px 55px rgba(74, 43, 28, 0.26);
+}
+
 .doxper-project-copy {
   align-self: stretch;
   display: flex;
