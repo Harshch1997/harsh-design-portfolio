@@ -23,16 +23,16 @@ import {
 
 const pdfAssets: Record<string, { title: string; thumbnail: string }> = {
   "1Y2NUCgtmjo4Y6A4bPD7F--cj2naSIoNN": {
-    title: "Uncover Services Catalogue",
-    thumbnail: "/brochure-thumbnails/uncover-services.webp",
-  },
-  "1SxTAkfPj110NxVgQcicBjv32-3TSoe90": {
-    title: "Healthyvaidya Product Leaflet",
+    title: "Healthyvaidya Product Brochure",
     thumbnail: "/brochure-thumbnails/healthyvaidya-glove.webp",
   },
-  "1gRSWaRGwtDeMCQ8IXCXM8zAHlUNz72X4": {
+  "1SxTAkfPj110NxVgQcicBjv32-3TSoe90": {
     title: "BioSwag Product Catalogue",
     thumbnail: "/brochure-thumbnails/bioswag-cover.webp",
+  },
+  "1gRSWaRGwtDeMCQ8IXCXM8zAHlUNz72X4": {
+    title: "Uncover Clinic Brochure",
+    thumbnail: "/brochure-thumbnails/uncover-services.webp",
   },
   "1SB6w2ICCDOEq3hSLOw6XlfT8l5wZce3a": {
     title: "Uncover Academy Programs Brochure",
