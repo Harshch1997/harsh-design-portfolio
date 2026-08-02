@@ -180,6 +180,11 @@ const prioritizedWork = [...work]
 
 const brandWork = [
   {
+    name: "Uncover Wellness",
+    service: "Dermatology · Wellness campaigns",
+    href: "https://www.instagram.com/uncover.wellness/",
+  },
+  {
     name: "Uncover Transform",
     service: "Social identity · Campaign design",
     href: "https://www.instagram.com/uncover.transform/",
@@ -262,8 +267,8 @@ export default function Home() {
       </section>
 
       <section className="portfolio-stats" data-reveal aria-label="Portfolio overview">
-        <div><Clapperboard /><strong>38</strong><span>Design reels</span></div>
-        <div><GalleryHorizontalEnd /><strong>17</strong><span>Social posts</span></div>
+        <div><Clapperboard /><strong>43</strong><span>Design reels</span></div>
+        <div><GalleryHorizontalEnd /><strong>24</strong><span>Social posts</span></div>
         <div><TvMinimalPlay /><strong>39</strong><span>Video, motion &amp; ad pieces</span></div>
         <div><Images /><strong>246</strong><span>Archived artworks</span></div>
       </section>

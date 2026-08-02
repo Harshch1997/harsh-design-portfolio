@@ -68,6 +68,11 @@ export const driveCatalogues = {
 
 export const instagramCatalogues = [
   {
+    brand: "Uncover Wellness",
+    accent: "#c99568",
+    codes: ids("Dbaur0LR4bc DbVsgzxRCvx DbTG2y5R2W0 DbSv6VsRlln DbIdBpaR5RS"),
+  },
+  {
     brand: "Uncover Transform",
     accent: "#d7ff35",
     codes: ids("DbS5imduTVc DbFhqF8R-q8 DbAviAruGmt Da5ifsaNZGY Da29YnbOrFy Dazfdt0B0Da DaxoZUqSWN5 DaxEENAPEYz DavBnzoQ-FR DauZ792htCU"),
@@ -90,6 +95,19 @@ export const instagramCatalogues = [
 ];
 
 export const instagramPostCatalogues = [
+  {
+    brand: "Uncover Wellness",
+    accent: "#c99568",
+    posts: [
+      { code: "DanR987tuSr", slides: 1 },
+      { code: "DanRu98xlg7", slides: 1 },
+      { code: "DanRShmxxP9", slides: 1 },
+      { code: "DbgCA2iHz4G", slides: 6 },
+      { code: "DbdiqPfDV5o", slides: 5 },
+      { code: "DbNhGqgxaYr", slides: 1 },
+      { code: "DbIext6n2hG", slides: 8 },
+    ],
+  },
   {
     brand: "Uncover Transform",
     accent: "#d7ff35",
