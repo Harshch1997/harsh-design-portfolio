@@ -100,19 +100,8 @@ const collections: Collection[] = [
     tone: "mint",
   },
   {
-    id: "tshirts",
-    number: "08",
-    kicker: "T-shirt Design",
-    title: "Ideas you can wear.",
-    description:
-      "Every available apparel graphic, print variation and neck-label asset from the T-shirt archive.",
-    source:
-      "https://drive.google.com/drive/folders/1TFnEkf3RteviNTwvPmjfHKD442QCVbZR",
-    tone: "blue",
-  },
-  {
     id: "identity",
-    number: "09",
+    number: "08",
     kicker: "Brand Identity & Campaign Graphics",
     title: "Systems that stay recognizable.",
     description:
@@ -123,7 +112,7 @@ const collections: Collection[] = [
   },
   {
     id: "outdoor",
-    number: "10",
+    number: "09",
     kicker: "Outdoor & In-Clinic Branding",
     title: "Designed for physical space.",
     description:
@@ -131,6 +120,17 @@ const collections: Collection[] = [
     source:
       "https://drive.google.com/drive/folders/1yg2KdCbOzIjULoqqIEx485ahw4WjCQGr",
     tone: "gold",
+  },
+  {
+    id: "tshirts",
+    number: "10",
+    kicker: "T-shirt Design",
+    title: "Ideas you can wear.",
+    description:
+      "Every available apparel graphic, print variation and neck-label asset from the T-shirt archive.",
+    source:
+      "https://drive.google.com/drive/folders/1TFnEkf3RteviNTwvPmjfHKD442QCVbZR",
+    tone: "blue",
   },
 ];
 

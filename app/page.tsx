@@ -321,19 +321,19 @@ export default function Home() {
             <strong>Product Listings</strong>
             <ArrowDown />
           </a>
-          <a href="#tshirts">
-            <span>08</span><Shirt className="category-icon" />
-            <strong>T-shirt Design</strong>
-            <ArrowDown />
-          </a>
           <a href="#identity">
-            <span>09</span><Palette className="category-icon" />
+            <span>08</span><Palette className="category-icon" />
             <strong>Brand Identity</strong>
             <ArrowDown />
           </a>
           <a href="#outdoor">
-            <span>10</span><GalleryHorizontalEnd className="category-icon" />
+            <span>09</span><GalleryHorizontalEnd className="category-icon" />
             <strong>Outdoor Branding</strong>
+            <ArrowDown />
+          </a>
+          <a href="#tshirts">
+            <span>10</span><Shirt className="category-icon" />
+            <strong>T-shirt Design</strong>
             <ArrowDown />
           </a>
         </div>
