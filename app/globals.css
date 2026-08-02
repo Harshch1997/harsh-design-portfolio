@@ -1368,6 +1368,42 @@ footer h2 {
   transition: transform 500ms cubic-bezier(.2,.8,.2,1);
 }
 
+#identity .identity-logo-surface {
+  background:
+    radial-gradient(circle at 22% 18%, rgba(73, 110, 159, 0.34), transparent 38%),
+    linear-gradient(145deg, #172a44 0%, #0b1728 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+#identity .identity-logo-surface::after,
+.identity-lightbox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.identity-lightbox {
+  position: relative;
+}
+
+.identity-lightbox > img {
+  position: relative;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 30% 18%, rgba(70, 108, 157, 0.36), transparent 42%),
+    linear-gradient(145deg, #172a44 0%, #091321 100%);
+}
+
+.identity-lightbox > div {
+  position: relative;
+  z-index: 2;
+}
+
 .collection-image i {
   position: absolute;
   right: 12px;

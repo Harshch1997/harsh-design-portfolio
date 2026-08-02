@@ -233,7 +233,7 @@ function CollectionCarousel({
               key={id}
               className={`collection-card ${pdf ? "pdf-card" : ""}`}
             >
-              <span className="collection-image">
+              <span className={`collection-image ${collection.id === "identity" ? "identity-logo-surface" : ""}`}>
                 <img
                   src={thumb(id)}
                   alt={pdf?.title ?? packaging?.title ?? `${collection.kicker} artwork ${index + 1}`}
@@ -325,7 +325,7 @@ export function DesignCollections() {
               />
             </div>
           ) : (
-            <div className="lightbox-content">
+            <div className={`lightbox-content ${active.collection.id === "identity" ? "identity-lightbox" : ""}`}>
               <img
                 src={thumb(active.id, 1800)}
                 alt={`${active.collection.kicker} artwork ${active.index + 1}`}
