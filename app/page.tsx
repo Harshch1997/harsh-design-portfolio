@@ -197,7 +197,7 @@ const brandWork = [
   {
     name: "Casa Sonal Singh",
     service: "Luxury fashion · Digital content",
-    href: "https://www.instagram.com/casasonalsingh/",
+    href: "https://www.instagram.com/sonalsingh.in/",
   },
   {
     name: "Go Sharpener",
@@ -267,8 +267,8 @@ export default function Home() {
       </section>
 
       <section className="portfolio-stats" data-reveal aria-label="Portfolio overview">
-        <div><Clapperboard /><strong>43</strong><span>Design reels</span></div>
-        <div><GalleryHorizontalEnd /><strong>24</strong><span>Social posts</span></div>
+        <div><Clapperboard /><strong>47</strong><span>Design reels</span></div>
+        <div><GalleryHorizontalEnd /><strong>32</strong><span>Social posts</span></div>
         <div><TvMinimalPlay /><strong>39</strong><span>Video, motion &amp; ad pieces</span></div>
         <div><Images /><strong>246</strong><span>Archived artworks</span></div>
       </section>
