@@ -306,7 +306,7 @@ export default function Home() {
             <strong>Print Designs</strong>
             <ArrowDown />
           </a>
-          <a href="#packaging">
+          <a href="#usl-packaging">
             <span>05</span><PackageOpen className="category-icon" />
             <strong>Packaging Design</strong>
             <ArrowDown />

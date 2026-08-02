@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { driveCatalogues } from "./catalogueData";
+import { USLPackagingShowcase } from "./USLPackagingShowcase";
 import {
   BookOpenText,
   Boxes,
@@ -244,11 +245,13 @@ export function DesignCollections() {
   return (
     <>
       {collections.map((collection) => (
-        <CollectionCarousel
-          collection={collection}
-          onOpen={(id, index, current) => setActive({ id, index, collection: current })}
-          key={collection.id}
-        />
+        <Fragment key={collection.id}>
+          {collection.id === "packaging" && <USLPackagingShowcase />}
+          <CollectionCarousel
+            collection={collection}
+            onOpen={(id, index, current) => setActive({ id, index, collection: current })}
+          />
+        </Fragment>
       ))}
 
       {active && (
