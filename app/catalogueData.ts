@@ -83,14 +83,14 @@ export const instagramCatalogues = [
     codes: ids("DbSwbobKwYH DbFhqF8R-q8 DbAvS4vqTJG Da5Y4V-qcxo Da28jrcqKB7 DazfIscRqz8 DaxpHs3KZF4 DaxPbGsKH07 DavAblTKZKt"),
   },
   {
-    brand: "Casa Sonal Singh",
-    accent: "#e5bd8c",
-    codes: ids("DZeiNS8hLYG DbfmSU3Tpku DbSXDNXBoGe DbLQHS4ptZ_"),
-  },
-  {
     brand: "Chai Calling",
     accent: "#ffb54a",
     codes: ids("DNqi6ixv2Yq DNqOnX7Txn8 DbYZlfAz3zW DbTYViEToDy DbQxquMz86u DbH7--SxCN8 DbC3VQexkhq"),
+  },
+  {
+    brand: "Casa Sonal Singh",
+    accent: "#e5bd8c",
+    codes: ids("DZeiNS8hLYG DbfmSU3Tpku DbSXDNXBoGe DbLQHS4ptZ_"),
   },
   {
     brand: "Yuomo Men",
@@ -131,20 +131,6 @@ export const instagramPostCatalogues = [
     ],
   },
   {
-    brand: "Casa Sonal Singh",
-    accent: "#e5bd8c",
-    posts: [
-      { code: "DKEJoPxozqd", slides: 12 },
-      { code: "DNKjCiDyjeh", slides: 5 },
-      { code: "DbijrizpLPS", slides: 1 },
-      { code: "DbYLCXPp1xI", slides: 1 },
-      { code: "DbNuIXOpwkP", slides: 1 },
-      { code: "DbNs-9IJEKE", slides: 1 },
-      { code: "DbGbLYTJiNP", slides: 1 },
-      { code: "DbA9c53CSu9", slides: 4 },
-    ],
-  },
-  {
     brand: "Go Sharpener",
     accent: "#d6a8ff",
     posts: [
@@ -166,6 +152,20 @@ export const instagramPostCatalogues = [
       { code: "DbLopjUEy2a", slides: 5 },
       { code: "DbGUOscTWz6", slides: 1 },
       { code: "Da-hLXZzef-", slides: 1 },
+    ],
+  },
+  {
+    brand: "Casa Sonal Singh",
+    accent: "#e5bd8c",
+    posts: [
+      { code: "DKEJoPxozqd", slides: 12 },
+      { code: "DNKjCiDyjeh", slides: 5 },
+      { code: "DbijrizpLPS", slides: 1 },
+      { code: "DbYLCXPp1xI", slides: 1 },
+      { code: "DbNuIXOpwkP", slides: 1 },
+      { code: "DbNs-9IJEKE", slides: 1 },
+      { code: "DbGbLYTJiNP", slides: 1 },
+      { code: "DbA9c53CSu9", slides: 4 },
     ],
   },
 ];

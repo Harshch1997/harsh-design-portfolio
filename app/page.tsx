@@ -195,11 +195,6 @@ const brandWork = [
     href: "https://www.instagram.com/uncover.hair/",
   },
   {
-    name: "Casa Sonal Singh",
-    service: "Luxury fashion · Digital content",
-    href: "https://www.instagram.com/sonalsingh.in/",
-  },
-  {
     name: "Go Sharpener",
     service: "Education · Social & video",
     href: "https://www.instagram.com/gosharpener/",
@@ -208,6 +203,11 @@ const brandWork = [
     name: "Chai Calling India",
     service: "F&B · Social storytelling",
     href: "https://www.instagram.com/chaicallingindia/",
+  },
+  {
+    name: "Casa Sonal Singh",
+    service: "Luxury fashion · Digital content",
+    href: "https://www.instagram.com/sonalsingh.in/",
   },
   {
     name: "Yuomo Men",
