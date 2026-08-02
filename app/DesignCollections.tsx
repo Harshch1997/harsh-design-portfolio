@@ -9,6 +9,7 @@ import {
   ChevronRight,
   ExternalLink,
   Eye,
+  FileText,
   FolderOpen,
   Image as ImageIcon,
   GalleryHorizontalEnd,
@@ -19,6 +20,29 @@ import {
   Shirt,
   X,
 } from "lucide-react";
+
+const pdfAssets: Record<string, { title: string; thumbnail: string }> = {
+  "1Y2NUCgtmjo4Y6A4bPD7F--cj2naSIoNN": {
+    title: "Uncover Services Catalogue",
+    thumbnail: "/brochure-thumbnails/uncover-services.webp",
+  },
+  "1SxTAkfPj110NxVgQcicBjv32-3TSoe90": {
+    title: "Healthyvaidya Product Leaflet",
+    thumbnail: "/brochure-thumbnails/healthyvaidya-glove.webp",
+  },
+  "1gRSWaRGwtDeMCQ8IXCXM8zAHlUNz72X4": {
+    title: "BioSwag Product Catalogue",
+    thumbnail: "/brochure-thumbnails/bioswag-cover.webp",
+  },
+  "1SB6w2ICCDOEq3hSLOw6XlfT8l5wZce3a": {
+    title: "Uncover Academy Programs Brochure",
+    thumbnail: "/brochure-thumbnails/uncover-academy-brochure.webp",
+  },
+  "1wzD_N3jfN_WA-8lxHZ3tGRz7YrVQFygd": {
+    title: "Uncover Academy Admissions Flyer",
+    thumbnail: "/brochure-thumbnails/uncover-academy-flyer.webp",
+  },
+};
 
 type Collection = {
   id: keyof typeof driveCatalogues;
@@ -112,7 +136,8 @@ const collections: Collection[] = [
 
 const isLocalAsset = (id: string) => id.startsWith("/");
 const thumb = (id: string, size = 1000) =>
-  isLocalAsset(id) ? id : `https://drive.google.com/thumbnail?id=${id}&sz=w${size}`;
+  pdfAssets[id]?.thumbnail ??
+  (isLocalAsset(id) ? id : `https://drive.google.com/thumbnail?id=${id}&sz=w${size}`);
 
 const collectionIcons = {
   print: Printer,
@@ -167,27 +192,30 @@ function CollectionCarousel({
         </div>
       </div>
       <div className="collection-grid" ref={track}>
-        {items.map((id, index) => (
-          <button
-            onClick={() => onOpen(id, index, collection)}
-            key={id}
-            className="collection-card"
-          >
-            <span className="collection-image">
-              <img
-                src={thumb(id)}
-                alt={`${collection.kicker} artwork ${index + 1}`}
-                loading="lazy"
-              />
-              <i><Eye size={14} /> View artwork</i>
-            </span>
-            <span className="collection-meta">
-              <small>{String(index + 1).padStart(2, "0")}</small>
-              <strong>{collection.kicker} / {index + 1}</strong>
-              <em>{isLocalAsset(id) ? "Photorealistic product mockup" : "Original portfolio archive"}</em>
-            </span>
-          </button>
-        ))}
+        {items.map((id, index) => {
+          const pdf = pdfAssets[id];
+          return (
+            <button
+              onClick={() => onOpen(id, index, collection)}
+              key={id}
+              className={`collection-card ${pdf ? "pdf-card" : ""}`}
+            >
+              <span className="collection-image">
+                <img
+                  src={thumb(id)}
+                  alt={pdf?.title ?? `${collection.kicker} artwork ${index + 1}`}
+                  loading="lazy"
+                />
+                <i>{pdf ? <><FileText size={14} /> Read complete PDF</> : <><Eye size={14} /> View artwork</>}</i>
+              </span>
+              <span className="collection-meta">
+                <small>{String(index + 1).padStart(2, "0")}</small>
+                <strong>{pdf?.title ?? `${collection.kicker} / ${index + 1}`}</strong>
+                <em>{pdf ? "Complete PDF · opens in popup" : isLocalAsset(id) ? "Photorealistic product mockup" : "Original portfolio archive"}</em>
+              </span>
+            </button>
+          );
+        })}
       </div>
     </section>
   );
@@ -240,25 +268,48 @@ export function DesignCollections() {
           >
             <X size={22} />
           </button>
-          <div className="lightbox-content">
-            <img
-              src={thumb(active.id, 1800)}
-              alt={`${active.collection.kicker} artwork ${active.index + 1}`}
-            />
-            <div>
-              <span>{active.collection.kicker}</span>
-              <strong>Artwork {String(active.index + 1).padStart(2, "0")}</strong>
-              <a
-                href={isLocalAsset(active.id)
-                  ? active.collection.source
-                  : `https://drive.google.com/file/d/${active.id}/view`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FolderOpen size={16} /> {isLocalAsset(active.id) ? "Open packaging source folder" : "Open original file"} <ExternalLink size={14} />
-              </a>
+          {pdfAssets[active.id] ? (
+            <div className="pdf-lightbox-content">
+              <div className="pdf-lightbox-head">
+                <span>
+                  <small>{active.collection.kicker} · Complete document</small>
+                  <strong>{pdfAssets[active.id].title}</strong>
+                </span>
+                <a
+                  href={`https://drive.google.com/file/d/${active.id}/view`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FileText size={16} /> Open PDF in Drive <ExternalLink size={14} />
+                </a>
+              </div>
+              <iframe
+                src={`https://drive.google.com/file/d/${active.id}/preview`}
+                title={`${pdfAssets[active.id].title} PDF`}
+                allow="autoplay"
+              />
             </div>
-          </div>
+          ) : (
+            <div className="lightbox-content">
+              <img
+                src={thumb(active.id, 1800)}
+                alt={`${active.collection.kicker} artwork ${active.index + 1}`}
+              />
+              <div>
+                <span>{active.collection.kicker}</span>
+                <strong>Artwork {String(active.index + 1).padStart(2, "0")}</strong>
+                <a
+                  href={isLocalAsset(active.id)
+                    ? active.collection.source
+                    : `https://drive.google.com/file/d/${active.id}/view`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FolderOpen size={16} /> {isLocalAsset(active.id) ? "Open packaging source folder" : "Open original file"} <ExternalLink size={14} />
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </>
