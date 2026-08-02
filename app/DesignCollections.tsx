@@ -45,6 +45,37 @@ const pdfAssets: Record<string, { title: string; thumbnail: string }> = {
   },
 };
 
+const packagingAssets: Record<string, { title: string; description: string }> = {
+  "/packaging-mockups/biteora/mint-front.webp": {
+    title: "Biteora Pudina Makhana — Front",
+    description: "Mint-green flavour system · Front-of-pack design",
+  },
+  "/packaging-mockups/biteora/mint-back.webp": {
+    title: "Biteora Pudina Makhana — Back",
+    description: "Nutrition, ingredients and brand information panel",
+  },
+  "/packaging-mockups/biteora/peri-peri-front.webp": {
+    title: "Biteora Peri Peri Makhana — Front",
+    description: "Spiced red flavour system · Front-of-pack design",
+  },
+  "/packaging-mockups/biteora/peri-peri-back.webp": {
+    title: "Biteora Peri Peri Makhana — Back",
+    description: "Nutrition, ingredients and brand information panel",
+  },
+  "/packaging-mockups/biteora/himalayan-salt-front.webp": {
+    title: "Biteora Himalayan Salt — Front",
+    description: "Mountain-blue flavour system · Front-of-pack design",
+  },
+  "/packaging-mockups/biteora/himalayan-salt-back.webp": {
+    title: "Biteora Himalayan Salt — Back",
+    description: "Nutrition, ingredients and brand information panel",
+  },
+  "/packaging-mockups/biteora/premium-phool-makhana.webp": {
+    title: "Biteora Premium Phool Makhana",
+    description: "Heritage-inspired front and back packaging concept",
+  },
+};
+
 type Collection = {
   id: keyof typeof driveCatalogues;
   number: string;
@@ -195,6 +226,7 @@ function CollectionCarousel({
       <div className="collection-grid" ref={track}>
         {items.map((id, index) => {
           const pdf = pdfAssets[id];
+          const packaging = packagingAssets[id];
           return (
             <button
               onClick={() => onOpen(id, index, collection)}
@@ -204,15 +236,15 @@ function CollectionCarousel({
               <span className="collection-image">
                 <img
                   src={thumb(id)}
-                  alt={pdf?.title ?? `${collection.kicker} artwork ${index + 1}`}
+                  alt={pdf?.title ?? packaging?.title ?? `${collection.kicker} artwork ${index + 1}`}
                   loading="lazy"
                 />
                 <i>{pdf ? <><FileText size={14} /> Read complete PDF</> : <><Eye size={14} /> View artwork</>}</i>
               </span>
               <span className="collection-meta">
                 <small>{String(index + 1).padStart(2, "0")}</small>
-                <strong>{pdf?.title ?? `${collection.kicker} / ${index + 1}`}</strong>
-                <em>{pdf ? "Complete PDF · opens in popup" : isLocalAsset(id) ? "Photorealistic product mockup" : "Original portfolio archive"}</em>
+                <strong>{pdf?.title ?? packaging?.title ?? `${collection.kicker} / ${index + 1}`}</strong>
+                <em>{pdf ? "Complete PDF · opens in popup" : packaging?.description ?? (isLocalAsset(id) ? "Photorealistic product mockup" : "Original portfolio archive")}</em>
               </span>
             </button>
           );
@@ -300,7 +332,8 @@ export function DesignCollections() {
               />
               <div>
                 <span>{active.collection.kicker}</span>
-                <strong>Artwork {String(active.index + 1).padStart(2, "0")}</strong>
+                <strong>{packagingAssets[active.id]?.title ?? `Artwork ${String(active.index + 1).padStart(2, "0")}`}</strong>
+                {packagingAssets[active.id] && <p>{packagingAssets[active.id].description}</p>}
                 <a
                   href={isLocalAsset(active.id)
                     ? active.collection.source

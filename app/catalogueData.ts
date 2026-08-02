@@ -20,6 +20,10 @@ export const driveCatalogues = {
   `),
   packaging: ids(`
     /packaging-mockups/amla-shampoo.webp /packaging-mockups/vitamin-c-night-cream.webp /packaging-mockups/peanut-butter-range.webp
+    /packaging-mockups/biteora/mint-front.webp /packaging-mockups/biteora/mint-back.webp
+    /packaging-mockups/biteora/peri-peri-front.webp /packaging-mockups/biteora/peri-peri-back.webp
+    /packaging-mockups/biteora/himalayan-salt-front.webp /packaging-mockups/biteora/himalayan-salt-back.webp
+    /packaging-mockups/biteora/premium-phool-makhana.webp
     1wda3FbXRMkm57zZC39MHqN8nt0h48hqn 1fpwngZJK2aGhXQ_QXSNhfzjnS-cZef4R 1U4jlsLkahBx_PpIjndDiZQZTRqf7DBkJ
     1DsGWbkjgjri1z9JgwCaA3qD0CjGKrBVZ 1fxIIWYh3Ov_ZKL4qMecbVoP0jiwNXiW- 1QVXgEABBNtczKZMhYqHnVUm5znJqleQF
     1-lce2BYfiKvkE8CAbNIoSZEZCG-N7B0x 19iDm_3VIqB0FcyL4e--Cj2bJ4c2WbFWa 14tOf1pOP-5yeOLeveDQNnCCqvaH99oo_
