@@ -253,7 +253,11 @@ function CollectionCarousel({
   );
 }
 
-export function DesignCollections() {
+export function DesignCollections({
+  include,
+}: {
+  include?: Collection["id"][];
+}) {
   const [active, setActive] = useState<{
     id: string;
     index: number;
@@ -275,7 +279,7 @@ export function DesignCollections() {
 
   return (
     <>
-      {collections.map((collection) => (
+      {collections.filter((collection) => !include || include.includes(collection.id)).map((collection) => (
         <CollectionCarousel
           key={collection.id}
           collection={collection}

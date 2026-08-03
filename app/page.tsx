@@ -290,11 +290,6 @@ export default function Home() {
             <strong>YouTube &amp; Video</strong>
             <ArrowDown />
           </a>
-          <a href="#motion-graphics">
-            <span>02B</span><Film className="category-icon" />
-            <strong>Motion Graphics</strong>
-            <ArrowDown />
-          </a>
           <a href="#performance-ads">
             <span>02C</span><Megaphone className="category-icon" />
             <strong>AI Performance Ads</strong>
@@ -310,16 +305,6 @@ export default function Home() {
             <strong>Website Banner Images</strong>
             <ArrowDown />
           </a>
-          <a href="#work">
-            <span>03</span><MonitorSmartphone className="category-icon" />
-            <strong>UI/UX &amp; Web Design</strong>
-            <ArrowDown />
-          </a>
-          <a href="#print">
-            <span>04</span><Printer className="category-icon" />
-            <strong>Print Designs</strong>
-            <ArrowDown />
-          </a>
           <a href="#usl-packaging">
             <span>05</span><PackageOpen className="category-icon" />
             <strong>Packaging Design</strong>
@@ -330,11 +315,6 @@ export default function Home() {
             <strong>Brochures</strong>
             <ArrowDown />
           </a>
-          <a href="#product-listing">
-            <span>07</span><Boxes className="category-icon" />
-            <strong>Product Listings</strong>
-            <ArrowDown />
-          </a>
           <a href="#identity">
             <span>08</span><Palette className="category-icon" />
             <strong>Brand Identity</strong>
@@ -343,6 +323,26 @@ export default function Home() {
           <a href="#outdoor">
             <span>09</span><GalleryHorizontalEnd className="category-icon" />
             <strong>Outdoor Branding</strong>
+            <ArrowDown />
+          </a>
+          <a href="#work">
+            <span>03</span><MonitorSmartphone className="category-icon" />
+            <strong>UI/UX &amp; Web Design</strong>
+            <ArrowDown />
+          </a>
+          <a href="#motion-graphics">
+            <span>02B</span><Film className="category-icon" />
+            <strong>Motion Graphics</strong>
+            <ArrowDown />
+          </a>
+          <a href="#print">
+            <span>04</span><Printer className="category-icon" />
+            <strong>Print Designs</strong>
+            <ArrowDown />
+          </a>
+          <a href="#product-listing">
+            <span>07</span><Boxes className="category-icon" />
+            <strong>Product Listings</strong>
             <ArrowDown />
           </a>
           <a href="#tshirts">
@@ -403,18 +403,6 @@ export default function Home() {
         <YouTubeShowcase />
       </section>
 
-      <section className="motion-graphics-section" id="motion-graphics" data-reveal>
-        <div className="motion-graphics-head">
-          <p className="kicker"><Film size={15} /> 02B / Motion Graphics</p>
-          <h2>Designed to move.</h2>
-          <p>
-            The complete motion archive from Drive: animated campaigns,
-            hospitality stories, offer films, event loops and branded edits.
-          </p>
-        </div>
-        <MotionGraphicsShowcase />
-      </section>
-
       <section className="performance-ads-section" id="performance-ads" data-reveal>
         <div className="performance-ads-head">
           <p className="kicker"><Megaphone size={15} /> 02C / AI Performance Marketing Ads</p>
@@ -430,6 +418,8 @@ export default function Home() {
       <USLPackagingShowcase />
 
       <WebsiteCreativeShowcase />
+
+      <DesignCollections include={["brochures", "identity", "outdoor"]} />
 
       <section className="work-section" id="work" data-reveal>
         <div className="section-heading">
@@ -553,7 +543,19 @@ export default function Home() {
         </a>
       </section>
 
-      <DesignCollections />
+      <section className="motion-graphics-section" id="motion-graphics" data-reveal>
+        <div className="motion-graphics-head">
+          <p className="kicker"><Film size={15} /> 02B / Motion Graphics</p>
+          <h2>Designed to move.</h2>
+          <p>
+            The complete motion archive from Drive: animated campaigns,
+            hospitality stories, offer films, event loops and branded edits.
+          </p>
+        </div>
+        <MotionGraphicsShowcase />
+      </section>
+
+      <DesignCollections include={["print", "packaging", "listings", "tshirts"]} />
 
       <section className="graphic-section" id="graphic" data-reveal>
         <div>
