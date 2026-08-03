@@ -5,6 +5,7 @@ import { StaticPostShowcase } from "./StaticPostShowcase";
 import { InteractiveChrome } from "./InteractiveChrome";
 import { MotionGraphicsShowcase } from "./MotionGraphicsShowcase";
 import { PerformanceAdsShowcase } from "./PerformanceAdsShowcase";
+import { USLPackagingShowcase } from "./USLPackagingShowcase";
 import {
   ArrowDown,
   ArrowUp,
@@ -412,6 +413,8 @@ export default function Home() {
         </div>
         <PerformanceAdsShowcase />
       </section>
+
+      <USLPackagingShowcase />
 
       <section className="work-section" id="work" data-reveal>
         <div className="section-heading">
