@@ -81,6 +81,7 @@ export function WebsiteCreativeShowcase() {
   const [bannerFilter, setBannerFilter] = useState<Filter>("All");
   const [active, setActive] = useState<Creative | null>(null);
   const productRail = useRef<HTMLDivElement>(null);
+  const bannerRail = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!active) return;
@@ -96,6 +97,7 @@ export function WebsiteCreativeShowcase() {
   const products = productFilter === "All" ? productImages : productImages.filter((item) => item.brand === productFilter);
   const banners = bannerFilter === "All" ? bannerImages : bannerImages.filter((item) => item.brand === bannerFilter);
   const scrollProducts = (direction: number) => productRail.current?.scrollBy({ left: direction * 720, behavior: "smooth" });
+  const scrollBanners = (direction: number) => bannerRail.current?.scrollBy({ left: direction * 780, behavior: "smooth" });
 
   return (
     <>
@@ -144,11 +146,17 @@ export function WebsiteCreativeShowcase() {
           </div>
           <div>
             <p>Homepage heroes, collection launches and editorial campaign frames designed to set the tone before the first scroll.</p>
-            <BrandFilter value={bannerFilter} onChange={setBannerFilter} />
+            <div className="web-banner-actions">
+              <BrandFilter value={bannerFilter} onChange={setBannerFilter} />
+              <div className="web-creative-arrows">
+                <button onClick={() => scrollBanners(-1)} aria-label="Previous website banners"><ChevronLeft /></button>
+                <button onClick={() => scrollBanners(1)} aria-label="Next website banners"><ChevronRight /></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="web-banner-grid">
+        <div className="web-banner-grid" ref={bannerRail}>
           {banners.map((item, index) => (
             <button className={`web-banner-card banner-${(index % 5) + 1}`} onClick={() => setActive(item)} key={item.image}>
               <img src={item.image} alt={`${item.title} for ${item.brand}`} loading="lazy" />
