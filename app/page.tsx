@@ -295,16 +295,6 @@ export default function Home() {
             <strong>AI Performance Ads</strong>
             <ArrowDown />
           </a>
-          <a href="#website-products">
-            <span>02D</span><ShoppingBag className="category-icon" />
-            <strong>Website Product Images</strong>
-            <ArrowDown />
-          </a>
-          <a href="#website-banners">
-            <span>02E</span><LayoutPanelTop className="category-icon" />
-            <strong>Website Banner Images</strong>
-            <ArrowDown />
-          </a>
           <a href="#usl-packaging">
             <span>05</span><PackageOpen className="category-icon" />
             <strong>Packaging Design</strong>
@@ -328,6 +318,16 @@ export default function Home() {
           <a href="#work">
             <span>03</span><MonitorSmartphone className="category-icon" />
             <strong>UI/UX &amp; Web Design</strong>
+            <ArrowDown />
+          </a>
+          <a href="#website-products">
+            <span>02D</span><ShoppingBag className="category-icon" />
+            <strong>Website Product Images</strong>
+            <ArrowDown />
+          </a>
+          <a href="#website-banners">
+            <span>02E</span><LayoutPanelTop className="category-icon" />
+            <strong>Website Banner Images</strong>
             <ArrowDown />
           </a>
           <a href="#motion-graphics">
@@ -416,8 +416,6 @@ export default function Home() {
       </section>
 
       <USLPackagingShowcase />
-
-      <WebsiteCreativeShowcase />
 
       <DesignCollections include={["brochures", "identity", "outdoor"]} />
 
@@ -542,6 +540,8 @@ export default function Home() {
           <Arrow />
         </a>
       </section>
+
+      <WebsiteCreativeShowcase />
 
       <section className="motion-graphics-section" id="motion-graphics" data-reveal>
         <div className="motion-graphics-head">
