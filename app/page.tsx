@@ -6,6 +6,7 @@ import { InteractiveChrome } from "./InteractiveChrome";
 import { MotionGraphicsShowcase } from "./MotionGraphicsShowcase";
 import { PerformanceAdsShowcase } from "./PerformanceAdsShowcase";
 import { USLPackagingShowcase } from "./USLPackagingShowcase";
+import { WebsiteCreativeShowcase } from "./WebsiteCreativeShowcase";
 import {
   ArrowDown,
   ArrowUp,
@@ -20,6 +21,7 @@ import {
   FolderOpen,
   GalleryHorizontalEnd,
   Images,
+  LayoutPanelTop,
   LayoutTemplate,
   MapPin,
   Megaphone,
@@ -31,6 +33,7 @@ import {
   Printer,
   Play,
   Shirt,
+  ShoppingBag,
   Sparkles,
   UserRound,
   TvMinimalPlay,
@@ -297,6 +300,16 @@ export default function Home() {
             <strong>AI Performance Ads</strong>
             <ArrowDown />
           </a>
+          <a href="#website-products">
+            <span>02D</span><ShoppingBag className="category-icon" />
+            <strong>Website Product Images</strong>
+            <ArrowDown />
+          </a>
+          <a href="#website-banners">
+            <span>02E</span><LayoutPanelTop className="category-icon" />
+            <strong>Website Banner Images</strong>
+            <ArrowDown />
+          </a>
           <a href="#work">
             <span>03</span><MonitorSmartphone className="category-icon" />
             <strong>UI/UX &amp; Web Design</strong>
@@ -415,6 +428,8 @@ export default function Home() {
       </section>
 
       <USLPackagingShowcase />
+
+      <WebsiteCreativeShowcase />
 
       <section className="work-section" id="work" data-reveal>
         <div className="section-heading">
