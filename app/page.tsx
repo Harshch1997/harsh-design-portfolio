@@ -229,14 +229,16 @@ export default function Home() {
           HC<span>®</span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#selected"><Sparkles size={15} />Selected</a>
+          <a href="#social"><Clapperboard size={15} />Social</a>
+          <a href="#video"><TvMinimalPlay size={15} />Video</a>
           <a href="#work"><MonitorSmartphone size={15} />UI/UX</a>
-          <a href="#social"><Clapperboard size={15} />Campaigns</a>
           <a href="#about"><UserRound size={15} />About</a>
         </nav>
         <a
           className="availability"
-          href="#contact"
+          href="https://www.behance.net/harshchhabra"
+          target="_blank"
+          rel="noreferrer"
         >
           <BriefcaseBusiness size={16} /> Available for projects <i />
         </a>
@@ -249,31 +251,12 @@ export default function Home() {
           <br />
           brands <em>unmissable.</em>
         </h1>
-        <div className="hero-showcase" aria-label="Preview of current portfolio work">
-          <a className="hero-shot hero-shot-app" href="#work">
-            <img src="/work/uncover-app-screen-01.png" alt="Uncover patient app interface" />
-            <span><b>Latest product work</b>Uncover patient app</span>
-          </a>
-          <a className="hero-shot hero-shot-packaging" href="#usl-packaging">
-            <img src="/usl-packaging/sun-soaked/01.webp" alt="USL Derma Sun Soaked packaging" />
-            <span><b>Packaging system</b>USL Derma</span>
-          </a>
-          <p><Sparkles size={14} /> Product UI · Brand systems · Campaigns</p>
-        </div>
         <div className="hero-bottom">
-          <div>
-            <p>
-              I’m Harsh Chhabra — a multidisciplinary designer shaping product
-              experiences, brand systems and campaigns from first idea to final frame.
-            </p>
-            <div className="hero-actions">
-              <a href="#selected"><Sparkles size={16} /> See selected work</a>
-              <a href="https://www.behance.net/harshchhabra" target="_blank" rel="noreferrer">
-                Behance <Arrow />
-              </a>
-            </div>
-          </div>
-          <a className="circle-link" href="#selected" aria-label="Explore selected work">
+          <p>
+            I’m Harsh Chhabra — a graphic &amp; UI/UX designer creating bold
+            digital experiences, visual identities and stories built to move.
+          </p>
+          <a className="circle-link" href="#social" aria-label="Explore selected work">
             <MousePointerClick size={20} />
             <span>Explore</span>
             <ArrowDown size={18} />
@@ -288,78 +271,6 @@ export default function Home() {
         <div><GalleryHorizontalEnd /><strong>32</strong><span>Social posts</span></div>
         <div><TvMinimalPlay /><strong>39</strong><span>Video, motion &amp; ad pieces</span></div>
         <div><Images /><strong>246</strong><span>Archived artworks</span></div>
-      </section>
-
-      <section className="recruiter-highlights" id="selected" data-reveal>
-        <div className="recruiter-heading">
-          <div>
-            <p className="kicker"><Sparkles size={15} /> Recruiter quick view · 60 seconds</p>
-            <h2>Latest work.<br /><em>Best work first.</em></h2>
-          </div>
-          <p>
-            Four projects that show how I think across product, brand,
-            packaging and performance creative. The complete archive follows below.
-          </p>
-        </div>
-        <div className="recruiter-grid">
-          <a className="recruiter-card recruiter-card-featured" href="#work">
-            <div className="recruiter-visual uncover-ecosystem-visual">
-              <img src="/work/uncover-website.webp" alt="Uncover website experience" />
-              <img src="/work/uncover-app-screen-01.png" alt="Uncover patient app interface" />
-            </div>
-            <div className="recruiter-copy">
-              <span>01 · Current work</span>
-              <h3>Uncover ecosystem</h3>
-              <p>Patient app, clinic website, campaign design and brand communication working as one connected experience.</p>
-              <div><i>Product UI</i><i>Web</i><i>Brand system</i></div>
-              <b>Explore the case study <Arrow /></b>
-            </div>
-          </a>
-
-          <a className="recruiter-card" href="#usl-packaging">
-            <div className="recruiter-visual recruiter-visual-packaging">
-              <img src="/usl-packaging/untan-fluid-sunscreen-spf-50/01.webp" alt="USL Derma Untan sunscreen packaging" />
-            </div>
-            <div className="recruiter-copy">
-              <span>02 · Packaging system</span>
-              <h3>USL Derma</h3>
-              <p>Four-product skincare range built with a cohesive shelf presence and individual product personalities.</p>
-              <b>View packaging <Arrow /></b>
-            </div>
-          </a>
-
-          <a className="recruiter-card" href="#performance-ads">
-            <div className="recruiter-visual recruiter-visual-ad">
-              <img src="/performance-ads/natriel-ad-01.webp" alt="AI performance marketing campaign creative" />
-              <span><Play size={16} fill="currentColor" /> Click to watch</span>
-            </div>
-            <div className="recruiter-copy">
-              <span>03 · Performance creative</span>
-              <h3>AI-led ad campaigns</h3>
-              <p>Conversion-minded concepts combining clear hooks, fast storytelling and platform-native visual rhythm.</p>
-              <b>Watch campaigns <Arrow /></b>
-            </div>
-          </a>
-
-          <a className="recruiter-card" href="#social">
-            <div className="recruiter-visual recruiter-visual-social">
-              <img src="/posts/DanRShmxxP9.webp" alt="Uncover social media campaign design" />
-              <img src="/reels/all/DbAvS4vqTJG.webp" alt="Uncover reel campaign thumbnail" />
-            </div>
-            <div className="recruiter-copy">
-              <span>04 · Content systems</span>
-              <h3>Social that stays on-brand</h3>
-              <p>Repeatable visual systems spanning reels, static posts and multi-slide campaign storytelling.</p>
-              <b>Browse campaigns <Arrow /></b>
-            </div>
-          </a>
-        </div>
-        <div className="recruiter-proof" aria-label="Portfolio strengths">
-          <span><MonitorSmartphone size={18} /><b>Live digital products</b>Apps and websites in market</span>
-          <span><Palette size={18} /><b>End-to-end craft</b>Concept through production</span>
-          <span><GalleryHorizontalEnd size={18} /><b>Multi-channel range</b>Digital, motion and print</span>
-          <a href="#work">Go straight to UI/UX <Arrow /></a>
-        </div>
       </section>
 
       <section className="work-index" data-reveal aria-label="Portfolio categories">
