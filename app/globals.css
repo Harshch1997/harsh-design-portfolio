@@ -10,7 +10,7 @@
 
 /* USL packaging case study */
 .usl-packaging {
-  padding: 10vw 3.5vw;
+  padding: 7vw 3.5vw;
   overflow: hidden;
   color: #f7f0e7;
   background:
@@ -25,24 +25,24 @@
 }
 
 .usl-packaging-intro {
-  padding-bottom: 7vw;
+  padding-bottom: 4.5vw;
 }
 
 .usl-packaging-intro > div {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
-  gap: 7vw;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 6vw;
   align-items: end;
-  margin-top: 3vw;
+  margin-top: 2vw;
 }
 
 .usl-packaging-intro h2 {
   margin: 0;
-  max-width: 980px;
-  font-size: clamp(4rem, 8.6vw, 9.4rem);
+  max-width: 760px;
+  font-size: clamp(3.2rem, 5.6vw, 6.4rem);
   font-weight: 500;
-  line-height: 0.82;
-  letter-spacing: -0.075em;
+  line-height: 0.88;
+  letter-spacing: -0.065em;
 }
 
 .usl-packaging-summary p {
@@ -66,16 +66,17 @@
 
 .usl-product-stories {
   display: grid;
-  gap: clamp(42px, 7vw, 110px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .usl-product-story {
   --usl-card: #9a4d34;
   --usl-soft: #e1bea1;
   overflow: hidden;
-  border-radius: 34px;
+  border-radius: 22px;
   background: var(--usl-card);
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
 }
 
 .usl-product-story.sun-soaked {
@@ -96,9 +97,10 @@
 
 .usl-product-story > button {
   width: 100%;
-  min-height: min(760px, 75vw);
-  display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
   padding: 0;
   border: 0;
   color: inherit;
@@ -107,17 +109,13 @@
   cursor: zoom-in;
 }
 
-.usl-product-story:nth-child(even) .usl-story-visual {
-  order: 2;
-}
-
 .usl-story-visual {
   min-width: 0;
+  width: 100%;
+  height: clamp(360px, 34vw, 520px);
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(120px, 0.55fr);
-  gap: 4px;
-  padding: 18px;
+  display: block;
+  padding: 10px;
   background: color-mix(in srgb, var(--usl-soft) 74%, white 26%);
 }
 
@@ -127,18 +125,18 @@
   min-height: 0;
   display: block;
   object-fit: cover;
-  border-radius: 22px;
+  border-radius: 15px;
   transition: transform 650ms cubic-bezier(.2,.8,.2,1), filter 350ms ease;
 }
 
 .usl-story-visual img:nth-child(2) {
-  filter: saturate(0.86) contrast(0.96);
+  display: none;
 }
 
 .usl-story-visual i {
   position: absolute;
-  left: 36px;
-  bottom: 36px;
+  left: 22px;
+  bottom: 22px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -158,18 +156,20 @@
 }
 
 .usl-product-story:hover .usl-story-visual img:nth-child(2) {
-  transform: translateY(-7px);
+  transform: none;
 }
 
 .usl-story-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: clamp(34px, 5vw, 78px);
+  flex: 1;
+  justify-content: flex-start;
+  min-height: 315px;
+  padding: 25px 23px 27px;
 }
 
 .usl-story-copy small {
-  margin-bottom: auto;
+  margin-bottom: 24px;
   font-size: 0.63rem;
   text-transform: uppercase;
   letter-spacing: 0.13em;
@@ -178,18 +178,18 @@
 
 .usl-story-copy > strong {
   display: block;
-  margin-top: 38px;
-  font-size: clamp(4.2rem, 8vw, 9rem);
+  margin-top: 0;
+  font-size: clamp(2.9rem, 4.2vw, 4.7rem);
   font-weight: 510;
-  line-height: 0.78;
-  letter-spacing: -0.075em;
+  line-height: 0.86;
+  letter-spacing: -0.065em;
 }
 
 .usl-story-copy > b {
   display: block;
   max-width: 360px;
-  margin-top: 25px;
-  font-size: clamp(1.05rem, 1.8vw, 1.7rem);
+  margin-top: 17px;
+  font-size: clamp(0.9rem, 1.15vw, 1.18rem);
   font-weight: 530;
   line-height: 1.1;
   letter-spacing: -0.035em;
@@ -197,18 +197,18 @@
 
 .usl-story-copy > p {
   max-width: 470px;
-  margin: 28px 0;
-  font-size: 0.9rem;
-  line-height: 1.65;
+  display: -webkit-box;
+  margin: 17px 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: 0.75rem;
+  line-height: 1.5;
   opacity: 0.76;
 }
 
 .usl-story-copy > em {
-  font-style: normal;
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
-  opacity: 0.62;
+  display: none;
 }
 
 .usl-story-cta {
@@ -216,12 +216,26 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 44px;
+  margin-top: auto;
   padding-bottom: 7px;
   border-bottom: 1px solid currentColor;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+@media (max-width: 1200px) {
+  .usl-product-stories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .usl-story-visual {
+    height: min(62vw, 580px);
+  }
+
+  .usl-story-copy > strong {
+    font-size: clamp(3.8rem, 8vw, 6rem);
+  }
 }
 
 .usl-gallery-modal {
@@ -403,11 +417,11 @@
 
 @media (max-width: 900px) {
   .usl-packaging {
-    padding: 100px 18px;
+    padding: 80px 18px;
   }
 
   .usl-packaging-intro {
-    padding-bottom: 70px;
+    padding-bottom: 50px;
   }
 
   .usl-packaging-intro > div {
@@ -417,11 +431,11 @@
   }
 
   .usl-packaging-intro h2 {
-    font-size: clamp(3.7rem, 15vw, 6.4rem);
+    font-size: clamp(3.2rem, 11vw, 5.8rem);
   }
 
   .usl-product-story {
-    border-radius: 24px;
+    border-radius: 20px;
   }
 
   .usl-product-story > button {
@@ -434,9 +448,8 @@
   }
 
   .usl-story-visual {
-    height: min(128vw, 680px);
+    height: min(65vw, 520px);
     padding: 10px;
-    grid-template-columns: minmax(0, 1.5fr) minmax(90px, 0.5fr);
   }
 
   .usl-story-visual img {
@@ -449,13 +462,13 @@
   }
 
   .usl-story-copy {
-    min-height: 510px;
-    padding: 32px 26px 38px;
+    min-height: 280px;
+    padding: 24px 22px 26px;
   }
 
   .usl-story-copy > strong {
-    margin-top: 42px;
-    font-size: clamp(4.5rem, 22vw, 7rem);
+    margin-top: 0;
+    font-size: clamp(3.2rem, 8vw, 5.2rem);
   }
 
   .usl-gallery-modal {
@@ -506,6 +519,24 @@
 
   .usl-gallery-sidebar > a {
     margin-top: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  .usl-product-stories {
+    grid-template-columns: 1fr;
+  }
+
+  .usl-story-visual {
+    height: min(112vw, 500px);
+  }
+
+  .usl-story-copy {
+    min-height: 275px;
+  }
+
+  .usl-story-copy > strong {
+    font-size: clamp(3.8rem, 18vw, 5.4rem);
   }
 }
 
