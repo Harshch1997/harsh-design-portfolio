@@ -13,9 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://harsh-chhabra-design-portfolio.harshchhabra3330.chatgpt.site"),
   title: "Harsh Chhabra — Graphic & UI/UX Designer",
   description:
-    "Selected work by Harsh Chhabra — brand identity, UI/UX design, social campaigns and motion.",
+    "Recruiter-ready selected work by Harsh Chhabra across product design, brand systems, campaigns, packaging and motion.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -23,8 +24,22 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Harsh Chhabra — Design that makes brands unmissable",
     description:
-      "Brand identity, UI/UX design, social campaigns and motion.",
+      "Product design, brand systems, campaigns, packaging and motion—selected work by Harsh Chhabra.",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1731,
+        height: 909,
+        alt: "Harsh Chhabra — Design that makes brands unmissable",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Harsh Chhabra — Design Portfolio",
+    description: "Product design, brand systems, campaigns, packaging and motion.",
+    images: ["/og.png"],
   },
 };
 
