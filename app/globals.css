@@ -2112,8 +2112,14 @@ footer h2 {
 }
 
 .youtube-card strong {
+  max-width: calc(100% - 66px);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   margin-top: 5px;
   font-size: 1.02rem;
+  line-height: 1.25;
 }
 
 .youtube-card em {

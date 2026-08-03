@@ -18,7 +18,7 @@ const videos = youtubeCatalogues.flatMap((group) =>
     id,
     channel: group.channel,
     handle: group.handle,
-    title: `Video ${String(index + 1).padStart(3, "0")}`,
+    title: group.titles?.[index] ?? `Video ${String(index + 1).padStart(3, "0")}`,
   })),
 );
 

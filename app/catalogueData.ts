@@ -174,7 +174,14 @@ export const instagramPostCatalogues = [
   },
 ];
 
-export const youtubeCatalogues = [
+type YouTubeCatalogue = {
+  channel: string;
+  handle: string;
+  ids: string[];
+  titles?: string[];
+};
+
+export const youtubeCatalogues: YouTubeCatalogue[] = [
   {
     channel: "The Original You Show",
     handle: "theoriginalyoushow",
@@ -184,5 +191,15 @@ export const youtubeCatalogues = [
     channel: "GoSharpener",
     handle: "gosharpener",
     ids: ids("8WX58L1BIQk U91-xIy11aE axooKW0kP_Q"),
+  },
+  {
+    channel: "My Elyara",
+    handle: "myelyara",
+    ids: ids("aa_H6RpJcVI U4xKBfhCQzs AjUfyDF-YNk"),
+    titles: [
+      "Hair Restoration 2026: Global Trends",
+      "Hair Restoration Master Class",
+      "The Filler That Wakes Up Collagen",
+    ],
   },
 ];
