@@ -325,7 +325,7 @@ export function DesignCollections() {
               />
             </div>
           ) : (
-            <div className={`lightbox-content ${active.collection.id === "identity" ? "identity-lightbox" : ""}`}>
+            <div className={`lightbox-content ${active.collection.id === "identity" ? `identity-lightbox identity-tone-${active.index % 4}` : ""}`}>
               <img
                 src={thumb(active.id, 1800)}
                 alt={`${active.collection.kicker} artwork ${active.index + 1}`}

@@ -1400,10 +1400,31 @@ footer h2 {
 }
 
 #identity .identity-logo-surface {
+  --logo-brown-mid: #5f3525;
+  --logo-brown-deep: #24130e;
+  --logo-brown-glow: rgba(205, 145, 104, 0.34);
   background:
-    radial-gradient(circle at 22% 18%, rgba(73, 110, 159, 0.34), transparent 38%),
-    linear-gradient(145deg, #172a44 0%, #0b1728 100%);
+    radial-gradient(circle at 22% 18%, var(--logo-brown-glow), transparent 42%),
+    linear-gradient(145deg, var(--logo-brown-mid) 0%, var(--logo-brown-deep) 100%);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+#identity .collection-card:nth-child(4n + 2) .identity-logo-surface {
+  --logo-brown-mid: #704b35;
+  --logo-brown-deep: #2e1d15;
+  --logo-brown-glow: rgba(218, 174, 132, 0.28);
+}
+
+#identity .collection-card:nth-child(4n + 3) .identity-logo-surface {
+  --logo-brown-mid: #754636;
+  --logo-brown-deep: #321a14;
+  --logo-brown-glow: rgba(203, 126, 91, 0.32);
+}
+
+#identity .collection-card:nth-child(4n + 4) .identity-logo-surface {
+  --logo-brown-mid: #653127;
+  --logo-brown-deep: #28110f;
+  --logo-brown-glow: rgba(190, 96, 72, 0.3);
 }
 
 #identity .identity-logo-surface::after,
@@ -1420,14 +1441,35 @@ footer h2 {
 
 .identity-lightbox {
   position: relative;
+  --logo-brown-mid: #5f3525;
+  --logo-brown-deep: #24130e;
+  --logo-brown-glow: rgba(205, 145, 104, 0.34);
+}
+
+.identity-lightbox.identity-tone-1 {
+  --logo-brown-mid: #704b35;
+  --logo-brown-deep: #2e1d15;
+  --logo-brown-glow: rgba(218, 174, 132, 0.28);
+}
+
+.identity-lightbox.identity-tone-2 {
+  --logo-brown-mid: #754636;
+  --logo-brown-deep: #321a14;
+  --logo-brown-glow: rgba(203, 126, 91, 0.32);
+}
+
+.identity-lightbox.identity-tone-3 {
+  --logo-brown-mid: #653127;
+  --logo-brown-deep: #28110f;
+  --logo-brown-glow: rgba(190, 96, 72, 0.3);
 }
 
 .identity-lightbox > img {
   position: relative;
   z-index: 1;
   background:
-    radial-gradient(circle at 30% 18%, rgba(70, 108, 157, 0.36), transparent 42%),
-    linear-gradient(145deg, #172a44 0%, #091321 100%);
+    radial-gradient(circle at 30% 18%, var(--logo-brown-glow), transparent 42%),
+    linear-gradient(145deg, var(--logo-brown-mid) 0%, var(--logo-brown-deep) 100%);
 }
 
 .identity-lightbox > div {
