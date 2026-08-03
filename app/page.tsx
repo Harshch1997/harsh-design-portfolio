@@ -428,7 +428,7 @@ export default function Home() {
         <div className="work-grid visual-work-grid">
           {prioritizedWork.map((item) => (
             <a
-              className={`project-card ${item.video ? "video-project" : ""} ${item.featured ? "featured-project" : ""} ${item.website ? "website-project" : ""}`}
+              className={`project-card ${item.video ? "video-project" : ""} ${item.featured ? "featured-project" : ""} ${item.website ? "website-project" : ""} ${item.frame ? "case-project" : ""}`}
               href={item.href}
               target="_blank"
               rel="noreferrer"

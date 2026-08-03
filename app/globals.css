@@ -4930,6 +4930,30 @@ footer h2 {
     margin-bottom: 30px;
   }
 
+  .case-project:not(.video-project) .case-preview-foot {
+    min-height: 38px;
+    padding-right: 118px;
+  }
+
+  .case-project:not(.video-project) .case-preview-foot > strong {
+    max-width: 100%;
+  }
+
+  .case-project:not(.video-project) .case-preview-foot > div {
+    display: none;
+  }
+
+  .case-project:not(.video-project) .view-pill {
+    top: auto;
+    right: 14px;
+    bottom: 14px;
+    z-index: 7;
+    padding: 8px 10px;
+    opacity: 1;
+    transform: none;
+    font-size: 0.54rem;
+  }
+
   .work-grid {
     display: flex;
     gap: 12px;
