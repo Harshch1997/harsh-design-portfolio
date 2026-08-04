@@ -241,9 +241,12 @@ export default function Home() {
           <a href="#social"><Clapperboard size={15} />Social</a>
           <a href="#video"><TvMinimalPlay size={15} />Video</a>
           <a href="#work"><MonitorSmartphone size={15} />UI/UX</a>
-          <a href="#resume"><BookOpenText size={15} />Resume</a>
+          <a className="nav-resume" href="#resume"><BookOpenText size={15} />Resume</a>
           <a href="#about"><UserRound size={15} />About</a>
         </nav>
+        <a className="mobile-resume-link" href="#resume">
+          <BookOpenText size={15} /> Resume
+        </a>
         <a
           className="availability"
           href="https://www.behance.net/harshchhabra"
@@ -255,7 +258,14 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <p className="eyebrow"><MapPin size={15} /> Independent designer · India</p>
+        <div className="hero-topline">
+          <p className="eyebrow"><MapPin size={15} /> Independent designer · India</p>
+          <a className="hero-resume-shortcut" href="#resume">
+            <BookOpenText size={17} />
+            <span><small>For recruiters</small><strong>View resume</strong></span>
+            <Arrow />
+          </a>
+        </div>
         <h1>
           Design that makes
           <br />
