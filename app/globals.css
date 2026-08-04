@@ -3766,6 +3766,34 @@ footer h2 {
   transform: translateY(-3px);
 }
 
+.whatsapp-contact {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  z-index: 87;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 18px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #168c50;
+  box-shadow: 0 16px 45px rgba(10, 90, 48, 0.28);
+  font-size: 0.72rem;
+  font-weight: 620;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.whatsapp-contact:hover {
+  transform: translateY(-3px);
+  background: #117542;
+  box-shadow: 0 20px 55px rgba(10, 90, 48, 0.36);
+}
+
 @media (max-width: 800px) {
   .portfolio-stats {
     grid-template-columns: 1fr 1fr;
@@ -3826,6 +3854,31 @@ footer h2 {
   .back-to-top {
     right: 14px;
     bottom: 72px;
+  }
+
+  .whatsapp-contact {
+    left: 12px;
+    bottom: 12px;
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    min-height: 48px;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+  }
+
+  .whatsapp-contact span {
+    display: none;
+  }
+
+  .whatsapp-contact.is-available {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
   }
 
   .work-index a {

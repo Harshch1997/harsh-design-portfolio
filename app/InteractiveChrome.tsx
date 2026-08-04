@@ -13,6 +13,7 @@ import {
   LayoutPanelTop,
   Megaphone,
   Menu,
+  MessageCircle,
   MonitorSmartphone,
   PackageOpen,
   Palette,
@@ -141,6 +142,17 @@ export function InteractiveChrome() {
       >
         <ArrowUp size={19} />
       </button>
+
+      <a
+        className={`whatsapp-contact ${showTop ? "is-available" : ""}`}
+        href="https://wa.me/919911166926?text=Hello%20Harsh%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20design%20project."
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Connect with Harsh on WhatsApp"
+      >
+        <MessageCircle size={21} strokeWidth={2} />
+        <span>WhatsApp</span>
+      </a>
     </>
   );
 }
