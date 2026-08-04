@@ -16,6 +16,7 @@ import {
   BriefcaseBusiness,
   Camera,
   Clapperboard,
+  Download,
   Eye,
   Film,
   FolderOpen,
@@ -241,6 +242,7 @@ export default function Home() {
           <a href="#social"><Clapperboard size={15} />Social</a>
           <a href="#video"><TvMinimalPlay size={15} />Video</a>
           <a href="#work"><MonitorSmartphone size={15} />UI/UX</a>
+          <a href="#resume"><BookOpenText size={15} />Resume</a>
           <a href="#about"><UserRound size={15} />About</a>
         </nav>
         <a
@@ -613,6 +615,59 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="resume-section" id="resume" data-reveal>
+        <div className="resume-section-copy">
+          <p className="kicker"><BookOpenText size={15} /> Recruiter-ready resume</p>
+          <h2>Experience,<br />in one clear view.</h2>
+          <p>
+            Six-plus years across brand, UI/UX, social, packaging, performance
+            creative and motion—currently leading multidisciplinary design at
+            Uncover Wellness.
+          </p>
+          <div className="resume-facts" aria-label="Resume highlights">
+            <span><strong>6+</strong> years of experience</span>
+            <span><strong>9</strong> creative disciplines</span>
+            <span><strong>2</strong> focused pages</span>
+          </div>
+          <div className="resume-actions">
+            <a
+              className="resume-view"
+              href="/resume/Harsh-Chhabra-Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Eye size={18} /> View resume <Arrow />
+            </a>
+            <a
+              className="resume-download"
+              href="/resume/Harsh-Chhabra-Resume.pdf"
+              download="Harsh-Chhabra-Resume.pdf"
+            >
+              <Download size={18} /> Download PDF
+            </a>
+          </div>
+        </div>
+        <a
+          className="resume-preview"
+          href="/resume/Harsh-Chhabra-Resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open Harsh Chhabra's resume"
+        >
+          <span className="resume-preview-label"><Eye size={14} /> Click to open</span>
+          <img
+            src="/resume/Harsh-Chhabra-Resume-preview.png"
+            alt="Preview of Harsh Chhabra's senior creative designer resume"
+            loading="lazy"
+          />
+          <span className="resume-preview-foot">
+            <small>Updated 2026</small>
+            <strong>Senior Creative Designer</strong>
+            <Arrow />
+          </span>
+        </a>
       </section>
 
       <footer id="contact" data-reveal>
