@@ -83,7 +83,7 @@ export function StaticPostShowcase() {
           >
             <span className="post-image">
               <img
-                src={`/posts/${post.code}.webp`}
+                src={post.image ?? `/posts/${post.code}.webp`}
                 alt={`${post.brand}: ${post.title}`}
                 loading="lazy"
               />

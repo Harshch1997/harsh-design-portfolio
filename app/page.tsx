@@ -184,6 +184,11 @@ const prioritizedWork = [...work]
 
 const brandWork = [
   {
+    name: "My Elyara",
+    service: "Regenerative aesthetics · Social design",
+    href: "https://www.instagram.com/myelyara/",
+  },
+  {
     name: "Uncover Wellness",
     service: "Dermatology · Wellness campaigns",
     href: "https://www.instagram.com/uncover.wellness/",

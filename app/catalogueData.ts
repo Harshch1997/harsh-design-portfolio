@@ -105,6 +105,14 @@ export const instagramCatalogues = [
 
 export const instagramPostCatalogues = [
   {
+    brand: "My Elyara",
+    accent: "#f26b3a",
+    posts: [
+      { code: "DbXoiucvcwC", slides: 1, image: "/posts/DbXoiucvcwC.jpg" },
+      { code: "DZxGYtgPxVJ", slides: 1, image: "/posts/DZxGYtgPxVJ.jpg" },
+    ],
+  },
+  {
     brand: "Uncover Wellness",
     accent: "#c99568",
     posts: [
