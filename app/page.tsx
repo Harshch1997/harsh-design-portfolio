@@ -243,6 +243,14 @@ export default function Home() {
           <a href="#video"><TvMinimalPlay size={15} />Video</a>
           <a href="#work"><MonitorSmartphone size={15} />UI/UX</a>
           <a className="nav-resume" href="#resume"><BookOpenText size={15} />Resume</a>
+          <a
+            className="nav-whatsapp"
+            href="https://wa.me/919911166926?text=Hello%20Harsh%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20design%20project."
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="/whatsapp.svg" alt="" aria-hidden="true" /> WhatsApp
+          </a>
           <a href="#about"><UserRound size={15} />About</a>
         </nav>
         <a className="mobile-resume-link" href="#resume">

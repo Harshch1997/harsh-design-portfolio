@@ -13,7 +13,6 @@ import {
   LayoutPanelTop,
   Megaphone,
   Menu,
-  MessageCircle,
   MonitorSmartphone,
   PackageOpen,
   Palette,
@@ -151,7 +150,7 @@ export function InteractiveChrome() {
         rel="noreferrer"
         aria-label="Connect with Harsh on WhatsApp"
       >
-        <MessageCircle size={21} strokeWidth={2} />
+        <img src="/whatsapp.svg" alt="" aria-hidden="true" />
         <span>WhatsApp</span>
       </a>
     </>
