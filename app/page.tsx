@@ -21,7 +21,6 @@ import {
   Film,
   FolderOpen,
   GalleryHorizontalEnd,
-  Images,
   LayoutPanelTop,
   LayoutTemplate,
   MapPin,
@@ -277,11 +276,11 @@ export default function Home() {
         <div className="hero-orbit orbit-two">Branding</div>
       </section>
 
-      <section className="portfolio-stats" data-reveal aria-label="Portfolio overview">
-        <div><Clapperboard /><strong>47</strong><span>Design reels</span></div>
-        <div><GalleryHorizontalEnd /><strong>32</strong><span>Social posts</span></div>
-        <div><TvMinimalPlay /><strong>39</strong><span>Video, motion &amp; ad pieces</span></div>
-        <div><Images /><strong>246</strong><span>Archived artworks</span></div>
+      <section className="portfolio-stats" data-reveal aria-label="Career highlights">
+        <div><BriefcaseBusiness /><strong>6+</strong><span>Years designing brands &amp; digital products</span></div>
+        <div><UserRound /><strong>NOW</strong><span>Senior Creative Designer · Uncover Wellness</span></div>
+        <div><Palette /><strong>09</strong><span>Disciplines across brand, product &amp; motion</span></div>
+        <div><Sparkles /><strong>360°</strong><span>Concept, design, production &amp; delivery</span></div>
       </section>
 
       <section className="work-index" data-reveal aria-label="Portfolio categories">
