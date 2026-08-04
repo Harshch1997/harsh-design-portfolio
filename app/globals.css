@@ -2992,6 +2992,64 @@ footer h2 {
   opacity: 0.52;
 }
 
+.podcast-subsection {
+  margin: 72px 3.5vw 0;
+  padding-top: 58px;
+  border-top: 1px solid rgba(14, 35, 65, 0.25);
+}
+
+.podcast-subsection-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 7vw;
+  align-items: end;
+  margin-bottom: 38px;
+}
+
+.podcast-subsection-head h3 {
+  margin: 20px 0 0;
+  font-size: clamp(3rem, 6vw, 6.2rem);
+  font-weight: 540;
+  line-height: 0.87;
+  letter-spacing: -0.07em;
+}
+
+.podcast-subsection-head > p {
+  margin: 0;
+  max-width: 520px;
+  color: rgba(14, 35, 65, 0.62);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.podcast-controls,
+.podcast-track {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.podcast-card > span {
+  border-radius: 12px;
+}
+
+.podcast-card > span b {
+  position: absolute;
+  z-index: 2;
+  left: 12px;
+  top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--acid);
+  font-size: 0.58rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
 .youtube-shorts-section {
   position: relative;
   padding: 7vw 3.5vw;
@@ -3583,6 +3641,29 @@ footer h2 {
 
   .youtube-card {
     flex-basis: min(84vw, 365px);
+  }
+
+  .podcast-subsection {
+    margin: 52px 16px 0;
+    padding-top: 42px;
+  }
+
+  .podcast-subsection-head {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .podcast-subsection-head h3 {
+    font-size: clamp(2.75rem, 12vw, 4rem);
+  }
+
+  .podcast-subsection-head > p {
+    font-size: 0.86rem;
+  }
+
+  .podcast-card {
+    flex-basis: min(78vw, 330px);
   }
 
   .youtube-shorts-section {

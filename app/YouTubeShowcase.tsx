@@ -6,6 +6,8 @@ import {
   ChevronLeft,
   ChevronRight,
   ExternalLink,
+  Headphones,
+  Mic2,
   MousePointerClick,
   Play,
   Video,
@@ -13,7 +15,7 @@ import {
   TvMinimalPlay,
 } from "lucide-react";
 
-const videos = youtubeCatalogues.flatMap((group) =>
+const allVideos = youtubeCatalogues.flatMap((group) =>
   group.ids.map((id, index) => ({
     id,
     channel: group.channel,
@@ -22,10 +24,25 @@ const videos = youtubeCatalogues.flatMap((group) =>
   })),
 );
 
+const podcastIds = new Set([
+  "RTbvq99VrNE",
+  "voSM-iCHeFg",
+  "GPzpXyRHUb8",
+  "Vz2wqRwpZGk",
+  "CA2nl0PrL_8",
+  "hoVh-oKvOiQ",
+  "pNFfK-W7nXE",
+]);
+
+const podcasts = allVideos.filter((video) => podcastIds.has(video.id));
+const videos = allVideos.filter((video) => !podcastIds.has(video.id));
+const videoChannels = ["All", ...new Set(videos.map((video) => video.channel))];
+
 export function YouTubeShowcase() {
   const [filter, setFilter] = useState("All");
-  const [active, setActive] = useState<(typeof videos)[number] | null>(null);
+  const [active, setActive] = useState<(typeof allVideos)[number] | null>(null);
   const track = useRef<HTMLDivElement>(null);
+  const podcastTrack = useRef<HTMLDivElement>(null);
   const visible = filter === "All" ? videos : videos.filter((video) => video.channel === filter);
 
   useEffect(() => {
@@ -45,10 +62,16 @@ export function YouTubeShowcase() {
       behavior: "smooth",
     });
 
+  const movePodcasts = (direction: number) =>
+    podcastTrack.current?.scrollBy({
+      left: direction * Math.min(window.innerWidth * 0.82, 900),
+      behavior: "smooth",
+    });
+
   return (
     <>
       <div className="youtube-filter">
-        {["All", ...youtubeCatalogues.map((group) => group.channel)].map((channel) => (
+        {videoChannels.map((channel) => (
           <button
             key={channel}
             className={filter === channel ? "active" : ""}
@@ -90,6 +113,49 @@ export function YouTubeShowcase() {
             <em>{String(index + 1).padStart(3, "0")} / {visible.length}</em>
           </button>
         ))}
+      </div>
+
+      <div className="podcast-subsection" id="podcasts">
+        <div className="podcast-subsection-head">
+          <div>
+            <p className="kicker"><Mic2 size={15} /> Podcast production</p>
+            <h3>Podcasts &amp;<br />conversations.</h3>
+          </div>
+          <p>
+            Long-form interview edits, branded conversation formats and visual
+            storytelling for The Original You Show and Uncover Wellness.
+          </p>
+        </div>
+        <div className="archive-controls podcast-controls">
+          <strong><Headphones size={15} /> {podcasts.length} podcast episodes</strong>
+          <span><MousePointerClick size={14} /> Click any episode to watch</span>
+          <div>
+            <button onClick={() => movePodcasts(-1)} aria-label="Previous podcasts"><ChevronLeft /></button>
+            <button onClick={() => movePodcasts(1)} aria-label="Next podcasts"><ChevronRight /></button>
+          </div>
+        </div>
+        <div className="youtube-track podcast-track" ref={podcastTrack}>
+          {podcasts.map((podcast, index) => (
+            <button
+              className="youtube-card podcast-card"
+              key={podcast.id}
+              onClick={() => setActive(podcast)}
+            >
+              <span>
+                <img
+                  src={`https://i.ytimg.com/vi/${podcast.id}/hqdefault.jpg`}
+                  alt={`${podcast.channel} podcast: ${podcast.title}`}
+                  loading="lazy"
+                />
+                <i><Play size={22} fill="currentColor" /></i>
+                <b><Mic2 size={13} /> Podcast</b>
+              </span>
+              <small>{podcast.channel}</small>
+              <strong>{podcast.title}</strong>
+              <em>{String(index + 1).padStart(2, "0")} / {podcasts.length}</em>
+            </button>
+          ))}
+        </div>
       </div>
 
       {active && (

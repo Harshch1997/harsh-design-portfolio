@@ -210,6 +210,14 @@ export const youtubeCatalogues: YouTubeCatalogue[] = [
     channel: "The Original You Show",
     handle: "theoriginalyoushow",
     ids: ids("voSM-iCHeFg GPzpXyRHUb8 Vz2wqRwpZGk CA2nl0PrL_8 hoVh-oKvOiQ pNFfK-W7nXE"),
+    titles: [
+      "Building, Branding & Big Exits",
+      "Khana, Khazana & Keeping It Timeless",
+      "Love, Logistics & a Little SPF",
+      "Punchlines, Pressure & the Power of Being Real",
+      "Govinda Genes, Glow-Ups & Growing Up in Bollywood",
+      "Insecurities, Injectables & Influence",
+    ],
   },
   {
     channel: "GoSharpener",
