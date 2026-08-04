@@ -102,7 +102,7 @@ export function InteractiveChrome() {
         <i style={{ width: `${progress}%` }} />
       </div>
 
-      <div className={`project-map ${open ? "open" : ""}`}>
+      <div className={`project-map ${open ? "open" : ""} ${showTop ? "is-available" : ""}`}>
         <button
           className="project-map-trigger"
           onClick={() => setOpen((value) => !value)}
