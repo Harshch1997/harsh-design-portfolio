@@ -1,6 +1,7 @@
 import { ReelShowcase } from "./ReelShowcase";
 import { DesignCollections } from "./DesignCollections";
 import { YouTubeShowcase } from "./YouTubeShowcase";
+import { YouTubeShortsShowcase } from "./YouTubeShortsShowcase";
 import { StaticPostShowcase } from "./StaticPostShowcase";
 import { InteractiveChrome } from "./InteractiveChrome";
 import { MotionGraphicsShowcase } from "./MotionGraphicsShowcase";
@@ -418,6 +419,8 @@ export default function Home() {
         </div>
         <YouTubeShowcase />
       </section>
+
+      <YouTubeShortsShowcase />
 
       <section className="performance-ads-section" id="performance-ads" data-reveal>
         <div className="performance-ads-head">

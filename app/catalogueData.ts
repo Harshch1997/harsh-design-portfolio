@@ -191,6 +191,22 @@ type YouTubeCatalogue = {
 
 export const youtubeCatalogues: YouTubeCatalogue[] = [
   {
+    channel: "Uncover Wellness",
+    handle: "UncoverWellness",
+    ids: ids("RTbvq99VrNE 5wxjDe2MKIQ oYfgVa8qGHM aRaZLrl-lqE G58TVu-alNQ CCSFKfUTvnw NuTcEyjTDnM uo-5Wowt_eI jUBbxOQrAX8"),
+    titles: [
+      "Under The Skin · Ep. 1 — Skin Cancer in India",
+      "The Confidence After Laser Hair Removal",
+      "The UNCOVER Experience · Golf Course Road",
+      "Instant Skin Score & Detailed Skin Analysis",
+      "UNCOVER Clinics · Body Treatments",
+      "UNCOVER Clinics · Plasma Hair Restoration",
+      "Advanced Skin Treatments at UNCOVER Clinics",
+      "Laser Hair Reduction at UNCOVER Clinics",
+      "UNCOVER Clinic Grand Launch",
+    ],
+  },
+  {
     channel: "The Original You Show",
     handle: "theoriginalyoushow",
     ids: ids("voSM-iCHeFg GPzpXyRHUb8 Vz2wqRwpZGk CA2nl0PrL_8 hoVh-oKvOiQ pNFfK-W7nXE"),
@@ -210,4 +226,33 @@ export const youtubeCatalogues: YouTubeCatalogue[] = [
       "The Filler That Wakes Up Collagen",
     ],
   },
+];
+
+export const youtubeShorts = [
+  { id: "kFXrISf-NmQ", title: "Exosome Therapy in Regenerative Dermatology" },
+  { id: "Wcrk4bf5sRQ", title: "Do Not Use Minoxidil" },
+  { id: "yFr3iwTuqXQ", title: "Summer Tips by Dermatologists" },
+  { id: "H31u1blmd-k", title: "When Hormones Take Over Your Skin" },
+  { id: "-Tx5nmsNOqo", title: "A Different Kind of Valentine’s Gift" },
+  { id: "gpRDbBV_oP0", title: "India’s First Non-invasive Eye Regen Treatment" },
+  { id: "XQymi56XlqA", title: "Acne and Acne Scars Are a Real Problem" },
+  { id: "-pMVTmeQsNE", title: "Laser Hair Reduction Is Not Permanent" },
+  { id: "UWFh0KiHzI0", title: "You Are Not Alone" },
+  { id: "iz2OTRxhY0M", title: "This Is What I Call an Aesthetic Clinic" },
+  { id: "7jBu0TVgm1c", title: "Bacne Is a Thing — Here’s How You Fix It" },
+  { id: "0z27-CPTUjI", title: "2026 Is the Year I Glow Up" },
+  { id: "BC-CaCuUoYk", title: "The Magical Expectations from Dermatologists" },
+  { id: "I9nrNPnek5A", title: "Laser Hair Reduction Is Not for Everyone" },
+  { id: "6dQRtTgDgaY", title: "The Perfect Valentine’s Gift" },
+  { id: "ZYoKBkrI79o", title: "What Happens After Your First Mounjaro Shot?" },
+  { id: "cbexIIGLMGk", title: "Mayyur Girotra · Laser Toning & Sunburn Treatment" },
+  { id: "RHGjY_pZ-y4", title: "Acne Treatment at UNCOVER Clinics" },
+  { id: "yqnlxg3_Kqk", title: "Advanced Microneedling with Dermapen 4" },
+  { id: "nWyCTNhHzDc", title: "The Glow Peel · UNCOVER Testimonial" },
+  { id: "m1mTL0KE3QA", title: "OxyBright Facial & Laser Hair Reduction" },
+  { id: "Jmfz2a4Kqc0", title: "Laser Hair Removal at UNCOVER Clinics" },
+  { id: "Qw_1fVIMGgE", title: "Laser Hair Removal at Home by UNCOVER" },
+  { id: "kaxU6kEI1Dw", title: "UNCOVER Laser, Skin & Hair Clinic · Coming Soon" },
+  { id: "uoaikN7Dr7M", title: "Met Gala · Skin & Hair Treatments" },
+  { id: "w7NG83-UiX4", title: "Uncover the Original You · Tailored Treatments" },
 ];

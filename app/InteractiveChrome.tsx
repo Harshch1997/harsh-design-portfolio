@@ -28,6 +28,7 @@ const destinations = [
   { id: "social", label: "Reels", icon: Clapperboard },
   { id: "static-posts", label: "Social posts", icon: GalleryHorizontalEnd },
   { id: "video", label: "YouTube", icon: TvMinimalPlay },
+  { id: "youtube-shorts", label: "YouTube Shorts", icon: MonitorSmartphone },
   { id: "performance-ads", label: "Performance ads", icon: Megaphone },
   { id: "brochures", label: "Brochures", icon: BookOpenText },
   { id: "identity", label: "Brand identity", icon: Palette },
