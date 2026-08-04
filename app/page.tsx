@@ -185,11 +185,6 @@ const prioritizedWork = [...work]
 
 const brandWork = [
   {
-    name: "My Elyara",
-    service: "Regenerative aesthetics · Social design",
-    href: "https://www.instagram.com/myelyara/",
-  },
-  {
     name: "Uncover Wellness",
     service: "Dermatology · Wellness campaigns",
     href: "https://www.instagram.com/uncover.wellness/",
@@ -203,6 +198,11 @@ const brandWork = [
     name: "Uncover Hair",
     service: "Brand communication · Social",
     href: "https://www.instagram.com/uncover.hair/",
+  },
+  {
+    name: "My Elyara",
+    service: "Regenerative aesthetics · Social design",
+    href: "https://www.instagram.com/myelyara/",
   },
   {
     name: "Go Sharpener",

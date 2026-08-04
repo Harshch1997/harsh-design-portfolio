@@ -105,14 +105,6 @@ export const instagramCatalogues = [
 
 export const instagramPostCatalogues = [
   {
-    brand: "My Elyara",
-    accent: "#f26b3a",
-    posts: [
-      { code: "DbXoiucvcwC", slides: 1, image: "/posts/DbXoiucvcwC.jpg" },
-      { code: "DZxGYtgPxVJ", slides: 1, image: "/posts/DZxGYtgPxVJ.jpg" },
-    ],
-  },
-  {
     brand: "Uncover Wellness",
     accent: "#c99568",
     posts: [
@@ -140,6 +132,14 @@ export const instagramPostCatalogues = [
       { code: "Da0RIkdGJcg", slides: 7 },
       { code: "Daxf7j6GJEk", slides: 6 },
       { code: "Dau0iSCHNcV", slides: 7 },
+    ],
+  },
+  {
+    brand: "My Elyara",
+    accent: "#f26b3a",
+    posts: [
+      { code: "DbXoiucvcwC", slides: 1, image: "/posts/DbXoiucvcwC.jpg" },
+      { code: "DZxGYtgPxVJ", slides: 1, image: "/posts/DZxGYtgPxVJ.jpg" },
     ],
   },
   {
@@ -207,6 +207,16 @@ export const youtubeCatalogues: YouTubeCatalogue[] = [
     ],
   },
   {
+    channel: "My Elyara",
+    handle: "myelyara",
+    ids: ids("aa_H6RpJcVI U4xKBfhCQzs AjUfyDF-YNk"),
+    titles: [
+      "Hair Restoration 2026: Global Trends",
+      "Hair Restoration Master Class",
+      "The Filler That Wakes Up Collagen",
+    ],
+  },
+  {
     channel: "The Original You Show",
     handle: "theoriginalyoushow",
     ids: ids("voSM-iCHeFg GPzpXyRHUb8 Vz2wqRwpZGk CA2nl0PrL_8 hoVh-oKvOiQ pNFfK-W7nXE"),
@@ -223,16 +233,6 @@ export const youtubeCatalogues: YouTubeCatalogue[] = [
     channel: "GoSharpener",
     handle: "gosharpener",
     ids: ids("8WX58L1BIQk U91-xIy11aE axooKW0kP_Q"),
-  },
-  {
-    channel: "My Elyara",
-    handle: "myelyara",
-    ids: ids("aa_H6RpJcVI U4xKBfhCQzs AjUfyDF-YNk"),
-    titles: [
-      "Hair Restoration 2026: Global Trends",
-      "Hair Restoration Master Class",
-      "The Filler That Wakes Up Collagen",
-    ],
   },
 ];
 
