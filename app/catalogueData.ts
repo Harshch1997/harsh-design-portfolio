@@ -193,8 +193,9 @@ export const youtubeCatalogues: YouTubeCatalogue[] = [
   {
     channel: "Uncover Wellness",
     handle: "UncoverWellness",
-    ids: ids("RTbvq99VrNE 5wxjDe2MKIQ oYfgVa8qGHM aRaZLrl-lqE G58TVu-alNQ CCSFKfUTvnw NuTcEyjTDnM uo-5Wowt_eI jUBbxOQrAX8"),
+    ids: ids("XbcuakaDH4Q RTbvq99VrNE 5wxjDe2MKIQ oYfgVa8qGHM aRaZLrl-lqE G58TVu-alNQ CCSFKfUTvnw NuTcEyjTDnM uo-5Wowt_eI jUBbxOQrAX8"),
     titles: [
+      "Aging Skin: Beyond Wrinkles · Under The Skin",
       "Under The Skin · Ep. 1 — Skin Cancer in India",
       "The Confidence After Laser Hair Removal",
       "The UNCOVER Experience · Golf Course Road",

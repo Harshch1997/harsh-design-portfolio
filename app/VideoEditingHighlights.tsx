@@ -25,10 +25,14 @@ type Highlight = {
   note: string;
   craft: string[];
   thumbnail?: string;
+  orientation?: "vertical" | "horizontal";
 };
 
 const highlights: Highlight[] = [
-  { id: "1GtZ9Jfee3iA5khSiutOeH71bW_0WW4ZG", kind: "drive", brand: "Orange Health", title: "Diagnostics, made cinematic", format: "Digital campaign film", note: "Purposeful sequencing, motion-led transitions, sound design and a complete campaign storyline.", craft: ["Story", "Grade", "Sound"] },
+  { id: "XbcuakaDH4Q", kind: "youtube", brand: "Uncover Wellness", title: "Aging Skin: Beyond Wrinkles", format: "Under The Skin · Editorial film", note: "A polished conversation-led edit combining expert insight, strong narrative pacing, branded framing and visual continuity.", craft: ["Story", "Pacing", "Sound"], orientation: "horizontal" },
+  { id: "13C5zUbIui44wsfRassA2lALviy3PEBR8", kind: "drive", brand: "Selected campaign work", title: "Campaign film · Director's cut", format: "Horizontal brand film", note: "A high-effort campaign edit with cinematic composition, controlled pacing and a polished visual finish.", craft: ["Cinematic", "Edit", "Finish"], thumbnail: "/editing-thumbs/drive-13C5zUbIui44wsfRassA2lALviy3PEBR8.jpg", orientation: "horizontal" },
+  { id: "1GtZ9Jfee3iA5khSiutOeH71bW_0WW4ZG", kind: "drive", brand: "Orange Health", title: "Diagnostics, made cinematic", format: "Digital campaign film", note: "Purposeful sequencing, motion-led transitions, sound design and a complete campaign storyline.", craft: ["Story", "Grade", "Sound"], thumbnail: "/editing-thumbs/orange-health.jpg", orientation: "vertical" },
+  { id: "1M066shmsHB7XfBV5axDbMRx0Z9TEV2Jo", kind: "drive", brand: "Selected social campaign", title: "Vertical campaign edit", format: "Portrait social film", note: "A mobile-first campaign cut selected for its visual pacing, layered edit and strong vertical storytelling.", craft: ["Vertical", "Rhythm", "Effects"], thumbnail: "/editing-thumbs/drive-1M066shmsHB7XfBV5axDbMRx0Z9TEV2Jo.jpg", orientation: "vertical" },
   { id: "DbIdBpaR5RS", kind: "instagram", brand: "Uncover Wellness", title: "Golf Course Road clinic film", format: "Brand launch reel", note: "A polished space-led narrative that turns a clinic walkthrough into a premium brand experience.", craft: ["Cinematic", "Motion", "Grade"], thumbnail: "/reels/all/DbIdBpaR5RS.webp" },
   { id: "Daw8tv9xTNP", kind: "instagram", brand: "Uncover Wellness", title: "Eight clinics and counting", format: "Network montage", note: "Multi-location storytelling compressed into a clear, energetic brand montage.", craft: ["Montage", "Tempo", "Story"] },
   { id: "axooKW0kP_Q", kind: "youtube", brand: "GoSharpener", title: "GoSharpener × Troovy", format: "Impact film", note: "A large-scale programme story shaped around reach, participation and measurable impact.", craft: ["Long-form", "Pacing", "Impact"] },
@@ -82,7 +86,9 @@ const getOriginal = (item: Highlight) => {
 };
 
 const isVertical = (item: Highlight) =>
-  item.kind === "instagram" || item.kind === "drive" || item.id === "yqnlxg3_Kqk";
+  item.orientation
+    ? item.orientation === "vertical"
+    : item.kind === "instagram" || item.id === "yqnlxg3_Kqk";
 
 export function VideoEditingHighlights() {
   const [active, setActive] = useState<Highlight | null>(null);
