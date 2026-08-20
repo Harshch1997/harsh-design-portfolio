@@ -6486,13 +6486,19 @@ footer h2 {
 }
 
 .editor-cut-progress {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  display: flex;
+  overflow-x: auto;
   border-top: 1px solid rgba(247, 241, 232, 0.16);
+  scrollbar-width: none;
+}
+
+.editor-cut-progress::-webkit-scrollbar {
+  display: none;
 }
 
 .editor-cut-progress i {
   position: relative;
+  flex: 0 0 42px;
   padding-top: 13px;
   color: rgba(247, 241, 232, 0.38);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
