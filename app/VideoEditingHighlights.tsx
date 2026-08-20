@@ -64,9 +64,9 @@ const highlights: Highlight[] = [
 
 const getThumbnail = (item: Highlight) =>
   item.thumbnail ?? (item.kind === "drive"
-    ? `https://drive.google.com/thumbnail?id=${item.id}&sz=w1200`
+    ? "/editing-thumbs/orange-health.jpg"
     : item.kind === "instagram"
-      ? `https://www.instagram.com/p/${item.id}/media/?size=l`
+      ? `/editing-thumbs/${item.id}.jpg`
       : `https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`);
 
 const getEmbed = (item: Highlight) => {
@@ -80,6 +80,9 @@ const getOriginal = (item: Highlight) => {
   if (item.kind === "drive") return `https://drive.google.com/file/d/${item.id}/view`;
   return `https://www.instagram.com/p/${item.id}/`;
 };
+
+const isVertical = (item: Highlight) =>
+  item.kind === "instagram" || item.kind === "drive" || item.id === "yqnlxg3_Kqk";
 
 export function VideoEditingHighlights() {
   const [active, setActive] = useState<Highlight | null>(null);
@@ -167,7 +170,7 @@ export function VideoEditingHighlights() {
 
       {active && (
         <div
-          className="video-modal editor-cut-modal"
+          className={`video-modal editor-cut-modal ${isVertical(active) ? "is-vertical" : "is-horizontal"}`}
           role="dialog"
           aria-modal="true"
           aria-label={active.title}

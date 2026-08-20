@@ -6559,6 +6559,24 @@ footer h2 {
   gap: 7px;
 }
 
+.editor-cut-modal.is-horizontal .video-modal-panel {
+  width: min(1050px, 94vw);
+}
+
+.editor-cut-modal.is-horizontal .video-modal-panel iframe {
+  aspect-ratio: 16 / 9;
+}
+
+.editor-cut-modal.is-vertical .video-modal-panel {
+  width: min(430px, calc(100vw - 32px));
+  max-height: 96svh;
+}
+
+.editor-cut-modal.is-vertical .video-modal-panel iframe {
+  height: min(72svh, 720px);
+  aspect-ratio: 9 / 16;
+}
+
 @media (max-width: 1050px) {
   .editor-cut-feature-copy {
     grid-template-columns: 1fr;
@@ -6686,6 +6704,20 @@ footer h2 {
 
   .editor-cut-modal .video-modal-panel iframe {
     max-height: 70svh;
+  }
+
+  .editor-cut-modal.is-horizontal .video-modal-panel iframe {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .editor-cut-modal.is-vertical .video-modal-panel {
+    width: min(410px, calc(100vw - 24px));
+  }
+
+  .editor-cut-modal.is-vertical .video-modal-panel iframe {
+    height: min(68svh, 650px);
+    aspect-ratio: 9 / 16;
   }
 }
 
