@@ -8,6 +8,7 @@ import { MotionGraphicsShowcase } from "./MotionGraphicsShowcase";
 import { PerformanceAdsShowcase } from "./PerformanceAdsShowcase";
 import { USLPackagingShowcase } from "./USLPackagingShowcase";
 import { WebsiteCreativeShowcase } from "./WebsiteCreativeShowcase";
+import { VideoEditingHighlights } from "./VideoEditingHighlights";
 import {
   ArrowDown,
   ArrowUp,
@@ -239,6 +240,7 @@ export default function Home() {
           HC<span>®</span>
         </a>
         <nav aria-label="Main navigation">
+          <a href="#editing-highlights"><Film size={15} />Best edits</a>
           <a href="#social"><Clapperboard size={15} />Social</a>
           <a href="#video"><TvMinimalPlay size={15} />Video</a>
           <a href="#work"><MonitorSmartphone size={15} />UI/UX</a>
@@ -305,6 +307,11 @@ export default function Home() {
       <section className="work-index" data-reveal aria-label="Portfolio categories">
         <p className="kicker"><Sparkles size={15} /> Explore by category</p>
         <div>
+          <a href="#editing-highlights">
+            <span>00</span><Film className="category-icon" />
+            <strong>Best Video Editing</strong>
+            <ArrowDown />
+          </a>
           <a href="#social">
             <span>01</span><Clapperboard className="category-icon" />
             <strong>Social Reels &amp; Posts</strong>
@@ -377,6 +384,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <VideoEditingHighlights />
 
       <section className="brand-section" id="social" data-reveal>
         <div className="brand-intro">
