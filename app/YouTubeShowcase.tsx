@@ -34,7 +34,18 @@ const podcastIds = new Set([
   "pNFfK-W7nXE",
 ]);
 
-const podcasts = allVideos.filter((video) => podcastIds.has(video.id));
+const podcastPriority = new Map([
+  ["pNFfK-W7nXE", 0], // Uorfi Javed
+  ["GPzpXyRHUb8", 1], // Sanjeev Kapoor
+  ["hoVh-oKvOiQ", 2], // Tina Ahuja
+]);
+
+const podcasts = allVideos
+  .filter((video) => podcastIds.has(video.id))
+  .sort(
+    (first, second) =>
+      (podcastPriority.get(first.id) ?? 99) - (podcastPriority.get(second.id) ?? 99),
+  );
 const videos = allVideos.filter((video) => !podcastIds.has(video.id));
 const videoChannels = ["All", ...new Set(videos.map((video) => video.channel))];
 
