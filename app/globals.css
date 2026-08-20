@@ -6131,8 +6131,7 @@ footer h2 {
 }
 
 .editor-cut-stage {
-  display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(340px, 0.55fr);
+  display: block;
   border-top: 1px solid rgba(247, 241, 232, 0.2);
   border-bottom: 1px solid rgba(247, 241, 232, 0.2);
 }
@@ -6240,7 +6239,7 @@ footer h2 {
 
 .editor-cut-selection {
   min-width: 0;
-  padding: 28px 0 34px 3vw;
+  padding: 24px 0 34px;
 }
 
 .editor-cut-selection-head {
@@ -6298,14 +6297,34 @@ footer h2 {
   border-color: var(--edit-lime);
 }
 
+.editor-cut-timecode {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+  color: rgba(247, 241, 232, 0.42);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.12em;
+}
+
+.editor-cut-timecode i {
+  height: 1px;
+  background: repeating-linear-gradient(90deg, rgba(247, 241, 232, 0.28) 0 5px, transparent 5px 10px);
+}
+
 .editor-cut-rail {
   display: flex;
-  gap: 12px;
+  gap: clamp(14px, 1.8vw, 26px);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 4px;
   scrollbar-width: none;
   overscroll-behavior-inline: contain;
   touch-action: pan-x pan-y;
+  padding: 17px 4px 22px;
+  perspective: 1100px;
 }
 
 .editor-cut-rail::-webkit-scrollbar {
@@ -6314,29 +6333,52 @@ footer h2 {
 
 .editor-cut-card {
   position: relative;
-  flex: 0 0 min(85%, 340px);
+  flex: 0 0 clamp(300px, 31vw, 440px);
   min-width: 0;
-  padding: 0;
+  padding: 28px 10px 12px;
   border: 1px solid rgba(247, 241, 232, 0.18);
   color: inherit;
-  background: rgba(255, 255, 255, 0.035);
+  background:
+    radial-gradient(circle at 12px 10px, var(--edit-ink) 0 3px, transparent 3.5px) 0 0 / 24px 20px repeat-x,
+    radial-gradient(circle at 12px calc(100% - 10px), var(--edit-ink) 0 3px, transparent 3.5px) 0 0 / 24px 20px repeat-x,
+    rgba(247, 241, 232, 0.075);
   text-align: left;
   cursor: pointer;
-  scroll-snap-align: start;
-  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+  scroll-snap-align: center;
+  transform: rotate(-0.55deg);
+  transform-origin: 50% 100%;
+  transition: transform 240ms ease, border-color 200ms ease, background 200ms ease;
+}
+
+.editor-cut-card:nth-child(even) {
+  transform: rotate(0.55deg) translateY(8px);
 }
 
 .editor-cut-card:hover {
-  transform: translateY(-4px);
+  transform: rotate(0) translateY(-7px);
   border-color: var(--edit-lime);
-  background: rgba(255, 255, 255, 0.07);
+  background:
+    radial-gradient(circle at 12px 10px, var(--edit-ink) 0 3px, transparent 3.5px) 0 0 / 24px 20px repeat-x,
+    radial-gradient(circle at 12px calc(100% - 10px), var(--edit-ink) 0 3px, transparent 3.5px) 0 0 / 24px 20px repeat-x,
+    rgba(216, 255, 69, 0.12);
+}
+
+.editor-cut-slate {
+  position: absolute;
+  top: 7px;
+  left: 16px;
+  z-index: 3;
+  color: rgba(247, 241, 232, 0.7);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
 }
 
 .editor-cut-card-image {
   position: relative;
   display: block;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   background: #101010;
 }
 
@@ -6385,8 +6427,8 @@ footer h2 {
 
 .editor-cut-card-copy {
   display: block;
-  min-height: 218px;
-  padding: 18px 46px 18px 18px;
+  min-height: 190px;
+  padding: 18px 46px 16px 12px;
 }
 
 .editor-cut-card-copy small,
@@ -6443,6 +6485,34 @@ footer h2 {
   color: var(--edit-lime);
 }
 
+.editor-cut-progress {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-top: 1px solid rgba(247, 241, 232, 0.16);
+}
+
+.editor-cut-progress i {
+  position: relative;
+  padding-top: 13px;
+  color: rgba(247, 241, 232, 0.38);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.54rem;
+  font-style: normal;
+  text-align: center;
+}
+
+.editor-cut-progress i::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--edit-lime);
+  transform: translateX(-50%);
+}
+
 .editor-cut-craft {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -6484,10 +6554,6 @@ footer h2 {
 }
 
 @media (max-width: 1050px) {
-  .editor-cut-stage {
-    grid-template-columns: minmax(0, 1.15fr) minmax(310px, 0.85fr);
-  }
-
   .editor-cut-feature-copy {
     grid-template-columns: 1fr;
   }
@@ -6559,7 +6625,7 @@ footer h2 {
   }
 
   .editor-cut-selection {
-    padding: 28px 0 32px;
+    padding: 22px 0 28px;
   }
 
   .editor-cut-selection-head button {
@@ -6573,11 +6639,20 @@ footer h2 {
   }
 
   .editor-cut-card {
-    flex-basis: min(82vw, 315px);
+    flex-basis: min(84vw, 360px);
   }
 
   .editor-cut-card-copy {
-    min-height: 205px;
+    min-height: 190px;
+  }
+
+  .editor-cut-timecode span:nth-of-type(2),
+  .editor-cut-timecode i:nth-of-type(2) {
+    display: none;
+  }
+
+  .editor-cut-timecode {
+    grid-template-columns: auto 1fr auto;
   }
 
   .editor-cut-craft {
@@ -6624,7 +6699,12 @@ footer h2 {
   }
 
   .editor-cut-card {
-    flex-basis: 84vw;
+    flex-basis: 86vw;
+    padding-inline: 8px;
+  }
+
+  .editor-cut-card-copy {
+    min-height: 178px;
   }
 }
 

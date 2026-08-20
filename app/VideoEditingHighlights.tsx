@@ -8,19 +8,17 @@ import {
   ChevronRight,
   Clapperboard,
   ExternalLink,
-  Film,
   Gauge,
   Palette,
   Play,
   Scissors,
-  Sparkles,
   Volume2,
   X,
 } from "lucide-react";
 
 type Highlight = {
   id: string;
-  kind: "youtube" | "instagram";
+  kind: "youtube" | "instagram" | "drive";
   brand: string;
   title: string;
   format: string;
@@ -30,6 +28,15 @@ type Highlight = {
 };
 
 const highlights: Highlight[] = [
+  {
+    id: "1GtZ9Jfee3iA5khSiutOeH71bW_0WW4ZG",
+    kind: "drive",
+    brand: "Orange Health",
+    title: "Diagnostics, made cinematic",
+    format: "Digital campaign film",
+    note: "A full-funnel brand film shaped through purposeful sequencing, motion-led transitions, sound design and a clear visual storyline.",
+    craft: ["Edit", "Grade", "Sound"],
+  },
   {
     id: "DbFhqF8R-q8",
     kind: "instagram",
@@ -89,7 +96,21 @@ const highlights: Highlight[] = [
 ];
 
 const getThumbnail = (item: Highlight) =>
-  item.thumbnail ?? `https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`;
+  item.thumbnail ?? (item.kind === "drive"
+    ? `https://drive.google.com/thumbnail?id=${item.id}&sz=w1200`
+    : `https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`);
+
+const getEmbed = (item: Highlight) => {
+  if (item.kind === "youtube") return `https://www.youtube.com/embed/${item.id}?autoplay=1`;
+  if (item.kind === "drive") return `https://drive.google.com/file/d/${item.id}/preview`;
+  return `https://www.instagram.com/reel/${item.id}/embed/`;
+};
+
+const getOriginal = (item: Highlight) => {
+  if (item.kind === "youtube") return `https://www.youtube.com/watch?v=${item.id}`;
+  if (item.kind === "drive") return `https://drive.google.com/file/d/${item.id}/view`;
+  return `https://www.instagram.com/reel/${item.id}/`;
+};
 
 export function VideoEditingHighlights() {
   const [active, setActive] = useState<Highlight | null>(null);
@@ -127,40 +148,16 @@ export function VideoEditingHighlights() {
       </div>
 
       <div className="editor-cut-stage">
-        <article className="editor-cut-feature">
-          <div className="editor-cut-video">
-            <iframe
-              src="https://drive.google.com/file/d/1GtZ9Jfee3iA5khSiutOeH71bW_0WW4ZG/preview"
-              title="Orange Health digital campaign video"
-              allow="autoplay; fullscreen"
-              allowFullScreen
-              loading="lazy"
-            />
-            <span className="editor-cut-feature-label"><Sparkles size={14} /> Featured film</span>
-          </div>
-          <div className="editor-cut-feature-copy">
-            <span>Orange Health · Digital campaign</span>
-            <h3>Diagnostics, made cinematic.</h3>
-            <p>
-              A full-funnel brand film shaped through purposeful sequencing,
-              motion-led transitions, sound design and a clear visual storyline.
-            </p>
-            <div className="editor-cut-tags">
-              <span><Scissors size={14} /> Editorial pacing</span>
-              <span><Palette size={14} /> Colour grade</span>
-              <span><Volume2 size={14} /> Sound design</span>
-              <span><Film size={14} /> Motion</span>
-            </div>
-          </div>
-        </article>
-
         <div className="editor-cut-selection">
           <div className="editor-cut-selection-head">
-            <div><Gauge size={17} /><span><strong>06</strong> selected edits</span></div>
+            <div><Gauge size={17} /><span><strong>{String(highlights.length).padStart(2, "0")}</strong> best edits · one complete reel</span></div>
             <div>
               <button onClick={() => move(-1)} aria-label="Previous selected edits"><ChevronLeft /></button>
               <button onClick={() => move(1)} aria-label="Next selected edits"><ChevronRight /></button>
             </div>
+          </div>
+          <div className="editor-cut-timecode" aria-hidden="true">
+            <span>00:00:00</span><i /><span>SELECTED CUTS</span><i /><span>END: 00:07:00</span>
           </div>
           <div className="editor-cut-rail" ref={rail}>
             {highlights.map((item, index) => (
@@ -170,6 +167,7 @@ export function VideoEditingHighlights() {
                 key={`${item.kind}-${item.id}`}
                 aria-label={`Play ${item.title}`}
               >
+                <span className="editor-cut-slate">CUT {String(index + 1).padStart(2, "0")}</span>
                 <span className="editor-cut-card-image">
                   <img src={getThumbnail(item)} alt="" loading="lazy" />
                   <i><Play size={20} fill="currentColor" /></i>
@@ -184,6 +182,9 @@ export function VideoEditingHighlights() {
                 <ArrowUpRight className="editor-cut-card-arrow" />
               </button>
             ))}
+          </div>
+          <div className="editor-cut-progress" aria-hidden="true">
+            {highlights.map((item, index) => <i key={`${item.id}-progress`}>{String(index + 1).padStart(2, "0")}</i>)}
           </div>
         </div>
       </div>
@@ -211,17 +212,13 @@ export function VideoEditingHighlights() {
               <button onClick={() => setActive(null)} aria-label="Close video"><X size={21} /></button>
             </div>
             <iframe
-              src={active.kind === "youtube"
-                ? `https://www.youtube.com/embed/${active.id}?autoplay=1`
-                : `https://www.instagram.com/reel/${active.id}/embed/`}
+              src={getEmbed(active)}
               title={`${active.brand}: ${active.title}`}
               allow="autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
             />
             <a
-              href={active.kind === "youtube"
-                ? `https://www.youtube.com/watch?v=${active.id}`
-                : `https://www.instagram.com/reel/${active.id}/`}
+              href={getOriginal(active)}
               target="_blank"
               rel="noreferrer"
             >
