@@ -6486,37 +6486,68 @@ footer h2 {
 }
 
 .editor-cut-progress {
-  display: flex;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: minmax(160px, auto) minmax(140px, 1fr) 42px;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 0 2px;
   border-top: 1px solid rgba(247, 241, 232, 0.16);
-  scrollbar-width: none;
 }
 
-.editor-cut-progress::-webkit-scrollbar {
-  display: none;
+.editor-cut-progress > span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
-.editor-cut-progress i {
-  position: relative;
-  flex: 0 0 42px;
-  padding-top: 13px;
-  color: rgba(247, 241, 232, 0.38);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.54rem;
-  font-style: normal;
-  text-align: center;
+.editor-cut-progress strong {
+  color: var(--edit-paper);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.editor-cut-progress i::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: 50%;
-  width: 4px;
-  height: 4px;
+.editor-cut-progress small {
+  color: rgba(247, 241, 232, 0.48);
+  font-size: 0.56rem;
+  letter-spacing: 0.05em;
+}
+
+.editor-cut-progress input {
+  width: 100%;
+  height: 5px;
+  appearance: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--edit-lime) var(--progress), rgba(247, 241, 232, 0.16) var(--progress));
+  cursor: grab;
+}
+
+.editor-cut-progress input::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  appearance: none;
+  border: 4px solid var(--edit-ink);
   border-radius: 50%;
   background: var(--edit-lime);
-  transform: translateX(-50%);
+  box-shadow: 0 0 0 1px rgba(215, 255, 53, 0.7);
+}
+
+.editor-cut-progress b {
+  color: var(--edit-lime);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .editor-cut-progress {
+    grid-template-columns: 1fr 38px;
+    gap: 9px 12px;
+  }
+
+  .editor-cut-progress > span {
+    grid-column: 1 / -1;
+  }
 }
 
 .editor-cut-craft {

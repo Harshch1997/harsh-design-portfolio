@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import {
   ArrowUpRight,
   Captions,
@@ -92,6 +92,7 @@ const isVertical = (item: Highlight) =>
 
 export function VideoEditingHighlights() {
   const [active, setActive] = useState<Highlight | null>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const rail = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -110,6 +111,19 @@ export function VideoEditingHighlights() {
       left: direction * Math.min(window.innerWidth * 0.78, 620),
       behavior: "smooth",
     });
+
+  const syncProgress = () => {
+    if (!rail.current) return;
+    const max = rail.current.scrollWidth - rail.current.clientWidth;
+    setScrollProgress(max > 0 ? (rail.current.scrollLeft / max) * 100 : 0);
+  };
+
+  const seek = (value: number) => {
+    if (!rail.current) return;
+    const max = rail.current.scrollWidth - rail.current.clientWidth;
+    rail.current.scrollTo({ left: (value / 100) * max, behavior: "smooth" });
+    setScrollProgress(value);
+  };
 
   return (
     <section className="editor-cut" id="editing-highlights" data-reveal>
@@ -137,7 +151,7 @@ export function VideoEditingHighlights() {
           <div className="editor-cut-timecode" aria-hidden="true">
             <span>00:00:00</span><i /><span>SELECTED CUTS</span><i /><span>END: 00:{String(highlights.length).padStart(2, "0")}:00</span>
           </div>
-          <div className="editor-cut-rail" ref={rail}>
+          <div className="editor-cut-rail" ref={rail} onScroll={syncProgress}>
             {highlights.map((item, index) => (
               <button
                 className="editor-cut-card"
@@ -161,8 +175,19 @@ export function VideoEditingHighlights() {
               </button>
             ))}
           </div>
-          <div className="editor-cut-progress" aria-hidden="true">
-            {highlights.map((item, index) => <i key={`${item.id}-progress`}>{String(index + 1).padStart(2, "0")}</i>)}
+          <div className="editor-cut-progress">
+            <span><strong>Explore the edit reel</strong><small>Drag, swipe or use the slider</small></span>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value={scrollProgress}
+              onChange={(event) => seek(Number(event.target.value))}
+              aria-label="Move through selected video work"
+              style={{ "--progress": `${scrollProgress}%` } as CSSProperties}
+            />
+            <b>{Math.round(scrollProgress)}%</b>
           </div>
         </div>
       </div>
