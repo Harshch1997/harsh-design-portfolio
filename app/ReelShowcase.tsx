@@ -12,12 +12,18 @@ import {
   X,
 } from "lucide-react";
 
+const jpgReels = new Set([
+  "DZkQYKYJFXn", "DXUGyoNypd7", "DXO6uBvkWBy", "DW3x_PwylG_",
+  "DWoVf_TkoZX", "DWIlk32DhY6", "DVLMif4EUW-", "DVGcJ9ODM75",
+  "DU0IgCajED_", "DUqHXuJDNGg", "DUm7WaRDaVz", "DOqdOuWkgZT",
+]);
+
 const reels = instagramCatalogues.flatMap((group) =>
   group.codes.map((code, index) => ({
     brand: group.brand,
     title: `Reel ${String(index + 1).padStart(2, "0")}`,
     code,
-    image: `/reels/all/${code}.webp`,
+    image: `/reels/all/${code}.${jpgReels.has(code) ? "jpg" : "webp"}`,
     accent: group.accent,
   })),
 );

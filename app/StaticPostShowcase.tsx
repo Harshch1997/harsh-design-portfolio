@@ -19,7 +19,7 @@ const posts = instagramPostCatalogues.flatMap((group) =>
     ...post,
     brand: group.brand,
     accent: group.accent,
-    title: post.slides > 1 ? `Carousel ${String(index + 1).padStart(2, "0")}` : `Static Post ${String(index + 1).padStart(2, "0")}`,
+    title: post.slides !== 1 ? `Carousel ${String(index + 1).padStart(2, "0")}` : `Static Post ${String(index + 1).padStart(2, "0")}`,
   })),
 );
 
@@ -87,8 +87,8 @@ export function StaticPostShowcase() {
                 alt={`${post.brand}: ${post.title}`}
                 loading="lazy"
               />
-              <i>{post.slides > 1 ? <><Layers3 size={13} /> {post.slides} slides</> : <><ImageIcon size={13} /> Static</>}</i>
-              <b aria-hidden="true">{post.slides > 1 ? <Layers3 size={17} /> : <Camera size={17} />}</b>
+              <i>{post.slides > 1 ? <><Layers3 size={13} /> {post.slides} slides</> : post.slides === 0 ? <><Layers3 size={13} /> Carousel</> : <><ImageIcon size={13} /> Static</>}</i>
+              <b aria-hidden="true">{post.slides !== 1 ? <Layers3 size={17} /> : <Camera size={17} />}</b>
             </span>
             <span className="post-meta">
               <small>{String(index + 1).padStart(2, "0")} / {post.brand}</small>

@@ -74,7 +74,7 @@ export const instagramCatalogues = [
   {
     brand: "Uncover Wellness",
     accent: "#c99568",
-    codes: ids("Dbaur0LR4bc DbVsgzxRCvx DbTG2y5R2W0 DbSv6VsRlln DbIdBpaR5RS"),
+    codes: ids("DZkQYKYJFXn DXUGyoNypd7 DXO6uBvkWBy DW3x_PwylG_ DWoVf_TkoZX DWIlk32DhY6 DVLMif4EUW- DVGcJ9ODM75 DU0IgCajED_ DUqHXuJDNGg DUm7WaRDaVz DOqdOuWkgZT Dbaur0LR4bc DbVsgzxRCvx DbTG2y5R2W0 DbSv6VsRlln DbIdBpaR5RS"),
   },
   {
     brand: "Uncover Transform",
@@ -108,6 +108,16 @@ export const instagramPostCatalogues = [
     brand: "Uncover Wellness",
     accent: "#c99568",
     posts: [
+      { code: "DZ1eau6oAXJ", slides: 0, image: "/posts/DZ1eau6oAXJ.jpg" },
+      { code: "DZp2BTiIAJu", slides: 0, image: "/posts/DZp2BTiIAJu.jpg" },
+      { code: "DZcnUIOIEQv", slides: 0, image: "/posts/DZcnUIOIEQv.jpg" },
+      { code: "DZZ-mAEE17B", slides: 0, image: "/posts/DZZ-mAEE17B.jpg" },
+      { code: "DZNWaQvE1Zs", slides: 0, image: "/posts/DZNWaQvE1Zs.jpg" },
+      { code: "DYZH825jioG", slides: 0, image: "/posts/DYZH825jioG.jpg" },
+      { code: "DYGyB48EXoB", slides: 0, image: "/posts/DYGyB48EXoB.jpg" },
+      { code: "DVnHax5ETry", slides: 0, image: "/posts/DVnHax5ETry.jpg" },
+      { code: "DSxISSYATvl", slides: 0, image: "/posts/DSxISSYATvl.jpg" },
+      { code: "DYRlcq7AZOW", slides: 0, image: "/posts/DYRlcq7AZOW.jpg" },
       { code: "DanR987tuSr", slides: 1 },
       { code: "DanRu98xlg7", slides: 1 },
       { code: "DanRShmxxP9", slides: 1 },

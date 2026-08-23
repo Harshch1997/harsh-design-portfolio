@@ -9,6 +9,7 @@ import { PerformanceAdsShowcase } from "./PerformanceAdsShowcase";
 import { USLPackagingShowcase } from "./USLPackagingShowcase";
 import { WebsiteCreativeShowcase } from "./WebsiteCreativeShowcase";
 import { VideoEditingHighlights } from "./VideoEditingHighlights";
+import { CuratedReelSections } from "./CuratedReelSections";
 import {
   ArrowDown,
   ArrowUp,
@@ -386,6 +387,8 @@ export default function Home() {
       </section>
 
       <VideoEditingHighlights />
+
+      <CuratedReelSections />
 
       <section className="brand-section" id="social" data-reveal>
         <div className="brand-intro">

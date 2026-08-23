@@ -22,9 +22,12 @@ import {
   ShoppingBag,
   TvMinimalPlay,
   X,
+  WandSparkles,
 } from "lucide-react";
 
 const destinations = [
+  { id: "ai-reels", label: "AI reels", icon: WandSparkles },
+  { id: "trailer-edits", label: "Trailers", icon: Film },
   { id: "social", label: "Reels", icon: Clapperboard },
   { id: "static-posts", label: "Social posts", icon: GalleryHorizontalEnd },
   { id: "video", label: "YouTube", icon: TvMinimalPlay },
