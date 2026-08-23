@@ -10,6 +10,7 @@ import { USLPackagingShowcase } from "./USLPackagingShowcase";
 import { WebsiteCreativeShowcase } from "./WebsiteCreativeShowcase";
 import { VideoEditingHighlights } from "./VideoEditingHighlights";
 import { CuratedReelSections } from "./CuratedReelSections";
+import { AdditionalWebProjects } from "./AdditionalWebProjects";
 import {
   ArrowDown,
   ArrowUp,
@@ -467,7 +468,7 @@ export default function Home() {
         <div className="section-heading">
           <p className="kicker"><MonitorSmartphone size={15} /> 03 / UI/UX &amp; Web Design</p>
           <h2>Ideas, not screenshots.</h2>
-          <p className="count">10 case studies</p>
+          <p className="count">25 digital products</p>
         </div>
         <div className="work-grid visual-work-grid">
           {prioritizedWork.map((item) => (
@@ -574,6 +575,7 @@ export default function Home() {
             </a>
           ))}
         </div>
+        <AdditionalWebProjects />
         <a
           className="behance-link"
           href="https://www.behance.net/harshchhabra"

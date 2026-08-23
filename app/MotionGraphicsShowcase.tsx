@@ -13,7 +13,9 @@ import {
   X,
 } from "lucide-react";
 
-const motionWork = [
+type MotionWorkItem = readonly [id: string, title: string];
+
+const motionWork: readonly MotionWorkItem[] = [
   ["1PGYLfZNA_AKVSfr75M4SDIfXfHvpzL1V", "Agra Monday"],
   ["14dgn1tvR9hvKbGTCvp36jFxKJnkabQej", "Agra Bollywood Night"],
   ["14qsfd-MPSX6xQbqj9CtOIJ-qQlz0ycNN", "Bollywood Night"],
@@ -35,7 +37,7 @@ const motionWork = [
   ["1XNH76Pg2Pbgm33MFGmzoPuGAsxg4IZob", "Social Motion Edit"],
   ["14b5L9M7Nm-c3FGeHgm8FlgB39Ia2HQRh", "Motion Design Task"],
   ["1ag5_XRzC2W9RieiMpVDKLRBug2li9bmu", "VN Motion Edit"],
-] as const;
+];
 
 export function MotionGraphicsShowcase() {
   const [active, setActive] = useState<(typeof motionWork)[number] | null>(null);

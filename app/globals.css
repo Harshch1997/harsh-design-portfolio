@@ -4486,6 +4486,516 @@ footer h2 {
   transform: translateY(-7px);
 }
 
+/* Extended UI/UX archive: live sites + complete Figma journeys */
+.additional-web-projects {
+  margin-top: clamp(62px, 8vw, 118px);
+  padding-top: clamp(28px, 4vw, 54px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.additional-web-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+  gap: 30px;
+  align-items: end;
+  margin-bottom: 30px;
+}
+
+.additional-web-head > div > span,
+.additional-web-head > p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+}
+
+.additional-web-head > div > span {
+  color: #d7ff35;
+}
+
+.additional-web-head h3 {
+  max-width: 760px;
+  margin: 14px 0 0;
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 5.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.additional-web-head > p {
+  max-width: 420px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.65;
+}
+
+.additional-web-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.additional-web-card {
+  min-width: 0;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.035);
+  color: #fff;
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 260ms ease, border-color 260ms ease, background 260ms ease;
+}
+
+.additional-web-card:hover {
+  transform: translateY(-7px);
+  border-color: #d7ff35;
+  background: rgba(215, 255, 53, 0.055);
+}
+
+.additional-web-visual {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #ebe8df;
+}
+
+.additional-web-visual img,
+.additional-web-visual iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 650ms cubic-bezier(.2,.75,.2,1);
+}
+
+.additional-web-visual iframe {
+  pointer-events: none;
+  background: white;
+}
+
+.additional-web-card:hover .additional-web-visual img,
+.additional-web-card:hover .additional-web-visual iframe {
+  transform: scale(1.035);
+}
+
+.additional-web-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 54%, rgba(5, 21, 41, 0.72));
+  pointer-events: none;
+}
+
+.additional-web-visual > i,
+.additional-web-visual > b {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4eee5;
+  color: #092744;
+}
+
+.additional-web-visual > i {
+  top: 16px;
+  left: 16px;
+  gap: 7px;
+  padding: 9px 12px;
+  border-radius: 99px;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.additional-web-visual > b {
+  right: 16px;
+  bottom: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  transition: transform 220ms ease, background 220ms ease;
+}
+
+.additional-web-card:hover .additional-web-visual > b {
+  transform: rotate(-8deg) scale(1.08);
+  background: #d7ff35;
+}
+
+.additional-web-meta {
+  display: grid;
+  padding: 20px;
+}
+
+.additional-web-meta small {
+  color: #d7ff35;
+  letter-spacing: 0.14em;
+  font-size: 0.66rem;
+}
+
+.additional-web-meta > strong {
+  margin-top: 9px;
+  font-size: 1.35rem;
+  line-height: 1.06;
+}
+
+.additional-web-meta > em {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.76rem;
+  font-style: normal;
+}
+
+.additional-web-meta > p {
+  min-height: 3.2em;
+  margin: 18px 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.83rem;
+  line-height: 1.55;
+}
+
+.additional-web-meta > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+}
+
+.figma-card .additional-web-visual {
+  background: #f0d5ff;
+}
+
+.web-project-modal {
+  position: fixed;
+  z-index: 1200;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(3, 12, 23, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.web-project-panel {
+  width: min(1500px, 96vw);
+  height: min(910px, 94vh);
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  overflow: hidden;
+  background: #f6f0e8;
+  color: #0a2948;
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.44);
+}
+
+.web-project-panel > header {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 18px 14px 22px;
+  border-bottom: 1px solid rgba(10, 41, 72, 0.17);
+}
+
+.web-project-panel > header > span,
+.web-project-panel > header > div,
+.web-project-panel > header a,
+.web-project-panel > footer {
+  display: flex;
+  align-items: center;
+}
+
+.web-project-panel > header > span {
+  min-width: 0;
+  gap: 10px;
+}
+
+.web-project-panel > header small {
+  color: rgba(10, 41, 72, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.66rem;
+}
+
+.web-project-panel > header strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.web-project-panel > header > div {
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.web-project-panel > header a,
+.web-project-panel > header button {
+  min-height: 42px;
+  border: 1px solid rgba(10, 41, 72, 0.24);
+  background: transparent;
+  color: #0a2948;
+}
+
+.web-project-panel > header a {
+  gap: 8px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+}
+
+.web-project-panel > header button {
+  width: 42px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.live-browser-bar {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  border-bottom: 1px solid rgba(10, 41, 72, 0.12);
+  background: #e9e2d8;
+}
+
+.live-browser-bar i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c78669;
+}
+
+.live-browser-bar i:nth-child(2) { background: #dfb560; }
+.live-browser-bar i:nth-child(3) { background: #8ba978; }
+
+.live-browser-bar span {
+  min-width: 0;
+  margin-left: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(10, 41, 72, 0.64);
+  font-size: 0.74rem;
+}
+
+.live-site-panel > iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.web-project-panel > footer {
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 18px;
+  border-top: 1px solid rgba(10, 41, 72, 0.12);
+  color: rgba(10, 41, 72, 0.62);
+  font-size: 0.7rem;
+}
+
+.figma-project-panel {
+  grid-template-rows: auto minmax(0, 1fr);
+  background: #0b1725;
+}
+
+.figma-project-panel > header {
+  background: #f6f0e8;
+}
+
+.figma-viewer-layout {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+}
+
+.figma-viewer-layout > nav {
+  min-height: 0;
+  padding: 14px;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255, 255, 255, 0.13);
+  background: #07111c;
+}
+
+.figma-viewer-layout > nav > button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 5px 9px;
+  margin-bottom: 12px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.figma-viewer-layout > nav > button.active {
+  border-color: #d7ff35;
+  background: rgba(215, 255, 53, 0.1);
+}
+
+.figma-viewer-layout nav button > span {
+  grid-column: 1 / -1;
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: white;
+}
+
+.figma-viewer-layout nav img,
+.figma-viewer-layout nav iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: cover;
+  object-position: top center;
+  pointer-events: none;
+}
+
+.figma-viewer-layout nav small {
+  color: #d7ff35;
+  font-size: 0.64rem;
+}
+
+.figma-viewer-layout nav strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.72rem;
+}
+
+.figma-viewer-layout > main {
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  overflow: auto;
+  background:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px),
+    #172332;
+  background-size: 24px 24px;
+}
+
+.figma-active-label {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 45px;
+  padding: 0 18px;
+  background: rgba(7, 17, 28, 0.93);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.figma-active-label span {
+  color: #d7ff35;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+}
+
+.figma-active-label strong { font-size: 0.82rem; }
+.figma-active-label em {
+  margin-left: auto;
+  color: rgba(255,255,255,.5);
+  font-size: 0.68rem;
+  font-style: normal;
+}
+
+.scroll-design > img {
+  width: min(100%, 1160px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  background: white;
+}
+
+.embed-design {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.embed-design > iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: white;
+}
+
+@media (max-width: 1050px) {
+  .additional-web-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .additional-web-head { grid-template-columns: 1fr; gap: 16px; }
+  .additional-web-head h3 { font-size: clamp(2.35rem, 13vw, 4rem); }
+  .additional-web-grid {
+    display: flex;
+    gap: 14px;
+    margin-inline: -20px;
+    padding: 0 20px 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .additional-web-grid::-webkit-scrollbar { display: none; }
+  .additional-web-card {
+    flex: 0 0 min(84vw, 350px);
+    scroll-snap-align: center;
+  }
+  .additional-web-meta > p { min-height: 0; }
+  .web-project-modal { padding: 0; }
+  .web-project-panel { width: 100vw; height: 100dvh; }
+  .web-project-panel > header { min-height: 64px; padding: 10px 12px; }
+  .web-project-panel > header small { display: none; }
+  .web-project-panel > header strong { max-width: 34vw; }
+  .web-project-panel > header a { padding: 0 10px; font-size: 0.61rem; }
+  .web-project-panel > footer { font-size: 0.62rem; }
+  .figma-viewer-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 132px minmax(0, 1fr);
+  }
+  .figma-viewer-layout > nav {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.13);
+  }
+  .figma-viewer-layout > nav > button {
+    flex: 0 0 126px;
+    margin: 0;
+    padding: 6px;
+  }
+  .figma-viewer-layout nav button > span { aspect-ratio: 16 / 8; }
+  .figma-active-label { min-height: 42px; padding: 0 12px; }
+  .figma-active-label em { display: none; }
+}
+
 .featured-project {
   grid-column: 1 / -1;
 }

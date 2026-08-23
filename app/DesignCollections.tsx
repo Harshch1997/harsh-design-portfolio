@@ -75,6 +75,17 @@ const packagingAssets: Record<string, { title: string; description: string }> = 
   },
 };
 
+const identityAssets: Record<string, { title: string; description: string }> = {
+  "/brand-logos/admax-white-green.jpg": {
+    title: "AdMax Co — White & Green",
+    description: "Performance marketing identity · Primary dark-ground logo",
+  },
+  "/brand-logos/admax-blue-green.jpg": {
+    title: "AdMax Co — Blue & Green",
+    description: "Performance marketing identity · Alternate colour system",
+  },
+};
+
 type Collection = {
   id: keyof typeof driveCatalogues;
   number: string;
@@ -226,6 +237,7 @@ function CollectionCarousel({
         {items.map((id, index) => {
           const pdf = pdfAssets[id];
           const packaging = packagingAssets[id];
+          const identity = identityAssets[id];
           return (
             <button
               onClick={() => onOpen(id, index, collection)}
@@ -235,15 +247,15 @@ function CollectionCarousel({
               <span className={`collection-image ${collection.id === "identity" ? "identity-logo-surface" : ""}`}>
                 <img
                   src={thumb(id)}
-                  alt={pdf?.title ?? packaging?.title ?? `${collection.kicker} artwork ${index + 1}`}
+                  alt={pdf?.title ?? packaging?.title ?? identity?.title ?? `${collection.kicker} artwork ${index + 1}`}
                   loading="lazy"
                 />
                 <i>{pdf ? <><FileText size={14} /> Read complete PDF</> : <><Eye size={14} /> View artwork</>}</i>
               </span>
               <span className="collection-meta">
                 <small>{String(index + 1).padStart(2, "0")}</small>
-                <strong>{pdf?.title ?? packaging?.title ?? `${collection.kicker} / ${index + 1}`}</strong>
-                <em>{pdf ? "Complete PDF · opens in popup" : packaging?.description ?? (isLocalAsset(id) ? "Photorealistic product mockup" : "Original portfolio archive")}</em>
+                <strong>{pdf?.title ?? packaging?.title ?? identity?.title ?? `${collection.kicker} / ${index + 1}`}</strong>
+                <em>{pdf ? "Complete PDF · opens in popup" : packaging?.description ?? identity?.description ?? (isLocalAsset(id) ? "Original portfolio artwork" : "Original portfolio archive")}</em>
               </span>
             </button>
           );
@@ -333,8 +345,9 @@ export function DesignCollections({
               />
               <div>
                 <span>{active.collection.kicker}</span>
-                <strong>{packagingAssets[active.id]?.title ?? `Artwork ${String(active.index + 1).padStart(2, "0")}`}</strong>
+                <strong>{packagingAssets[active.id]?.title ?? identityAssets[active.id]?.title ?? `Artwork ${String(active.index + 1).padStart(2, "0")}`}</strong>
                 {packagingAssets[active.id] && <p>{packagingAssets[active.id].description}</p>}
+                {identityAssets[active.id] && <p>{identityAssets[active.id].description}</p>}
                 <a
                   href={isLocalAsset(active.id)
                     ? active.collection.source
