@@ -72,9 +72,14 @@ export const driveCatalogues = {
 
 export const instagramCatalogues = [
   {
+    brand: "Uncover Clinics",
+    accent: "#8d5cff",
+    codes: ids("DZkQYKYJFXn DXUGyoNypd7 DXO6uBvkWBy DW3x_PwylG_ DWoVf_TkoZX DWIlk32DhY6 DVLMif4EUW- DVGcJ9ODM75 DU0IgCajED_ DUqHXuJDNGg DUm7WaRDaVz DOqdOuWkgZT"),
+  },
+  {
     brand: "Uncover Wellness",
     accent: "#c99568",
-    codes: ids("DZkQYKYJFXn DXUGyoNypd7 DXO6uBvkWBy DW3x_PwylG_ DWoVf_TkoZX DWIlk32DhY6 DVLMif4EUW- DVGcJ9ODM75 DU0IgCajED_ DUqHXuJDNGg DUm7WaRDaVz DOqdOuWkgZT Dbaur0LR4bc DbVsgzxRCvx DbTG2y5R2W0 DbSv6VsRlln DbIdBpaR5RS"),
+    codes: ids("Dbaur0LR4bc DbVsgzxRCvx DbTG2y5R2W0 DbSv6VsRlln DbIdBpaR5RS"),
   },
   {
     brand: "Uncover Transform",

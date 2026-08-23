@@ -187,6 +187,11 @@ const prioritizedWork = [...work]
 
 const brandWork = [
   {
+    name: "Uncover Clinics",
+    service: "Clinic campaigns · Reels & visual storytelling",
+    href: "https://www.instagram.com/uncover.clinics/",
+  },
+  {
     name: "Uncover Wellness",
     service: "Dermatology · Wellness campaigns",
     href: "https://www.instagram.com/uncover.wellness/",
