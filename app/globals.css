@@ -8,6 +8,230 @@
   --line: rgba(14, 35, 65, 0.22);
 }
 
+/* Compact, unified UI/UX archive */
+.featured-uiux-grid > .project-card {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.featured-uiux-grid > .website-project .project-image {
+  aspect-ratio: 2.25;
+}
+
+.uiux-archive-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.uiux-archive-filters,
+.uiux-archive-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uiux-archive-filters {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.uiux-archive-filters::-webkit-scrollbar,
+.additional-web-grid::-webkit-scrollbar { display: none; }
+
+.uiux-archive-filters button,
+.uiux-archive-arrows button {
+  min-height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.68);
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.uiux-archive-filters button {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.67rem;
+}
+
+.uiux-archive-filters button span { opacity: 0.52; }
+.uiux-archive-filters button:hover,
+.uiux-archive-filters button.active {
+  border-color: #d7ff35;
+  background: #d7ff35;
+  color: #092744;
+}
+
+.uiux-archive-arrows button {
+  width: 44px;
+  display: grid;
+  place-items: center;
+}
+
+.uiux-archive-arrows button:hover { background: rgba(255,255,255,.1); color: #d7ff35; }
+
+.additional-web-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+  padding-bottom: 6px;
+}
+
+.additional-web-card {
+  flex: 0 0 clamp(280px, 27vw, 390px);
+  scroll-snap-align: start;
+}
+
+.additional-web-meta { min-height: 152px; }
+.additional-web-meta > p { display: none; }
+.additional-web-meta > span { margin-top: auto; }
+
+.figma-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 6px;
+  background: radial-gradient(circle at 25% 20%, #f4d9ff, transparent 38%), linear-gradient(135deg, #5740ad, #15152e);
+  color: white;
+}
+
+.figma-placeholder strong { font-size: 1.3rem; }
+.figma-placeholder small { opacity: .65; }
+
+.uiux-archive-hint {
+  display: grid;
+  grid-template-columns: auto minmax(40px, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  color: rgba(255,255,255,.48);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .62rem;
+}
+
+.uiux-archive-hint i { height: 1px; background: rgba(255,255,255,.2); }
+
+.reliable-preview-panel { grid-template-rows: auto auto minmax(0, 1fr) auto; }
+.reliable-project-preview {
+  min-height: 0;
+  overflow: auto;
+  background: #dcd7cf;
+}
+
+.reliable-project-preview img {
+  width: min(100%, 1280px);
+  height: auto;
+  min-height: 100%;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: top center;
+  background: white;
+}
+
+.reliable-project-preview.has-video {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #091726;
+}
+
+.reliable-project-preview video { width: min(100%, 1180px); max-height: 100%; }
+
+.figma-page-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #443289, #17172d);
+  color: white;
+  font-size: .65rem;
+}
+
+.linkedin-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1.15fr) minmax(280px, .85fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 70px);
+  padding: clamp(55px, 7vw, 100px) 3.5vw;
+  overflow: hidden;
+  border-top: 1px solid rgba(9,39,68,.17);
+  background: #e9f1ff;
+  color: #092744;
+}
+
+.linkedin-mark {
+  width: clamp(72px, 8vw, 112px);
+  height: clamp(72px, 8vw, 112px);
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: #0a66c2;
+  color: white;
+  box-shadow: 0 20px 50px rgba(10,102,194,.24);
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -.08em;
+}
+
+.linkedin-section h2 {
+  margin: 10px 0 0;
+  font-size: clamp(2.7rem, 5.4vw, 5.8rem);
+  line-height: .92;
+  letter-spacing: -.06em;
+}
+
+.linkedin-copy p { max-width: 510px; margin: 0 0 26px; line-height: 1.65; color: rgba(9,39,68,.7); }
+.linkedin-copy a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(9,39,68,.25);
+  border-bottom: 1px solid rgba(9,39,68,.25);
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.linkedin-copy a span { display: flex; align-items: center; gap: 9px; }
+
+@media (max-width: 800px) {
+  .featured-uiux-grid > .website-project .project-image { aspect-ratio: .92; }
+  .additional-web-projects { margin-top: 68px; }
+  .additional-web-head { margin-bottom: 24px; }
+  .uiux-archive-toolbar { display: block; }
+  .uiux-archive-filters { margin-inline: -20px; padding: 0 20px 8px; }
+  .uiux-archive-arrows { display: none; }
+  .additional-web-grid { margin-inline: -20px; padding: 0 20px 8px; }
+  .additional-web-card { flex-basis: min(82vw, 330px); }
+  .additional-web-meta { min-height: 146px; }
+  .uiux-archive-hint { grid-template-columns: auto 1fr; }
+  .uiux-archive-hint span:last-child { display: none; }
+  .reliable-project-preview img { min-height: 0; }
+  .linkedin-section { grid-template-columns: auto 1fr; padding-block: 64px; }
+  .linkedin-section .linkedin-copy { grid-column: 1 / -1; }
+  .linkedin-section h2 { font-size: clamp(2.5rem, 12vw, 4rem); }
+}
+
 /* Website product imagery and campaign banners */
 .web-products-section,
 .web-banners-section {
@@ -7651,4 +7875,125 @@ footer h2 {
   .editor-cut-card-image img {
     transition: none;
   }
+}
+
+/* Final cascade for the compact UI/UX project browser */
+.featured-uiux-grid > .project-card {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.featured-uiux-grid > .website-project .project-image { aspect-ratio: 2.25; }
+
+.uiux-archive-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.uiux-archive-filters,
+.uiux-archive-arrows { display: flex; align-items: center; gap: 8px; }
+.uiux-archive-filters { overflow-x: auto; scrollbar-width: none; }
+.uiux-archive-filters::-webkit-scrollbar,
+.additional-web-grid::-webkit-scrollbar { display: none; }
+
+.uiux-archive-filters button,
+.uiux-archive-arrows button {
+  min-height: 42px;
+  border: 1px solid rgba(255,255,255,.24);
+  background: transparent;
+  color: rgba(255,255,255,.68);
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.uiux-archive-filters button {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-size: .67rem;
+}
+
+.uiux-archive-filters button span { opacity: .52; }
+.uiux-archive-filters button:hover,
+.uiux-archive-filters button.active { border-color: #d7ff35; background: #d7ff35; color: #092744; }
+.uiux-archive-arrows button { width: 44px; display: grid; place-items: center; }
+.uiux-archive-arrows button:hover { background: rgba(255,255,255,.1); color: #d7ff35; }
+
+.additional-web-projects .additional-web-grid {
+  display: flex;
+  grid-template-columns: none;
+  gap: 16px;
+  margin-inline: 0;
+  padding: 0 0 6px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+}
+
+.additional-web-projects .additional-web-card {
+  flex: 0 0 clamp(280px, 27vw, 390px);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.additional-web-projects .additional-web-meta { min-height: 152px; }
+.additional-web-projects .additional-web-meta > p { display: none; }
+.additional-web-projects .additional-web-meta > span { margin-top: auto; }
+
+.figma-placeholder {
+  width: 100%; height: 100%; display: grid; place-content: center; justify-items: center; gap: 6px;
+  background: radial-gradient(circle at 25% 20%, #f4d9ff, transparent 38%), linear-gradient(135deg, #5740ad, #15152e);
+  color: white;
+}
+.figma-placeholder strong { font-size: 1.3rem; }
+.figma-placeholder small { opacity: .65; }
+
+.uiux-archive-hint {
+  display: grid;
+  grid-template-columns: auto minmax(40px,1fr) auto;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  color: rgba(255,255,255,.48);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .62rem;
+}
+.uiux-archive-hint i { height: 1px; background: rgba(255,255,255,.2); }
+
+.reliable-preview-panel { grid-template-rows: auto auto minmax(0,1fr) auto; }
+.reliable-project-preview { min-height: 0; overflow: auto; background: #dcd7cf; }
+.reliable-project-preview img {
+  width: min(100%,1280px); height: auto; min-height: 100%; display: block; margin: 0 auto;
+  object-fit: contain; object-position: top center; background: white;
+}
+.reliable-project-preview.has-video { display: grid; place-items: center; padding: 24px; background: #091726; }
+.reliable-project-preview video { width: min(100%,1180px); max-height: 100%; }
+.figma-page-fallback {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;
+  background: linear-gradient(135deg,#443289,#17172d); color: white; font-size: .65rem;
+}
+
+@media (max-width: 800px) {
+  .featured-uiux-grid > .website-project .project-image { aspect-ratio: .92; }
+  .additional-web-projects { margin-top: 68px; }
+  .additional-web-projects .additional-web-head { margin-bottom: 24px; }
+  .uiux-archive-toolbar { display: block; }
+  .uiux-archive-filters { margin-inline: -20px; padding: 0 20px 8px; }
+  .uiux-archive-arrows { display: none; }
+  .additional-web-projects .additional-web-grid { margin-inline: -20px; padding: 0 20px 8px; }
+  .additional-web-projects .additional-web-card { flex-basis: min(82vw,330px); }
+  .additional-web-projects .additional-web-meta { min-height: 146px; }
+  .uiux-archive-hint { grid-template-columns: auto 1fr; }
+  .uiux-archive-hint span:last-child { display: none; }
+  .reliable-project-preview img { min-height: 0; }
 }

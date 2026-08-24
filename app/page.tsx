@@ -186,6 +186,19 @@ const prioritizedWork = [...work]
     index: String(index + 1).padStart(2, "0"),
   }));
 
+const featuredUiuxTitles = new Set(["Doxper Blu", "UNCOVER App", "USL Derma"]);
+const featuredUiuxWork = prioritizedWork.filter((item) => featuredUiuxTitles.has(item.title));
+const archiveUiuxWork = prioritizedWork
+  .filter((item) => !featuredUiuxTitles.has(item.title))
+  .map((item) => ({
+    title: item.title,
+    type: item.type,
+    image: item.image,
+    href: item.href,
+    index: item.index,
+    video: "video" in item ? item.video : undefined,
+  }));
+
 const brandWork = [
   {
     name: "Uncover Clinics",
@@ -470,8 +483,8 @@ export default function Home() {
           <h2>Ideas, not screenshots.</h2>
           <p className="count">25 digital products</p>
         </div>
-        <div className="work-grid visual-work-grid">
-          {prioritizedWork.map((item) => (
+        <div className="work-grid visual-work-grid featured-uiux-grid">
+          {featuredUiuxWork.map((item) => (
             <a
               className={`project-card ${item.video ? "video-project" : ""} ${item.featured ? "featured-project" : ""} ${item.website ? "website-project" : ""} ${item.frame ? "case-project" : ""}`}
               href={item.href}
@@ -575,7 +588,7 @@ export default function Home() {
             </a>
           ))}
         </div>
-        <AdditionalWebProjects />
+        <AdditionalWebProjects archiveProjects={archiveUiuxWork} />
         <a
           className="behance-link"
           href="https://www.behance.net/harshchhabra"
@@ -653,6 +666,20 @@ export default function Home() {
               <span><PackageOpen size={15} />Packaging</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="linkedin-section" id="linkedin" data-reveal>
+        <div className="linkedin-mark" aria-hidden="true">in</div>
+        <div>
+          <p className="kicker"><UserRound size={15} /> Connect beyond the portfolio</p>
+          <h2>Follow the work<br />behind the work.</h2>
+        </div>
+        <div className="linkedin-copy">
+          <p>See current projects, career updates and the thinking behind my design process—all in one recruiter-friendly profile.</p>
+          <a href="https://www.linkedin.com/in/harsh-chhabra-b45607139/" target="_blank" rel="noreferrer">
+            <span><UserRound size={18} /> View LinkedIn profile</span><Arrow />
+          </a>
         </div>
       </section>
 
