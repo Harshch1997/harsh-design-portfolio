@@ -4223,8 +4223,9 @@ footer h2 {
 
 .project-map {
   position: fixed;
-  right: 22px;
-  bottom: 22px;
+  left: 22px;
+  right: auto;
+  bottom: 94px;
   z-index: 90;
 }
 
@@ -4233,7 +4234,7 @@ footer h2 {
   display: flex;
   align-items: center;
   gap: 9px;
-  margin-left: auto;
+  margin-right: auto;
   padding: 0 18px;
   border: 0;
   border-radius: 999px;
@@ -4257,7 +4258,8 @@ footer h2 {
 
 .project-map-panel {
   position: absolute;
-  right: 0;
+  left: 0;
+  right: auto;
   bottom: 64px;
   width: min(420px, calc(100vw - 32px));
   padding: 18px;
@@ -4269,7 +4271,7 @@ footer h2 {
   opacity: 0;
   visibility: hidden;
   transform: translateY(12px) scale(0.97);
-  transform-origin: bottom right;
+  transform-origin: bottom left;
   transition: 180ms ease;
 }
 
@@ -4432,8 +4434,9 @@ footer h2 {
   }
 
   .project-map {
-    right: 12px;
-    bottom: 12px;
+    left: 12px;
+    right: auto;
+    bottom: 82px;
   }
 
   .project-map-trigger {
@@ -4461,6 +4464,8 @@ footer h2 {
   }
 
   .project-map-panel {
+    left: 0;
+    right: auto;
     bottom: 58px;
     max-height: min(70vh, 580px);
     overflow-y: auto;

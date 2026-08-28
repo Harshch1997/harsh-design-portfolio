@@ -88,12 +88,30 @@ export function InteractiveChrome() {
     );
     document.querySelectorAll("[data-reveal]").forEach((item) => revealObserver.observe(item));
 
+    const openPortfolioProject = (event: MouseEvent) => {
+      const link = (event.target as HTMLElement).closest<HTMLAnchorElement>("#work a.project-card");
+      if (!link?.href || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      const width = Math.min(1480, Math.max(860, window.screen.availWidth * 0.9));
+      const height = Math.min(960, Math.max(680, window.screen.availHeight * 0.9));
+      const left = Math.max(0, (window.screen.availWidth - width) / 2);
+      const top = Math.max(0, (window.screen.availHeight - height) / 2);
+      const viewer = window.open(
+        link.href,
+        "harsh-portfolio-project",
+        `popup=yes,width=${Math.round(width)},height=${Math.round(height)},left=${Math.round(left)},top=${Math.round(top)},resizable=yes,scrollbars=yes`,
+      );
+      viewer?.focus();
+    };
+    document.addEventListener("click", openPortfolioProject);
+
     updateScroll();
     window.addEventListener("scroll", updateScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", updateScroll);
       sectionObserver.disconnect();
       revealObserver.disconnect();
+      document.removeEventListener("click", openPortfolioProject);
     };
   }, []);
 

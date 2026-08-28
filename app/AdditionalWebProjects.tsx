@@ -112,6 +112,28 @@ export function AdditionalWebProjects({ archiveProjects }: { archiveProjects: Ar
   const closeModal = () => { setActiveProject(null); setPageIndex(0); };
   const scrollRail = (direction: number) => railRef.current?.scrollBy({ left: direction * Math.min(window.innerWidth * 0.72, 760), behavior: "smooth" });
   const projectImage = (project: UnifiedProject) => project.kind === "figma" ? project.pages.find((page) => page.image)?.image : project.image;
+  const openFullProject = (url: string) => {
+    const width = Math.min(1480, Math.max(860, window.screen.availWidth * 0.9));
+    const height = Math.min(960, Math.max(680, window.screen.availHeight * 0.9));
+    const left = Math.max(0, (window.screen.availWidth - width) / 2);
+    const top = Math.max(0, (window.screen.availHeight - height) / 2);
+    const viewer = window.open(
+      url,
+      "harsh-portfolio-project",
+      `popup=yes,width=${Math.round(width)},height=${Math.round(height)},left=${Math.round(left)},top=${Math.round(top)},resizable=yes,scrollbars=yes`,
+    );
+    viewer?.focus();
+  };
+  const openProject = (project: UnifiedProject) => {
+    if (project.kind === "figma") {
+      setPageIndex(0);
+      setActiveProject(project);
+      return;
+    }
+
+    const destination = project.kind === "live" ? project.url : project.video || project.href;
+    openFullProject(destination);
+  };
 
   return (
     <>
@@ -135,29 +157,18 @@ export function AdditionalWebProjects({ archiveProjects }: { archiveProjects: Ar
             const image = projectImage(project);
             const label = project.kind === "live" ? "Live site" : project.kind === "figma" ? `${project.pages.length} screens` : project.video ? "Motion case" : "UI/UX case";
             return (
-              <button className={`additional-web-card ${project.kind}-card`} key={`${filter}-${project.title}`} onClick={() => { setPageIndex(0); setActiveProject(project); }}>
+              <button className={`additional-web-card ${project.kind}-card`} key={`${filter}-${project.title}`} onClick={() => openProject(project)}>
                 <span className="additional-web-visual">
                   {image ? <img src={image} alt={`${project.title} design preview`} loading="lazy" /> : <span className="figma-placeholder"><Palette size={34} /><strong>Figma</strong><small>Interactive prototype</small></span>}
                   <i>{project.kind === "live" ? <Globe2 size={14} /> : project.kind === "figma" ? <Palette size={14} /> : project.video ? <Film size={14} /> : <MonitorSmartphone size={14} />}{label}</i><b><Eye size={18} /></b>
                 </span>
-                <span className="additional-web-meta"><small>{String(index + 1).padStart(2, "0")} / {project.kind.toUpperCase()}</small><strong>{project.title}</strong><em>{project.type}</em><span>View design <ArrowUpRight size={16} /></span></span>
+                <span className="additional-web-meta"><small>{String(index + 1).padStart(2, "0")} / {project.kind.toUpperCase()}</small><strong>{project.title}</strong><em>{project.type}</em><span>{project.kind === "live" ? "Launch live website" : project.kind === "figma" ? "Explore every screen" : project.video ? "Play full walkthrough" : "Open full project"} <ArrowUpRight size={16} /></span></span>
               </button>
             );
           })}
         </div>
         <div className="uiux-archive-hint"><span>Drag or swipe</span><i /><span>{visibleProjects.length} projects in this view</span></div>
       </div>
-
-      {activeProject && activeProject.kind !== "figma" && (
-        <div className="web-project-modal" role="dialog" aria-modal="true" aria-label={`${activeProject.title} project preview`} onMouseDown={(event) => event.target === event.currentTarget && closeModal()}>
-          <div className="web-project-panel reliable-preview-panel">
-            <header><span>{activeProject.kind === "live" ? <Globe2 size={17} /> : <MonitorSmartphone size={17} />}<small>{activeProject.kind === "live" ? "Live website" : "Selected UI/UX case"}</small><strong>{activeProject.title}</strong></span><div><a href={activeProject.kind === "live" ? activeProject.url : activeProject.href} target="_blank" rel="noreferrer">{activeProject.kind === "live" ? "Open live site" : "Open project"} <ExternalLink size={15} /></a><button onClick={closeModal} aria-label="Close project preview"><X size={20} /></button></div></header>
-            <div className="live-browser-bar"><i /><i /><i /><span>{activeProject.kind === "live" ? activeProject.url.replace(/^https?:\/\//, "") : activeProject.type}</span></div>
-            <div className={`reliable-project-preview ${activeProject.video ? "has-video" : ""}`}>{activeProject.video ? <video src={activeProject.video} poster={activeProject.image} controls playsInline /> : <img src={activeProject.image} alt={`${activeProject.title} complete preview`} />}</div>
-            <footer><MousePointerClick size={15} /> Scroll the preview here. Use the top-right button for the fully interactive live experience.</footer>
-          </div>
-        </div>
-      )}
 
       {activeFigma && activePage && (
         <div className="web-project-modal" role="dialog" aria-modal="true" aria-label={`${activeFigma.title} Figma project`} onMouseDown={(event) => event.target === event.currentTarget && closeModal()}>
