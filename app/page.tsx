@@ -202,48 +202,69 @@ const archiveUiuxWork = prioritizedWork
 const brandWork = [
   {
     name: "Uncover Clinics",
+    handle: "@uncover.clinics",
     service: "Clinic campaigns · Reels & visual storytelling",
     href: "https://www.instagram.com/uncover.clinics/",
   },
   {
     name: "Uncover Wellness",
+    handle: "@uncover.wellness",
     service: "Dermatology · Wellness campaigns",
     href: "https://www.instagram.com/uncover.wellness/",
   },
   {
     name: "Uncover Transform",
+    handle: "@uncover.transform",
     service: "Social identity · Campaign design",
     href: "https://www.instagram.com/uncover.transform/",
   },
   {
     name: "Uncover Hair",
+    handle: "@uncover.hair",
     service: "Brand communication · Social",
     href: "https://www.instagram.com/uncover.hair/",
   },
   {
     name: "My Elyara",
+    handle: "@myelyara",
     service: "Regenerative aesthetics · Social design",
     href: "https://www.instagram.com/myelyara/",
   },
   {
     name: "Go Sharpener",
+    handle: "@gosharpener",
     service: "Education · Social & video",
     href: "https://www.instagram.com/gosharpener/",
   },
   {
     name: "Chai Calling India",
+    handle: "@chaicallingindia",
     service: "F&B · Social storytelling",
     href: "https://www.instagram.com/chaicallingindia/",
   },
   {
     name: "Casa Sonal Singh",
+    handle: "@sonalsingh.in",
     service: "Luxury fashion · Digital content",
     href: "https://www.instagram.com/sonalsingh.in/",
   },
   {
     name: "Yuomo Men",
+    handle: "@yuomo.men",
     service: "Menswear · Digital campaigns",
     href: "https://www.instagram.com/yuomo.men/",
+  },
+  {
+    name: "White Tree Architects",
+    handle: "@whitetreearchitects",
+    service: "Architecture · Reels & visual storytelling",
+    href: "https://www.instagram.com/whitetreearchitects/",
+  },
+  {
+    name: "Jyotirgamaya by Kcamya",
+    handle: "@jyotirgamayabykcamya",
+    service: "Spiritual wellness · Reels & social content",
+    href: "https://www.instagram.com/jyotirgamayabykcamya/",
   },
 ];
 
@@ -423,7 +444,7 @@ export default function Home() {
               <a href={item.href} target="_blank" rel="noreferrer" key={item.name}>
                 <span className="profile-icon"><Camera size={18} /></span>
                 <span className="profile-copy">
-                  <strong>{item.name}</strong>
+                  <strong>{item.name} <em>{item.handle}</em></strong>
                   <small>{item.service}</small>
                 </span>
                 <Arrow />

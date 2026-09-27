@@ -107,6 +107,16 @@ export const instagramCatalogues = [
     accent: "#7ec8ff",
     codes: ids("DZfLzFRTNcj DXmfkohk4W- DXhcZ-Ik4tX DXZyBfSk8Vg DXhJ9rjkxat DXMWj1vk7Al DYplqTFT6YE DXWvcStE5o0 DXZM7MNhO54 DYmtt2qTYCP DYkbDvkzlN7 DWtfpF1k-Yc"),
   },
+  {
+    brand: "White Tree Architects",
+    accent: "#9c7c5d",
+    codes: ids("DbBRKrdzaJ3 DdEkqEMNtBb"),
+  },
+  {
+    brand: "Jyotirgamaya by Kcamya",
+    accent: "#7b4d9b",
+    codes: ids("Ddj-EgaTvlz DdYPIIcxO0r DdD5C0Yxa29"),
+  },
 ];
 
 export const instagramPostCatalogues = [
