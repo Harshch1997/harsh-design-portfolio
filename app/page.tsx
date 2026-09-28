@@ -225,6 +225,24 @@ const brandWork = [
     href: "https://www.instagram.com/uncover.hair/",
   },
   {
+    name: "MR BUTTON",
+    handle: "@mrbutton",
+    service: "Menswear · AI reels, campaigns & social content",
+    href: "https://www.instagram.com/mrbutton/",
+  },
+  {
+    name: "Jyotirgamaya by Kcamya",
+    handle: "@jyotirgamayabykcamya",
+    service: "Spiritual wellness · Reels & social content",
+    href: "https://www.instagram.com/jyotirgamayabykcamya/",
+  },
+  {
+    name: "White Tree Architects",
+    handle: "@whitetreearchitects",
+    service: "Architecture · Reels & visual storytelling",
+    href: "https://www.instagram.com/whitetreearchitects/",
+  },
+  {
     name: "My Elyara",
     handle: "@myelyara",
     service: "Regenerative aesthetics · Social design",
@@ -255,28 +273,10 @@ const brandWork = [
     href: "https://www.instagram.com/yuomo.men/",
   },
   {
-    name: "White Tree Architects",
-    handle: "@whitetreearchitects",
-    service: "Architecture · Reels & visual storytelling",
-    href: "https://www.instagram.com/whitetreearchitects/",
-  },
-  {
-    name: "Jyotirgamaya by Kcamya",
-    handle: "@jyotirgamayabykcamya",
-    service: "Spiritual wellness · Reels & social content",
-    href: "https://www.instagram.com/jyotirgamayabykcamya/",
-  },
-  {
     name: "Home4Us",
     handle: "@home4us.in",
     service: "Real estate · Social campaigns & carousel design",
     href: "https://www.instagram.com/home4us.in/",
-  },
-  {
-    name: "MR BUTTON",
-    handle: "@mrbutton",
-    service: "Menswear · AI reels, campaigns & social content",
-    href: "https://www.instagram.com/mrbutton/",
   },
 ];
 

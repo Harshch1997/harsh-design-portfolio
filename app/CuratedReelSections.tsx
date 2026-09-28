@@ -27,15 +27,15 @@ const aiReels: Reel[] = [
   { code: "DWjLEU6jbHv", title: "The clinic team disappears", label: "AI narrative · Campaign" },
   { code: "DWjV-D6IgYx", title: "Where did the dermats go?", label: "AI story · Suspense edit" },
   { code: "DWlUD_TGA7n", title: "UNCOVER Unplugged", label: "AI world-building · Launch" },
-  { code: "DWlWv2JESik", title: "Welcome to Unplugged", label: "AI characters · Branded reel" },
-  { code: "DYjx_xPTTo6", title: "The MELODI moment", label: "AI culture edit · Social" },
-  { code: "DZHvtuSsNEW", title: "Skin Booster candidates", label: "AI-assisted explainer" },
-  { code: "DZKK7_WRwV7", title: "Eight locations and counting", label: "AI scale story · Brand" },
   { code: "DdBsK9WBTT3", title: "New season, fresh rotation", label: "AI fashion campaign · MR BUTTON" },
   { code: "Dc3ZlLSBQOv", title: "The Black Soul Blazer", label: "AI product story · MR BUTTON" },
   { code: "Dc59zbFBtaD", title: "You can never have enough blue shirts", label: "AI fashion edit · MR BUTTON" },
   { code: "DcvqqYbhw5m", title: "Fall styling, the MR BUTTON way", label: "AI styling concept · MR BUTTON" },
   { code: "DdbcJ_MBZ1m", title: "Five looks, one festive mood", label: "AI festive campaign · MR BUTTON" },
+  { code: "DWlWv2JESik", title: "Welcome to Unplugged", label: "AI characters · Branded reel" },
+  { code: "DYjx_xPTTo6", title: "The MELODI moment", label: "AI culture edit · Social" },
+  { code: "DZHvtuSsNEW", title: "Skin Booster candidates", label: "AI-assisted explainer" },
+  { code: "DZKK7_WRwV7", title: "Eight locations and counting", label: "AI scale story · Brand" },
 ];
 
 const trailers: Reel[] = [
