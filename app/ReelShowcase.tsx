@@ -18,6 +18,8 @@ const jpgReels = new Set([
   "DU0IgCajED_", "DUqHXuJDNGg", "DUm7WaRDaVz", "DOqdOuWkgZT",
   "DbBRKrdzaJ3", "DdEkqEMNtBb", "Ddj-EgaTvlz", "DdYPIIcxO0r",
   "DdD5C0Yxa29",
+  "DdWShwcBzlk", "DdjKeoChgfD", "DdqmBa4TvYO", "DdwDDpIB0AE",
+  "DdynWIBBHkI",
 ]);
 
 const reels = instagramCatalogues.flatMap((group) =>

@@ -266,6 +266,18 @@ const brandWork = [
     service: "Spiritual wellness · Reels & social content",
     href: "https://www.instagram.com/jyotirgamayabykcamya/",
   },
+  {
+    name: "Home4Us",
+    handle: "@home4us.in",
+    service: "Real estate · Social campaigns & carousel design",
+    href: "https://www.instagram.com/home4us.in/",
+  },
+  {
+    name: "MR BUTTON",
+    handle: "@mrbutton",
+    service: "Menswear · AI reels, campaigns & social content",
+    href: "https://www.instagram.com/mrbutton/",
+  },
 ];
 
 function Arrow() {
