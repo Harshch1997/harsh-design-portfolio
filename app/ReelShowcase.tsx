@@ -1,4 +1,5 @@
 "use client";
+const previewExtensions: Record<string,string> = {"Dcz-9kFyakN":"-cover.jpg","DcC2PlfS4Mv":"-cover.jpg","Da149-8khv-":".webp","DaSQ-CXyjB1":".webp","DfXMkBkD-Nu":".jpg","DfRbtp1zKzK":".jpg","DMctGeqRSDW":".jpg","DfedTqylHCF":".jpg","DfJVKOpkzTd":".jpg","DfKS70XBWGK":".jpg","DXbzGqWEwEI":".jpg","DemKkk4k-nM":".jpg","Deb9GkZicdI":".jpg","DeJ5aC4pCQM":".jpg","DeRvss0JVZv":".jpg"};
 
 import { useEffect, useRef, useState } from "react";
 import { instagramCatalogues } from "./catalogueData";
@@ -16,13 +17,14 @@ const jpgReels = new Set([
   "DZkQYKYJFXn", "DXUGyoNypd7", "DXO6uBvkWBy", "DW3x_PwylG_",
   "DWoVf_TkoZX", "DWIlk32DhY6", "DVLMif4EUW-", "DVGcJ9ODM75",
   "DU0IgCajED_", "DUqHXuJDNGg", "DUm7WaRDaVz", "DOqdOuWkgZT",
-  "DbBRKrdzaJ3", "DdEkqEMNtBb", "Ddj-EgaTvlz", "DdYPIIcxO0r",
-  "DdD5C0Yxa29",
-  "DdWShwcBzlk", "DdjKeoChgfD", "DdqmBa4TvYO", "DdwDDpIB0AE",
-  "DdynWIBBHkI",
 ]);
 
-const reels = instagramCatalogues.flatMap((group) =>
+const newReels = [
+  ["ReME Sleep", "Sleep apnea awareness", "Dcz-9kFyakN"], ["ReME Sleep", "Sleep health", "DcC2PlfS4Mv"],
+  ["Commbitz", "Thailand in November", "DfRbtp1zKzK"], ["Mahina", "Period care", "DMctGeqRSDW"],
+  ["Nivaan Care", "Headache awareness", "DfKS70XBWGK"], ["OSSO", "The OSSO Podcast", "DXbzGqWEwEI"], ["GoQuest", "Growth architecture", "DeRvss0JVZv"],
+].map(([brand,title,code]) => ({ brand,title,code,image:`/social-previews/${code}${previewExtensions[code]}`,accent:"#d7ff35" }));
+const reels = [...newReels, ...instagramCatalogues.flatMap((group) =>
   group.codes.map((code, index) => ({
     brand: group.brand,
     title: `Reel ${String(index + 1).padStart(2, "0")}`,
@@ -30,7 +32,7 @@ const reels = instagramCatalogues.flatMap((group) =>
     image: `/reels/all/${code}.${jpgReels.has(code) ? "jpg" : "webp"}`,
     accent: group.accent,
   })),
-);
+)];
 
 export function ReelShowcase() {
   const [active, setActive] = useState<(typeof reels)[number] | null>(null);
@@ -61,7 +63,7 @@ export function ReelShowcase() {
   return (
     <>
       <div className="reel-filter" aria-label="Filter reels by brand">
-        {["All", ...instagramCatalogues.map((group) => group.brand)].map((brand) => (
+        {["All", ...new Set(reels.map((reel) => reel.brand))].map((brand) => (
           <button
             key={brand}
             className={filter === brand ? "active" : ""}
@@ -90,11 +92,7 @@ export function ReelShowcase() {
             key={`${reel.brand}-${reel.code}`}
             style={{ "--reel-accent": reel.accent } as React.CSSProperties}
           >
-            <img
-              src={reel.image}
-              alt={`${reel.brand}: ${reel.title}`}
-              loading="lazy"
-            />
+            {reel.image ? <img src={reel.image} alt={`${reel.brand}: ${reel.title}`} loading="lazy" /> : <span className="social-card-placeholder"><Camera size={28} /><strong>{reel.brand}</strong><small>Instagram reel</small></span>}
             <span className="reel-number">{String(index + 1).padStart(2, "0")}</span>
             <span className="reel-play" aria-hidden="true"><Play size={23} fill="currentColor" /></span>
             <span className="reel-caption">

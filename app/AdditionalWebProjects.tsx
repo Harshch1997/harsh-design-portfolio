@@ -11,7 +11,7 @@ export type ArchiveProject = {
 };
 
 type LiveSite = {
-  kind: "live"; title: string; url: string; image: string; type: string; note: string;
+  kind: "live"; title: string; url: string; image?: string; type: string; note: string;
 };
 
 type FigmaPage = { label: string; node: string; image?: string };
@@ -25,6 +25,10 @@ type UnifiedProject =
   | FigmaCase;
 
 const liveSites: LiveSite[] = [
+  { kind: "live", title: "Doxper Nex", image: "/site-previews/doxper-nex.jpg", url: "https://nex.doxper.com/", type: "Healthcare · Website", note: "Explore the live Doxper Nex experience." },
+  { kind: "live", title: "Astira Capital · Cortex", image: "/site-previews/astira-cortex.jpg", url: "https://astira-cinematic-capital.harshchhabra3330.chatgpt.site/#cortex", type: "Finance · Website", note: "Explore the Cortex experience." },
+  { kind: "live", title: "Astira Capital · Who We Are", image: "/site-previews/astira-about.jpg", url: "https://astira-cinematic-capital.harshchhabra3330.chatgpt.site/site?font=1#who-we-are", type: "Finance · Website", note: "Explore the company experience." },
+  { kind: "live", title: "Mom’s Belief", image: "/site-previews/moms-belief.jpg", url: "https://www.momsbelief.com/", type: "Healthcare · Website", note: "Explore the live website." },
   { kind: "live", title: "Neocrest", url: "https://neocrest.in/", image: "/site-previews/neocrest.png", type: "Corporate Website", note: "A polished business experience with a clear service journey." },
   { kind: "live", title: "Home4Us", url: "https://home4us.in/", image: "/site-previews/home4us.png", type: "Real Estate Platform", note: "Property discovery designed for confidence and fast decisions." },
   { kind: "live", title: "Car Bike World", url: "https://carbikeworld.com/", image: "/site-previews/carbikeworld.png", type: "Automotive Marketplace", note: "A content-rich automotive platform with practical browsing paths." },
@@ -94,8 +98,8 @@ export function AdditionalWebProjects({ archiveProjects }: { archiveProjects: Ar
   const [activeProject, setActiveProject] = useState<UnifiedProject | null>(null);
   const [pageIndex, setPageIndex] = useState(0);
   const projects = useMemo<UnifiedProject[]>(() => [
-    ...archiveProjects.map((project) => ({ ...project, kind: "archive" as const, note: "Selected product thinking, interface design and visual systems from the archive." })),
-    ...liveSites, ...figmaCases,
+    ...liveSites, ...archiveProjects.map((project) => ({ ...project, kind: "archive" as const, note: "Selected product thinking, interface design and visual systems from the archive." })),
+    ...figmaCases,
   ], [archiveProjects]);
   const visibleProjects = filter === "all" ? projects : projects.filter((project) => project.kind === filter);
   const activeFigma = activeProject?.kind === "figma" ? activeProject : null;
@@ -139,8 +143,8 @@ export function AdditionalWebProjects({ archiveProjects }: { archiveProjects: Ar
     <>
       <div className="additional-web-projects">
         <div className="additional-web-head">
-          <div><span><LayoutTemplate size={15} /> Compact digital archive</span><h3>One archive. Every screen.</h3></div>
-          <p><MousePointerClick size={15} /> Filter the work, swipe one consistent row, then open any project for a closer look.</p>
+          <div><span><LayoutTemplate size={15} /> Web & product design</span><h3>Explore the work.</h3></div>
+          <p><MousePointerClick size={15} /> Choose a category and open any project to explore it in full.</p>
         </div>
         <div className="uiux-archive-toolbar">
           <div className="uiux-archive-filters" aria-label="Filter UI/UX projects">
@@ -150,7 +154,7 @@ export function AdditionalWebProjects({ archiveProjects }: { archiveProjects: Ar
               <button className={filter === value ? "active" : ""} onClick={() => setFilter(value)} key={value}>{label}<span>{String(count).padStart(2, "0")}</span></button>
             ))}
           </div>
-          <div className="uiux-archive-arrows"><button onClick={() => scrollRail(-1)} aria-label="Previous projects"><ArrowLeft size={18} /></button><button onClick={() => scrollRail(1)} aria-label="Next projects"><ArrowRight size={18} /></button></div>
+          
         </div>
         <div className="additional-web-grid" ref={railRef}>
           {visibleProjects.map((project, index) => {
@@ -159,7 +163,7 @@ export function AdditionalWebProjects({ archiveProjects }: { archiveProjects: Ar
             return (
               <button className={`additional-web-card ${project.kind}-card`} key={`${filter}-${project.title}`} onClick={() => openProject(project)}>
                 <span className="additional-web-visual">
-                  {image ? <img src={image} alt={`${project.title} design preview`} loading="lazy" /> : <span className="figma-placeholder"><Palette size={34} /><strong>Figma</strong><small>Interactive prototype</small></span>}
+                  {image ? <img src={image} alt={`${project.title} design preview`} loading="lazy" /> : <span className="figma-placeholder"><Globe2 size={34} /><strong>{project.title}</strong><small>View project ↗</small></span>}
                   <i>{project.kind === "live" ? <Globe2 size={14} /> : project.kind === "figma" ? <Palette size={14} /> : project.video ? <Film size={14} /> : <MonitorSmartphone size={14} />}{label}</i><b><Eye size={18} /></b>
                 </span>
                 <span className="additional-web-meta"><small>{String(index + 1).padStart(2, "0")} / {project.kind.toUpperCase()}</small><strong>{project.title}</strong><em>{project.type}</em><span>{project.kind === "live" ? "Launch live website" : project.kind === "figma" ? "Explore every screen" : project.video ? "Play full walkthrough" : "Open full project"} <ArrowUpRight size={16} /></span></span>
@@ -167,7 +171,7 @@ export function AdditionalWebProjects({ archiveProjects }: { archiveProjects: Ar
             );
           })}
         </div>
-        <div className="uiux-archive-hint"><span>Drag or swipe</span><i /><span>{visibleProjects.length} projects in this view</span></div>
+        <div className="uiux-archive-hint"><span>Browse all projects</span><i /><span>{visibleProjects.length} projects in this view</span></div>
       </div>
 
       {activeFigma && activePage && (

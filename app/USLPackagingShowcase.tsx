@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowUpRight,
   ChevronLeft,
@@ -69,6 +69,7 @@ const products = [
 type Product = (typeof products)[number];
 
 export function USLPackagingShowcase() {
+  const rail = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<Product | null>(null);
   const [activeImage, setActiveImage] = useState(0);
 
@@ -120,7 +121,8 @@ export function USLPackagingShowcase() {
           </div>
         </div>
 
-        <div className="usl-product-stories">
+        <div className="usl-rail-controls"><span>Browse all four products</span><div><button type="button" onClick={() => rail.current?.scrollBy({ left: -360, behavior: "smooth" })} aria-label="Previous products"><ChevronLeft size={20} /></button><button type="button" onClick={() => rail.current?.scrollBy({ left: 360, behavior: "smooth" })} aria-label="Next products"><ChevronRight size={20} /></button></div></div>
+        <div className="usl-product-stories" ref={rail} tabIndex={0} aria-label="Scroll through USL packaging projects">
           {products.map((product, index) => (
             <article className={`usl-product-story ${product.tone}`} key={product.handle}>
               <button onClick={() => openProduct(product)} aria-label={`View ${product.fullName} packaging gallery`}>

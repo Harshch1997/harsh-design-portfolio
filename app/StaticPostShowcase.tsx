@@ -1,4 +1,5 @@
 "use client";
+const previewExtensions: Record<string,string> = {"Dcz-9kFyakN":".jpg","DcC2PlfS4Mv":".jpg","Da149-8khv-":".webp","DaSQ-CXyjB1":".webp","DfXMkBkD-Nu":".jpg","DfRbtp1zKzK":".jpg","DMctGeqRSDW":".jpg","DfedTqylHCF":".jpg","DfJVKOpkzTd":".jpg","DfKS70XBWGK":".jpg","DXbzGqWEwEI":".jpg","DemKkk4k-nM":".jpg","Deb9GkZicdI":".jpg","DeJ5aC4pCQM":".jpg","DeRvss0JVZv":".jpg"};
 
 import { useEffect, useRef, useState } from "react";
 import { instagramPostCatalogues } from "./catalogueData";
@@ -14,14 +15,20 @@ import {
   X,
 } from "lucide-react";
 
-const posts = instagramPostCatalogues.flatMap((group) =>
+const newPosts = [
+  ["ReME Sleep", "Signs of poor sleep", "DaSQ-CXyjB1", 1], ["ReME Sleep", "Sleep apnea and heart health", "Da149-8khv-", 0],
+  ["Commbitz", "Travel inspiration", "DfXMkBkD-Nu", 0], ["Mahina", "Diwali carousel", "DfedTqylHCF", 0],
+  ["Nivaan Care", "Travel and back care", "DfJVKOpkzTd", 0], ["OSSO", "Patient story", "DemKkk4k-nM", 0],
+  ["GoQuest", "GrowthOS", "Deb9GkZicdI", 0], ["GoQuest", "Meet the founder", "DeJ5aC4pCQM", 1],
+].map(([brand,title,code,slides]) => ({brand: brand as string, title: title as string, code: code as string, slides: slides as number, image: `/social-previews/${code}${previewExtensions[code as string]}`, accent: "#d7ff35"}));
+const posts = [...newPosts, ...instagramPostCatalogues.flatMap((group) =>
   group.posts.map((post, index) => ({
     ...post,
     brand: group.brand,
     accent: group.accent,
     title: post.slides !== 1 ? `Carousel ${String(index + 1).padStart(2, "0")}` : `Static Post ${String(index + 1).padStart(2, "0")}`,
   })),
-);
+)];
 
 export function StaticPostShowcase() {
   const [filter, setFilter] = useState("All");
@@ -51,7 +58,7 @@ export function StaticPostShowcase() {
   return (
     <>
       <div className="post-filter">
-        {["All", ...instagramPostCatalogues.map((group) => group.brand)].map((brand) => (
+        {["All", ...new Set(posts.map((post) => post.brand))].map((brand) => (
           <button
             key={brand}
             className={filter === brand ? "active" : ""}
@@ -82,11 +89,7 @@ export function StaticPostShowcase() {
             style={{ "--post-accent": post.accent } as React.CSSProperties}
           >
             <span className="post-image">
-              <img
-                src={post.image ?? `/posts/${post.code}.webp`}
-                alt={`${post.brand}: ${post.title}`}
-                loading="lazy"
-              />
+              {post.image === "" ? <span className="social-card-placeholder"><Camera size={28} /><strong>{post.brand}</strong><small>{post.slides === 1 ? "Instagram post" : "Instagram carousel"}</small></span> : <img src={post.image ?? `/posts/${post.code}.webp`} alt={`${post.brand}: ${post.title}`} loading="lazy" />}
               <i>{post.slides > 1 ? <><Layers3 size={13} /> {post.slides} slides</> : post.slides === 0 ? <><Layers3 size={13} /> Carousel</> : <><ImageIcon size={13} /> Static</>}</i>
               <b aria-hidden="true">{post.slides !== 1 ? <Layers3 size={17} /> : <Camera size={17} />}</b>
             </span>

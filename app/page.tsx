@@ -1,3 +1,4 @@
+import { LinkedInShowcase } from "./LinkedInShowcase";
 import { ReelShowcase } from "./ReelShowcase";
 import { DesignCollections } from "./DesignCollections";
 import { YouTubeShowcase } from "./YouTubeShowcase";
@@ -186,10 +187,7 @@ const prioritizedWork = [...work]
     index: String(index + 1).padStart(2, "0"),
   }));
 
-const featuredUiuxTitles = new Set(["Doxper Blu", "UNCOVER App", "USL Derma"]);
-const featuredUiuxWork = prioritizedWork.filter((item) => featuredUiuxTitles.has(item.title));
 const archiveUiuxWork = prioritizedWork
-  .filter((item) => !featuredUiuxTitles.has(item.title))
   .map((item) => ({
     title: item.title,
     type: item.type,
@@ -200,83 +198,76 @@ const archiveUiuxWork = prioritizedWork
   }));
 
 const brandWork = [
+  { name: "ReME Sleep", service: "Sleep health · Social & reels", href: "https://www.instagram.com/reme_sleep/" },
+  { name: "Commbitz", service: "Travel connectivity · Social & reels", href: "https://www.instagram.com/commbitz_esim/" },
+  { name: "Mahina", service: "Period care · Social & reels", href: "https://www.instagram.com/my.mahina/" },
+  { name: "Nivaan Care", service: "Healthcare · Social & reels", href: "https://www.instagram.com/nivaancare/" },
+  { name: "OSSO", service: "Orthopaedics · Social & reels", href: "https://www.instagram.com/osso.ortho/" },
+  { name: "GoQuest", service: "Growth · Social & reels", href: "https://www.instagram.com/goquest.ai/" },
   {
     name: "Uncover Clinics",
-    handle: "@uncover.clinics",
     service: "Clinic campaigns · Reels & visual storytelling",
     href: "https://www.instagram.com/uncover.clinics/",
   },
   {
     name: "Uncover Wellness",
-    handle: "@uncover.wellness",
     service: "Dermatology · Wellness campaigns",
     href: "https://www.instagram.com/uncover.wellness/",
   },
   {
     name: "Uncover Transform",
-    handle: "@uncover.transform",
     service: "Social identity · Campaign design",
     href: "https://www.instagram.com/uncover.transform/",
   },
   {
     name: "Uncover Hair",
-    handle: "@uncover.hair",
     service: "Brand communication · Social",
     href: "https://www.instagram.com/uncover.hair/",
   },
   {
     name: "MR BUTTON",
-    handle: "@mrbutton",
     service: "Menswear · AI reels, campaigns & social content",
     href: "https://www.instagram.com/mrbutton/",
   },
   {
     name: "Jyotirgamaya by Kcamya",
-    handle: "@jyotirgamayabykcamya",
     service: "Spiritual wellness · Reels & social content",
     href: "https://www.instagram.com/jyotirgamayabykcamya/",
   },
   {
     name: "White Tree Architects",
-    handle: "@whitetreearchitects",
     service: "Architecture · Reels & visual storytelling",
     href: "https://www.instagram.com/whitetreearchitects/",
   },
   {
+    name: "Home4Us",
+    service: "Real estate · Social campaigns & carousel design",
+    href: "https://www.instagram.com/home4us.in/",
+  },
+  {
     name: "My Elyara",
-    handle: "@myelyara",
     service: "Regenerative aesthetics · Social design",
     href: "https://www.instagram.com/myelyara/",
   },
   {
     name: "Go Sharpener",
-    handle: "@gosharpener",
     service: "Education · Social & video",
     href: "https://www.instagram.com/gosharpener/",
   },
   {
     name: "Chai Calling India",
-    handle: "@chaicallingindia",
     service: "F&B · Social storytelling",
     href: "https://www.instagram.com/chaicallingindia/",
   },
   {
     name: "Casa Sonal Singh",
-    handle: "@sonalsingh.in",
     service: "Luxury fashion · Digital content",
     href: "https://www.instagram.com/sonalsingh.in/",
   },
   {
     name: "Yuomo Men",
-    handle: "@yuomo.men",
     service: "Menswear · Digital campaigns",
     href: "https://www.instagram.com/yuomo.men/",
-  },
-  {
-    name: "Home4Us",
-    handle: "@home4us.in",
-    service: "Real estate · Social campaigns & carousel design",
-    href: "https://www.instagram.com/home4us.in/",
   },
 ];
 
@@ -370,6 +361,7 @@ export default function Home() {
             <strong>Social Reels &amp; Posts</strong>
             <ArrowDown />
           </a>
+          <a href="#linkedin-posts"><span>01C</span><GalleryHorizontalEnd className="category-icon" /><strong>LinkedIn Posts</strong><ArrowDown /></a>
           <a href="#video">
             <span>02</span><TvMinimalPlay className="category-icon" />
             <strong>YouTube &amp; Video</strong>
@@ -456,7 +448,7 @@ export default function Home() {
               <a href={item.href} target="_blank" rel="noreferrer" key={item.name}>
                 <span className="profile-icon"><Camera size={18} /></span>
                 <span className="profile-copy">
-                  <strong>{item.name} <em>{item.handle}</em></strong>
+                  <strong>{item.name}</strong>
                   <small>{item.service}</small>
                 </span>
                 <Arrow />
@@ -479,6 +471,8 @@ export default function Home() {
         </div>
         <StaticPostShowcase />
       </section>
+
+      <LinkedInShowcase />
 
       <section className="motion-section" id="video" data-reveal>
         <div className="motion-copy">
@@ -515,111 +509,6 @@ export default function Home() {
           <p className="kicker"><MonitorSmartphone size={15} /> 03 / UI/UX &amp; Web Design</p>
           <h2>Ideas, not screenshots.</h2>
           <p className="count">25 digital products</p>
-        </div>
-        <div className="work-grid visual-work-grid featured-uiux-grid">
-          {featuredUiuxWork.map((item) => (
-            <a
-              className={`project-card ${item.video ? "video-project" : ""} ${item.featured ? "featured-project" : ""} ${item.website ? "website-project" : ""} ${item.frame ? "case-project" : ""}`}
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              key={item.title}
-            >
-              <div className="project-image">
-                {item.screens ? (
-                  <div className={`doxper-project-preview ${item.appTone ?? ""}`}>
-                    <div className="doxper-project-copy">
-                      <img src={item.appIcon} alt="" className="doxper-app-icon" />
-                      <span>{item.previewLabel ?? "Healthcare product design"}</span>
-                      <strong>{item.title}</strong>
-                      <p>{item.summary ?? "Digital workflows designed for doctors, appointments and connected care."}</p>
-                    </div>
-                    <div className="doxper-screens" aria-label="Doxper Blu app interface previews">
-                      {item.screens.map((screen, screenIndex) => (
-                        <img
-                          src={screen}
-                          alt={`Doxper Blu app screen ${screenIndex + 1}`}
-                          loading={screenIndex === 0 ? "eager" : "lazy"}
-                          key={screen}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                ) : item.website ? (
-                  <div className={`website-project-preview ${item.websiteTone}`}>
-                    <div className="website-browser-card">
-                      <div className="website-browser-bar">
-                        <i /><i /><i />
-                        <span>{item.website}</span>
-                      </div>
-                      <div className="website-browser-canvas">
-                        <img src={item.image} alt={`${item.title} website homepage`} loading="lazy" />
-                      </div>
-                    </div>
-                    <div className="website-card-caption">
-                      <span>Live website design</span>
-                      <strong>{item.title}</strong>
-                      <p>{item.summary}</p>
-                      <div>
-                        {item.tags?.map((tag) => <i key={tag}>{tag}</i>)}
-                      </div>
-                    </div>
-                  </div>
-                ) : item.frame ? (
-                  <div className={`case-preview ${item.tone}`}>
-                    <div className="case-preview-head">
-                      <span>{item.previewLabel}</span>
-                      <strong>{item.index}</strong>
-                    </div>
-                    <div className={`case-device ${item.frame}`}>
-                      <div className="case-device-bar">
-                        <i /><i /><i />
-                        <span>{item.title}</span>
-                      </div>
-                      <div className="case-device-screen">
-                        {item.video ? (
-                          <video
-                            src={item.video}
-                            poster={item.image}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            aria-label="Red Fort ticketing interface walkthrough"
-                          />
-                        ) : (
-                          <img src={item.image} alt={`${item.title} UI/UX preview`} loading="lazy" />
-                        )}
-                      </div>
-                    </div>
-                    <div className="case-preview-foot">
-                      <strong>{item.title}</strong>
-                      <div>
-                        {item.tags?.map((tag) => <i key={tag}>{tag}</i>)}
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <img src={item.image} alt={`${item.title} UI/UX preview`} loading="lazy" />
-                )}
-                <span className="view-pill">
-                  {item.video ? (
-                    <><Play size={15} fill="currentColor" /> Watch Red Fort video</>
-                  ) : (
-                    <><Eye size={15} /> {item.cta ?? "View project"}</>
-                  )}
-                </span>
-              </div>
-              <div className="project-meta">
-                <span>{item.index}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.type}</p>
-                </div>
-                <Arrow />
-              </div>
-            </a>
-          ))}
         </div>
         <AdditionalWebProjects archiveProjects={archiveUiuxWork} />
         <a
